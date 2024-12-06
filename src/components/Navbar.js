@@ -3,10 +3,18 @@ import { Link } from 'react-router-dom';
 import { Globe } from 'lucide-react';
 import translations from '../utils/translations';
 import languages from '../utils/languages';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCube, Pagination, Autoplay } from 'swiper/modules'; // Import Autoplay module
+import 'swiper/css';
+import 'swiper/css/effect-cube';
+import 'swiper/css/pagination';
+
+// Import Swiper styles
 
 // SVG Imports
 import logo from '../assets/logo.svg';
-import inst from '../assets/instagram.svg';
+import inst from '../assets/instagram.png';
+import face from '../assets/facebook.png';
 import drop from '../assets/dropdown.svg';
 import menuIcon from '../assets/menu-icon.svg';
 import closeIcon from '../assets/close-icon.svg';
@@ -46,14 +54,63 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-5">
                 <div className="flex justify-between items-center ">
                     {/* Instagram Logo */}
-                    <div className="flex items-center space-x-4">
-                        <img src={inst} alt="Instagram Logo" className="" />
+                    <div className="flex items-center flex-col gap-3">
+                        <img src={inst} alt="Instagram Logo" className="w-5" />
+                        <img src={face} alt="Instagram Logo" className="w-5" />
                     </div>
                     {/* Logo and Navigation Links */}
-                    <div className="flex flex-col items-center gap-10 relative left-12 ">
-                        <Link to="/">
-                            <img src={logo} alt="Dr. Joints Logo" />
-                        </Link>
+                    <div className={`relative should`}>
+                        <div className="flex flex-col items-center gap-10 mb-10  ">
+                            <Link to="/">
+                                <Swiper
+                                    effect={'cube'}
+                                    grabCursor={true}
+                                    cubeEffect={{
+                                        shadow: true,
+                                        slideShadows: true,
+                                        shadowOffset: 20,
+                                        shadowScale: 0.94,
+                                    }}
+                                    autoplay={{
+                                        delay: 1000,
+                                        disableOnInteraction: false,
+                                    }}
+                                    modules={[EffectCube, Autoplay]} // Remove Pagination module
+                                    className="w-[100px] h-[100px]"
+                                >
+                                    <SwiperSlide>
+                                        <img
+                                            src={logo}
+                                            alt="Logo 1"
+                                            className="block w-full h-full object-fit"
+                                        />
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <img
+                                            src={logo}
+                                            alt="Logo 2"
+                                            className="block w-full h-full object-fit"
+                                        />
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <img
+                                            src={logo}
+                                            alt="Logo 3"
+                                            className="block w-full h-full object-fit"
+                                        />
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <img
+                                            src={logo}
+                                            alt="Logo 4"
+                                            className="block w-full h-full object-fit"
+                                        />
+                                    </SwiperSlide>
+                                </Swiper>
+                                {/* <img src={logo} alt="Dr. Joints Logo" /> */}
+                            </Link>
+
+                        </div>
                         <div className="flex space-x-6 font-medium">
                             {t.navLinks.map((link) => (
                                 <Link
@@ -80,7 +137,7 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
                     </select>
                 </div>
             </div>
-        </nav>
+        </nav >
     );
 
     // Mobile Menu
@@ -155,3 +212,56 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
 };
 
 export default Navbar;
+
+
+// import React from 'react';
+
+
+// export default function App() {
+//   return (
+//     <div className="h-screen bg-gray-200 flex items-center justify-center">
+//       <Swiper
+//         effect={'cube'}
+//         grabCursor={true}
+//         cubeEffect={{
+//           shadow: true,
+//           slideShadows: true,
+//           shadowOffset: 20,
+//           shadowScale: 0.94,
+//         }}
+//         pagination={true}
+//         modules={[EffectCube, Pagination]}
+//         className="w-[300px] h-[300px]"
+//       >
+//         <SwiperSlide>
+//           <img
+//             src="https://swiperjs.com/demos/images/nature-1.jpg"
+//             alt="Nature 1"
+//             className="block w-full h-full object-cover"
+//           />
+//         </SwiperSlide>
+//         <SwiperSlide>
+//           <img
+//             src="https://swiperjs.com/demos/images/nature-2.jpg"
+//             alt="Nature 2"
+//             className="block w-full h-full object-cover"
+//           />
+//         </SwiperSlide>
+//         <SwiperSlide>
+//           <img
+//             src="https://swiperjs.com/demos/images/nature-3.jpg"
+//             alt="Nature 3"
+//             className="block w-full h-full object-cover"
+//           />
+//         </SwiperSlide>
+//         <SwiperSlide>
+//           <img
+//             src="https://swiperjs.com/demos/images/nature-4.jpg"
+//             alt="Nature 4"
+//             className="block w-full h-full object-cover"
+//           />
+//         </SwiperSlide>
+//       </Swiper>
+//     </div>
+//   );
+// }

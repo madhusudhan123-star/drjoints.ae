@@ -1,18 +1,20 @@
 import React, { useState, useEffect, useCallback } from "react";
 import translations from '../utils/translations';
 import head from "../assets/header.svg";
-import leftImage from "../assets/second.svg";
-import rightImage from "../assets/second_one.svg";
+import leftImage from "../assets/musllim_joint.png";
+import rightImage from "../assets/muslim_joint2.jpeg";
 import productImage from '../assets/third.svg';
 import one from '../assets/t_one.svg';
 import two from '../assets/t_two.svg';
 import three from '../assets/t_three.svg';
 import four from '../assets/t_four.svg';
+import five from '../assets/hala.png';
 import head2 from '../assets/head2.svg';
 import left from '../assets/right.svg';
 import right from '../assets/left.svg';
 import logo from '../assets/logo.svg';
 import { Link } from 'react-router-dom';
+
 
 
 
@@ -98,8 +100,8 @@ const App = ({ currentLang }) => {
             </div>
 
             {/* Why Choose Section */}
-            <div className=" w-full min-h-screen flex flex-col items-center pb-10 px-0 md:px-20 sm:px-20">
-                <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold text-white text-center mb-5">
+            <div className=" w-full flex flex-col items-center px-0 md:px-20 sm:px-20">
+                <h1 className="text-2xl md:text-3xl lg:text-5xl pb-6 font-bold text-white text-center">
                     {t.home.question}
                 </h1>
                 <div className="flex flex-col md:flex-row gap-10">
@@ -109,7 +111,7 @@ const App = ({ currentLang }) => {
                             <img
                                 src={leftImage}
                                 alt="Person Holding Leg"
-                                className="rounded-lg object-cover "
+                                className="rounded-lg object-cover w-[70%]"
                             />
                         </div>
 
@@ -144,13 +146,14 @@ const App = ({ currentLang }) => {
                         </a>
                     </button>
                 </div>
-                <div className="container mx-auto px-4 mt-32 bg-white">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center items-center">
-                        <img src={one} alt="Trusted Brand 1" className="max-w-full h-auto" />
-                        <img src={two} alt="Trusted Brand 2" className="max-w-full h-auto" />
-                        <img src={three} alt="Trusted Brand 3" className="max-w-full h-auto" />
-                        <img src={four} alt="Trusted Brand 4" className="max-w-full h-auto" />
-                    </div>
+            </div>
+            <div className="w-screen px-4 mt-10 bg-white pb-4">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-6 justify-items-center items-center">
+                    <img src={one} alt="Trusted Brand 1" className="max-w-full h-auto" />
+                    <img src={two} alt="Trusted Brand 2" className="max-w-full h-auto" />
+                    <img src={three} alt="Trusted Brand 3" className="max-w-full h-auto" />
+                    <img src={four} alt="Trusted Brand 4" className="max-w-full h-auto" />
+                    <img src={five} alt="Trusted Brand 4" className="max-w-full h-auto" />
                 </div>
             </div>
 
@@ -175,7 +178,7 @@ const App = ({ currentLang }) => {
                     <div className="max-w-7xl mx-auto px-4">
                         <h2 className="text-3xl font-bold text-center mb-12 text-white">{t.home.client}</h2>
 
-                        <div className="relative overflow-hidden touch-pan-y">
+                        <div className="relative overflow-hidden should touch-pan-y">
                             <div
                                 className="flex transition-transform duration-500 ease-in-out"
                                 style={{

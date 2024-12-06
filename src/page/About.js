@@ -1,13 +1,32 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import translations from '../utils/translations';
 import { Link } from 'react-router-dom'
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-flip';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
+
+// Import required modules
+import { EffectFlip, Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 // image and svg files
 import first from '../assets/about_first.svg'
+import two from '../assets/about_second.svg'
+import three from '../assets/about_three.svg'
+import four from '../assets/about_four.svg'
 import doctor from '../assets/doctor.svg';
 import logo from '../assets/logo.svg';
 import rating from '../assets/rating.svg';
+import painone from '../assets/pain_first.svg';
+import painsecond from '../assets/pain_second.svg';
+import painthird from '../assets/pain_three.svg';
+import painfourth from '../assets/legpain.jpeg';
 import { ChevronLeft, ChevronRight, ThumbsUp, Store, Users, UserCircle, Star } from 'lucide-react';
+
 
 
 const AnimatedCounter = ({ end, duration = 2000, suffix = '' }) => {
@@ -125,7 +144,48 @@ const About = ({ currentLang }) => {
                         <p className='text-base md:text-xl'>{t.about.sub}</p>
                     </div>
                     <div className='w-full md:w-1/2 flex justify-center items-center'>
-                        <img src={first} alt="product" className='max-w-full h-auto' />
+                        <Swiper
+                            effect="flip"
+                            grabCursor={true}
+                            autoplay={{
+                                delay: 2000, // Slide every 3 seconds
+                                disableOnInteraction: false,
+                            }}
+                            pagination={{ clickable: false }} // Hides dots
+                            navigation={{}} // Keeps navigation but we'll hide it via CSS
+                            modules={[EffectFlip, Pagination, Navigation, Autoplay]}
+                            className="w-1/2 h-full p-12"
+                        >
+                            <SwiperSlide className="bg-center bg-cover">
+                                <img
+                                    src={first}
+                                    alt="Nature 1"
+                                    className="block w-full h-full object-cover"
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide className="bg-center bg-cover">
+                                <img
+                                    src={two}
+                                    alt="Nature 2"
+                                    className="block w-full h-full object-fit"
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide className="bg-center bg-cover">
+                                <img
+                                    src={three}
+                                    alt="Nature 3"
+                                    className="block w-full h-full object-fit"
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide className="bg-center bg-cover">
+                                <img
+                                    src={four}
+                                    alt="Nature 3"
+                                    className="block w-full h-full object-fit"
+                                />
+                            </SwiperSlide>
+                        </Swiper>
+                        {/* <img src={first} alt="product" className='max-w-full h-auto' /> */}
                     </div>
                 </div>
             </div>
@@ -147,59 +207,7 @@ const About = ({ currentLang }) => {
 
 
 
-            {/* Pain Relief Section */}
-            {/* Pain Relief Section */}
-            {/* <div id="reviews" className="w-full py-16 text-black relative z-10">
-                < className="max-w-7xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center mb-12 text-white">{t.about.titlethree}</h2>
 
-                    <div className="relative overflow-hidden">
-                        <div
-                            className="flex transition-transform duration-500 ease-in-out"
-                            style={{
-                                transform: `translateX(-${(currentIndex * 100) / itemsToShow}%)`,
-                                width: `${(t.about.reviews.length / itemsToShow) * 100}%`
-                            }}
-                        >
-                            {t.about.reviews.map((review, index) => (
-                                <div
-                                    key={index}
-                                    className={`
-                                     flex-shrink-0 
-                                     px-2 
-                                     flex 
-                                     items-center 
-                                     justify-center 
-                                     ${isMobile ? "w-full" : ``}
-                                 `}
-                                >
-                                    <div className="flex justify-center flex-col items-center transition-shadow duration-300 w- text-white">
-                                        <img
-                                            src={review.image}
-                                            alt={review.review}
-                                            className="h-full"
-                                        />
-                                        <h3 className="text-lg font-bold text-center">{review.review}</h3>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Navigation Dots */}
-            {/* <div className="flex justify-center mt-8 gap-2">
-                {[...Array(totalDots)].map((_, index) => (
-                    <button
-                        key={index}
-                        className={`
-                                 w-3 h-3 rounded-full transition-colors duration-300 
-                                 ${currentIndex === index ? "bg-blue-600" : "bg-gray-300"}
-                             `}
-                        onClick={() => setCurrentIndex(index)}
-                        aria-label={`Go to slide ${index + 1}`}
-                    />
-                ))}
-            </div> */}
 
             {/* Doctor Section */}
             <div className='relative'>
@@ -270,72 +278,68 @@ const About = ({ currentLang }) => {
 
 export default About
 
-// import React, { useState, useEffect, useCallback } from 'react'
-// import translations from '../utils/translations';
-// import { Link } from 'react-router-dom'
-
-// // image and svg files
-// import first from '../assets/about_first.svg'
-// import doctor from '../assets/doctor.svg';
-// import logo from '../assets/logo.svg';
-// import rating from '../assets/rating.svg';
-// import { ChevronLeft, ChevronRight, ThumbsUp, Store, Users, UserCircle, Star } from 'lucide-react';
-
-// const About = ({ currentLang }) => {
-//     const [currentIndex, setCurrentIndex] = useState(0);
-//     const [itemsToShow, setItemsToShow] = useState(3);
-//     const [isMobile, setIsMobile] = useState(false);
-//     const t = translations[currentLang] || translations.ENGLISH;
-
-//     // Handle window resize and set items to show
-//     const handleResize = useCallback(() => {
-//         const width = window.innerWidth;
-//         if (width < 640) {
-//             setItemsToShow(1);
-//             setIsMobile(true);
-//         } else if (width < 768) {
-//             setItemsToShow(2);
-//             setIsMobile(true);
-//         } else if (width < 1024) {
-//             setItemsToShow(3);
-//             setIsMobile(false);
-//         } else {
-//             setItemsToShow(3);
-//             setIsMobile(false);
-//         }
-//     }, []);
-
-//     useEffect(() => {
-//         handleResize();
-//         window.addEventListener("resize", handleResize);
-//         return () => window.removeEventListener("resize", handleResize);
-//     }, [handleResize]);
-
-//     // Auto-slide logic
-//     useEffect(() => {
-//         const timer = setInterval(() => {
-//             setCurrentIndex((prevIndex) => {
-//                 const totalSlides = t.about.reviews.length;
-//                 const maxIndex = totalSlides - itemsToShow;
-//                 return prevIndex >= maxIndex ? 0 : prevIndex + 1;
-//             });
-//         }, 3000);
-
-//         return () => clearInterval(timer);
-//     }, [t.about.reviews.length, itemsToShow]);
-
-//     // Calculate total dots
-//     const totalDots = Math.max(1, Math.ceil(t.about.reviews.length / itemsToShow));
-
-//     return (
-//         <div className='bg-gradient-to-b from-[#0060D9] to-[#00618E]'>
-//             {/* Previous sections remain the same */}
 
 
-
-//             {/* Rest of the component remains the same */}
-//         </div>
-//     )
-// }
-
-// export default About
+//   <div className="flex flex-col md:flex-row items-center justify-center h-screen px-4 md:px-8">
+//                 <div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+//                     <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
+//                         {t.about.secTitle}
+//                     </h1>
+//                     <p className="text-white-600 text-lg md:text-xl mb-6">
+//                         {t.about.seccontent}
+//                     </p>
+//                 </div>
+//                 <div className="w-full md:w-1/2">
+//                     <Swiper
+//                         effect="cards"
+//                         grabCursor={true}
+//                         modules={[EffectCards]}
+//                         className="w-full max-w-xs mx-auto"
+//                     >
+//                         <SwiperSlide className="flex items-center justify-center bg-red-600 rounded-lg w-[300px] h-[400px]">
+//                             <video
+//                                 className="w-full h-auto rounded-lg"
+//                                 muted
+//                                 autoPlay
+//                                 loop
+//                             >
+//                                 <source src={leg} type="video/mp4" />
+//                                 Your browser does not support the video tag.
+//                             </video>
+//                         </SwiperSlide>
+//                         <SwiperSlide className="flex items-center justify-center bg-blue-600 rounded-lg">
+//                             <video
+//                                 className="w-full h-auto rounded-lg"
+//                                 muted
+//                                 autoPlay
+//                                 loop
+//                             >
+//                                 <source src={one} type="video/mp4" />
+//                                 Your browser does not support the video tag.
+//                             </video>
+//                         </SwiperSlide>
+//                         <SwiperSlide className="flex items-center justify-center bg-green-600 rounded-lg">
+//                             <video
+//                                 className="w-full h-auto rounded-lg"
+//                                 muted
+//                                 autoPlay
+//                                 loop
+//                             >
+//                                 <source src={two} type="video/mp4" />
+//                                 Your browser does not support the video tag.
+//                             </video>
+//                         </SwiperSlide>
+//                         <SwiperSlide className="flex items-center justify-center bg-green-600 rounded-lg">
+//                             <video
+//                                 className="w-full h-auto rounded-lg"
+//                                 muted
+//                                 autoPlay
+//                                 loop
+//                             >
+//                                 <source src={three} type="video/mp4" />
+//                                 Your browser does not support the video tag.
+//                             </video>
+//                         </SwiperSlide>
+//                     </Swiper>
+//                 </div>
+//             </div> 

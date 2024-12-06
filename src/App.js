@@ -10,6 +10,8 @@ import Checkout from './page/Checkout';
 import PrivacyPolicyPage from './page/PrivacyPolicyPage';
 import ReturnPolicyPage from './page/ReturnPolicyPage';
 import TermsConditionsPage from './page/TermsConditionsPage';
+import Carousel from './page/Carousel';
+import ShippingPolicyPage from './page/Shipping';
 
 function App() {
   // Ensure the language exists in translations, fallback to 'ENGLISH'
@@ -58,7 +60,7 @@ function App() {
           <Route path='/private' element={<PrivacyPolicyPage currentLang={currentLang} />} />
           <Route path='/return' element={<ReturnPolicyPage currentLang={currentLang} />} />
           <Route path='/terms' element={<TermsConditionsPage currentLang={currentLang} />} />
-
+          <Route path='/ship' element={<ShippingPolicyPage currentLang={currentLang} />} />
         </Routes>
       </div>
     </BrowserRouter>

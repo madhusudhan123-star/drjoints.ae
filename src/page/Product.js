@@ -1,14 +1,19 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router';
 import product from '../assets/product_one.svg';
-import product1 from '../assets/product_two.svg';
 import product2 from '../assets/product_three.svg';
-import product3 from '../assets/product_about.svg';
+import product4 from '../assets/product5.svg';
+
 import rating from '../assets/rating.svg';
 import logo from '../assets/logo.svg';
 import translations from '../utils/translations';
 import { Link } from 'react-router-dom';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 
 const Product = ({ currentLang }) => {
     const navigate = useNavigate();
@@ -50,183 +55,160 @@ const Product = ({ currentLang }) => {
         });
     };
 
-    const productImages = [product, product1, product2];
+    const productImages = [product, product2, product4];
 
     return (
         <div className='bg-gradient-to-b from-[#0060D9] to-[#00618E]'>
             {/* First Section - Product Details */}
-            <div className=''>
-                <div className="max-w-7xl mx-auto px-4 py-12">
-                    <div className="grid md:grid-cols-2 grid-cols-1 gap-12">
-                        {/* Product Info Section */}
-                        <div className="space-y-8">
-                            {/* Product Images for Mobile View */}
-                            <div className="md:hidden space-y-4 mb-8">
-                                {/* Main Image */}
-                                <div className="bg-gray-100 rounded-lg overflow-hidden">
-                                    <img
-                                        src={productImages[selectedImage]}
-                                        alt="DR. Joints Pain Relief Oil"
-                                        className="w-full h-auto object-contain"
-                                    />
-                                </div>
-
-                                {/* Thumbnail Gallery */}
-                                <div className="grid grid-cols-4 gap-2">
-                                    {productImages.map((img, index) => (
-                                        <button
-                                            key={index}
-                                            onClick={() => setSelectedImage(index)}
-                                            className={`border-2 rounded-lg overflow-hidden ${selectedImage === index ? 'border-blue-500' : 'border-gray-200'}`}
-                                        >
-                                            <img
-                                                src={img}
-                                                alt={`Product view ${index + 1}`}
-                                                className="w-full h-auto object-contain"
-                                            />
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Quantity and Buy Section */}
-                            <div className="max-w-md mx-auto px-4">
-                                {/* Sold and Price Info */}
-                                <div className="mb-6">
-                                    <p className="text-sm text-orange-500  font-medium">
-                                        {t.product.fakeqty}
-                                    </p>
-                                    <h1 className="text-2xl font-bold text-white">{t.product.name}</h1>
-                                    <div className="flex items-center text-lg mt-2">
-                                        <del className="text-gray-400 mr-2">₹ 6990</del>
-                                        <span className="text-white text-2xl font-bold">₹ 3495</span>
-                                    </div>
-                                </div>
-
-                                {/* Payment Options */}
-                                <div className="space-y-4 ">
-                                    {/* COD Option */}
-                                    <label
-                                        className={`block p-4 border rounded-lg cursor-pointer ${formData.paymentMode === "cod"
-                                            ? "border-green-500 bg-green-50"
-                                            : "border-gray-300"
-                                            }`}
-                                    >
-                                        <div className="flex justify-between items-center">
-                                            <div>
-                                                <input
-                                                    type="radio"
-                                                    name="paymentMode"
-                                                    value="cod"
-                                                    checked={formData.paymentMode === "cod"}
-                                                    onChange={handleInputChange}
-                                                    className="mr-2"
-                                                />
-                                                <span className="font-medium text-gray">{codPrice}</span>{" "}
-                                                <span className="text-sm text-black">{t.product.price}</span>
-                                            </div>
-                                            <span className="text-sm text-red-500 font-medium">
-                                                {t.product.off}
-                                            </span>
-                                        </div>
-                                    </label>
-
-                                    {/* Online Payment Option */}
-                                    <label
-                                        className={`block p-4 border bg-white rounded-lg cursor-pointer ${formData.paymentMode === "online"
-                                            ? "border-green-500 bg-green-50"
-                                            : "border-gray-300"
-                                            }`}
-                                    >
-                                        <div className="flex justify-between items-center">
-                                            <div>
-                                                <input
-                                                    type="radio"
-                                                    name="paymentMode"
-                                                    value="online"
-                                                    checked={formData.paymentMode === "online"}
-                                                    onChange={handleInputChange}
-                                                    className="mr-2"
-                                                />
-                                                <span className="font-medium text-gray-800">₹{onlinePrice}</span>{" "}
-                                                <span className="text-sm text-black">{t.product.price2}</span>
-                                            </div>
-                                            <span className="text-sm text-red-500 font-medium">
-                                                {t.product.off2}
-                                            </span>
-                                        </div>
-                                        <p className="text-xs text-gray-500 mt-1">
-                                            <a href='/checkout'>
-                                                {t.product.buynow}
-                                            </a>
-                                        </p>
-                                    </label>
-                                </div>
-
-                                {/* Quantity Selector */}
-                                <div className="flex items-center mt-4 justify-center">
-                                    <label htmlFor="quantity" className="mr-2 text-gray-700">
-                                        {t.product.qty}
-                                    </label>
-                                    <input
-                                        type="number"
-                                        id="quantity"
-                                        min="1"
-                                        value={quantity}
-                                        onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
-                                        className="w-16 px-3 py-2 border border-gray-300 rounded-md"
-                                    />
-                                </div>
-
-                                {/* Error Message */}
-                                {formErrors.paymentMode && (
-                                    <p className="text-red-500 text-sm mt-2 text-center">
-                                        {formErrors.paymentMode}
-                                    </p>
-                                )}
-
-                                {/* Buy Now Button */}
-                                <button
-                                    onClick={handleCheckout}
-                                    disabled={!formData.paymentMode}
-                                    className={`w-full py-3 mt-6 text-white text-lg font-medium rounded-lg ${formData.paymentMode
-                                        ? "bg-green-500 hover:bg-green-600"
-                                        : "bg-gray-300 cursor-not-allowed"
-                                        }`}
-                                >
-                                    {t.product.buynow}
-                                </button>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    {/* Product Info Section */}
+                    <div className="w-full">
+                        {/* Product Name and Price */}
+                        <div className="text-center md:text-left mb-6">
+                            <p className="text-sm text-orange-500 font-medium">
+                                {t.product.fakeqty}
+                            </p>
+                            <h1 className="text-3xl font-bold text-white mb-2">
+                                {t.product.name}
+                            </h1>
+                            <div className="flex items-center justify-center md:justify-start text-lg">
+                                <del className="text-gray-400 mr-2">₹6990</del>
+                                <span className="text-white text-2xl font-bold">₹3495</span>
                             </div>
                         </div>
 
-                        {/* Product Images Section - Hidden on Mobile */}
-                        <div className="space-y-4 hidden md:block">
-                            {/* Main Image */}
-                            <div className=" rounded-lg overflow-hidden">
-                                <img
-                                    src={productImages[selectedImage]}
-                                    alt="DR. Joints Pain Relief Oil"
-                                    className="w-full h-auto object-contain"
-                                />
-                            </div>
-
-                            {/* Thumbnail Gallery */}
-                            <div className="grid grid-cols-4 gap-2">
-                                {productImages.map((img, index) => (
-                                    <button
-                                        key={index}
-                                        onClick={() => setSelectedImage(index)}
-                                        className={`border-2 rounded-lg overflow-hidden ${selectedImage === index ? 'border-blue-500' : 'border-gray-200'}`}
-                                    >
-                                        <img
-                                            src={img}
-                                            alt={`Product view ${index + 1}`}
-                                            className="w-full h-auto object-contain"
+                        {/* Payment Options */}
+                        <div className="space-y-4">
+                            {/* COD Option */}
+                            <label
+                                className={`block p-4 border rounded-lg cursor-pointer transition ${formData.paymentMode === "cod"
+                                    ? "border-green-500 bg-green-50"
+                                    : "border-gray-300"
+                                    }`}
+                            >
+                                <div className="flex justify-between font-bold items-center">
+                                    <div>
+                                        <input
+                                            type="radio"
+                                            name="paymentMode"
+                                            value="cod"
+                                            checked={formData.paymentMode === "cod"}
+                                            onChange={handleInputChange}
+                                            className="mr-2"
                                         />
-                                    </button>
-                                ))}
-                            </div>
+
+                                        <span className="text-sm text-black ml-1">
+                                            {t.product.price}
+                                        </span>
+                                    </div>
+                                    <span className="text-sm text-red-500 font-medium">
+                                        {t.product.off}
+                                    </span>
+                                </div>
+                            </label>
+
+                            {/* Online Payment Option */}
+                            <label
+                                className={`block p-4 border rounded-lg bg-white cursor-pointer transition ${formData.paymentMode === "online"
+                                    ? "border-green-500 bg-green-50"
+                                    : "border-gray-300"
+                                    }`}
+                            >
+                                <div className="flex justify-between font-bold items-center">
+                                    <div>
+                                        <input
+                                            type="radio"
+                                            name="paymentMode"
+                                            value="online"
+                                            checked={formData.paymentMode === "online"}
+                                            onChange={handleInputChange}
+                                            className="mr-2"
+                                        />
+
+                                        <span className="text-sm text-black ml-1">
+                                            {t.product.price2}
+                                        </span>
+                                    </div>
+                                    <span className="text-sm text-red-500 font-medium">
+                                        {t.product.off2}
+                                    </span>
+                                </div>
+                            </label>
                         </div>
+
+                        {/* Quantity Selector */}
+                        <div className="flex items-center mt-4 justify-center md:justify-start">
+                            <label htmlFor="quantity" className="mr-2 text-gray-700">
+                                {t.product.qty}
+                            </label>
+                            <input
+                                type="number"
+                                id="quantity"
+                                min="1"
+                                value={quantity}
+                                onChange={(e) =>
+                                    setQuantity(parseInt(e.target.value) || 1)
+                                }
+                                className="w-16 px-3 py-2 border border-gray-300 rounded-md text-center"
+                            />
+                        </div>
+
+                        {/* Error Message */}
+                        {formErrors.paymentMode && (
+                            <p className="text-red-500 text-sm mt-2 text-center">
+                                {formErrors.paymentMode}
+                            </p>
+                        )}
+
+                        {/* Buy Now Button */}
+                        <button
+                            onClick={handleCheckout}
+                            disabled={!formData.paymentMode}
+                            className={`w-full py-3 mt-6 text-white text-lg font-medium rounded-lg ${formData.paymentMode
+                                ? "bg-green-500 hover:bg-green-600"
+                                : "bg-gray-300 cursor-not-allowed"
+                                }`}
+                        >
+                            {t.product.buynow}
+                        </button>
+                    </div>
+
+                    {/* Product Image Section */}
+                    <div className="flex flex-col items-center w-full">
+                        <Swiper
+                            effect="coverflow"
+                            grabCursor={true}
+                            centeredSlides={true}
+                            slidesPerView="auto"
+                            coverflowEffect={{
+                                rotate: 50,
+                                stretch: 0,
+                                depth: 100,
+                                modifier: 1,
+                                slideShadows: true,
+                            }}
+                            pagination={{ clickable: true }}
+                            autoplay={{
+                                delay: 3000,
+                                disableOnInteraction: false,
+                            }}
+                            modules={[EffectCoverflow, Pagination, Autoplay]}
+                            className="w-full max-w-sm sm:max-w-md pt-6 pb-6"
+                        >
+                            {productImages.map((img, index) => (
+                                <SwiperSlide
+                                    key={index}
+                                    className="bg-center bg-cover w-full h-[200px] sm:w-[300px] sm:h-[300px]"
+                                >
+                                    <img
+                                        src={img}
+                                        alt={`Product view ${index + 1}`}
+                                        className="block w-full h-full object-cover rounded-lg shadow-lg"
+                                    />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </div>
                 </div>
             </div>
@@ -294,8 +276,9 @@ const Product = ({ currentLang }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
 export default Product
+

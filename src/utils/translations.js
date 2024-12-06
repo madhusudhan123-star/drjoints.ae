@@ -5,98 +5,10 @@ import painthird from '../assets/pain_three.svg';
 import painfourth from '../assets/legpain.jpeg';
 const translations = {
     ENGLISH: {
-        // home: {
-        //     title: "Feel Better ",
-        //     titlesec: "Move Better",
-        //     button: "Shop Now",
-        //     question: "Why Choose Dr. Joints Pain Relief Oil?",
-        //     answer: `Our Dr. Joints Pain Relief Oil is a natural, effective solution for joint pain. Our mission is to provide natural, effective solutions for those struggling with joint pain, helping you regain flexibility and comfort. We offer premium Ayurvedic oils, formulated using traditional herbs and ingredients, to help alleviate joint discomfort and promote recovery.`,
-        //     answertwo: `At Dr. Joints, we believe in the power of nature and holistic wellness. Our commitment to quality and authenticity ensures that each product is crafted to deliver lasting relief.`,
-        //     title2: "Natural, Effective Solutions for Joint Pain",
-        //     sub2: "Helping you regain flexibility and comfort with premium Ayurvedic oils",
-        //     trust: "Trusted By Healthcare Professionals",
-        //     follow: "Follow Us for Updates on Natural Pain Relief",
-        //     client: "What Our Clients Say about Dr. Joints Pain Relief Oil",
-        //     goproduct: "Start Buying Dr. Joints Pain Relief Oil",
-        //     reviews: [
-        //         { id: 1, name: "John Doe", review: "This service is fantastic!", stars: 5 },
-        //         { id: 2, name: "Jane Smith", review: "Highly professional and reliable.", stars: 4 },
-        //         { id: 3, name: "Alice Johnson", review: "Amazing experience overall!", stars: 5 },
-        //         { id: 4, name: "Robert Brown", review: "Good quality and fast delivery.", stars: 4 },
-        //         { id: 5, name: "Emily Davis", review: "Exceeded all expectations!", stars: 5 },
-        //         { id: 6, name: "Michael Wilson", review: "Very efficient and supportive.", stars: 4 },
-        //         { id: 7, name: "Sarah Lee", review: "Great experience with the team!", stars: 5 },
-        //         { id: 8, name: "Chris Martin", review: "Outstanding service quality.", stars: 5 }
-        //     ],
-        // },
-        // navbar: {
-        //     home: "SHOP",
-        //     about: "ABOUT",
-        //     contact: "CONTACT",
-        // },
-        // navLinks: [
-        //     { id: "product", path: "/product", label: "SHOP" },
-        //     { id: "about", path: "/about", label: "ABOUT" },
-        //     { id: "contact", path: "/contact", label: "CONTACT" },
-        // ],
-        // footer: [
-        //     { id: "HOME", path: "/", label: "HOME" },
-        //     { id: "SHOP", path: "/product", label: "SHOP" },
-        //     { id: "ABOUT", path: "/about", label: "ABOUT" },
-        //     { id: "CONTACT", path: "/contact", label: "CONTACT" },
-        //     { id: "RETURN POLICY", path: "/return", label: "RETURN POLICY" },
-        //     { id: "PRIVACY POLICY", path: "/private", label: "PRIVACY POLICY" },
-        //     { id: "TERMS & CONDITIONS", path: "/terms", label: "TERMS & CONDITIONS" },
-        // ],
-        // product: {
-        //     name: "Dr. Joints Pain Relief Oil",
-        //     fakeqty: "23 sold in the last 3 hours",
-        //     off: "Flat 50% OFF",
-        //     off2: "Flat 70% OFF",
-        //     buynow: "Buy Now",
-        //     qty: "Qty",
-        //     price: "₹ 3495 - COD",
-        //     price2: "₹ 3145 - Online Delivery",
-        //     para: `Our Dr. Joints Pain Relief Oil is a natural and effective solution for joint pain. Our mission is to provide natural, effective solutions for those struggling with joint pain, helping you regain flexibility and comfort. We offer premium Ayurvedic oils, formulated using traditional herbs and ingredients, to help alleviate joint discomfort and promote recovery. At Dr. Joints, we believe in the power of nature and holistic wellness. Our commitment to quality and authenticity ensures that each product is crafted to deliver lasting relief.`,
-        //     doctor: "Trusted By the Doctor",
-        //     docpara: "Trusted by healthcare professionals for natural and effective joint pain relief.",
-        //     rating: "Average Store Rating",
-        //     rating2: "18.3K Customer Reviews"
-        // },
-
-        // about: {
-        //     title: "All About Dr. Joints Pain Relief Oil",
-        //     sub: "Our Dr. Joints Pain Relief Oil is a natural and effective solution for joint pain, formulated using traditional herbs and ingredients to help alleviate joint discomfort and promote recovery. Our commitment to quality and authenticity ensures that each product is crafted to deliver lasting relief.",
-        //     titlesec: "Our Success in Numbers!",
-        //     successData: [
-        //         { id: "SUCCESSFUL_CONSULTATIONS", value: "1,523,654", label: "Successful Consultations" },
-        //         { id: "CUSTOMER_SATISFACTION", value: "97%", label: "Customer Satisfaction Rate" },
-        //         { id: "GLOBAL_REACH", value: "85", label: "Countries with Consultations" },
-        //         { id: "EXPERTISE_YEARS", value: "20+", label: "Years of Expertise in Ayurveda Treatments" }
-        //     ],
-        //     relief: "Get Relief with Dr. Joints Pain Relief Oil",
-        //     pain1: "- Joint Pain Relief",
-        //     paint2: "- Muscle Pain Relief",
-        //     paint3: "- Arthritis Pain Relief",
-        //     stats: [
-        //         { icon: ThumbsUp, value: 5, suffix: '+', label: 'Years of Operations' },
-        //         { icon: Users, value: 103000, suffix: '+', label: 'Happy Members' },
-        //         { icon: UserCircle, value: 125, suffix: '', label: 'Team Members' },
-        //         { icon: Star, value: 4.9, suffix: '', label: 'Google Rating' }
-        //     ],
-        //     reviews: [
-        //         { review: "Elbow Joint Pain", image: painone },
-        //         { review: "Arthritis Pain", image: painsecond },
-        //         { review: "Shoulder Pain", image: painthird },
-        //         { review: "Footer and Ankle joint Pain", image: painfourth },
-        //         { review: "Very efficient and supportive.", image: painsecond },
-        //         { review: "Great experience with the team!", image: painthird }
-        //     ]
-        // },
         home: {
             title: "Feel Better",
             titlesec: "Move Better",
-            button: "Heal Now",
+            button: "Buy Now",
             question: "Why Choose Dr. Joints Pain Relief Oil?",
             answer: `Discover a breakthrough in natural pain relief. Our Dr. Joints Pain Relief Oil is a scientifically formulated, 100% natural solution designed to liberate you from joint and muscle discomfort. We don't just mask pain – we target its root cause with the healing power of premium Ayurvedic herbs.`,
             answertwo: `At Dr. Joints, we blend ancient wisdom with modern research to deliver transformative wellness. Our commitment goes beyond temporary relief – we're dedicated to your long-term healing and quality of life.`,
@@ -105,7 +17,7 @@ const translations = {
             trust: "Trusted By Leading Healthcare Professionals",
             follow: "Join Our Journey to Natural Wellness",
             client: "Life-Changing Stories from Dr. Joints Users",
-            goproduct: "Transform Your Life with Dr. Joints Pain Relief Oil",
+            goproduct: "Buy Now",
             reviews: [
                 { id: 1, name: "Ahmed Al Mansoori", review: "As a construction site manager, knee pain was hampering my work. Dr. Joints gave me back my mobility and professional edge!", stars: 5 },
                 { id: 2, name: "Fatima Hassan", review: "A yoga instructor's dream! Professional, natural, and incredibly effective for my joint flexibility.", stars: 4 },
@@ -127,30 +39,31 @@ const translations = {
             ],
         },
         navbar: {
-            home: "WELLNESS SHOP",
-            about: "OUR STORY",
-            contact: "CONNECT",
+            home: "PRODUCT",
+            about: "ABOUT",
+            contact: "CONTACT",
         },
         navLinks: [
-            { id: "product", path: "/product", label: "WELLNESS SHOP" },
-            { id: "about", path: "/about", label: "OUR STORY" },
-            { id: "contact", path: "/contact", label: "CONNECT" },
+            { id: "product", path: "/product", label: "PRODUCT" },
+            { id: "about", path: "/about", label: "ABOUT" },
+            { id: "contact", path: "/contact", label: "CONTACT" },
         ],
         footer: [
             { id: "HOME", path: "/", label: "HOME" },
-            { id: "SHOP", path: "/product", label: "WELLNESS SHOP" },
+            { id: "SHOP", path: "/product", label: "PRODUCT" },
             { id: "ABOUT", path: "/about", label: "OUR STORY" },
-            { id: "CONTACT", path: "/contact", label: "CONNECT" },
+            { id: "CONTACT", path: "/contact", label: "CONTACT" },
             { id: "RETURN POLICY", path: "/return", label: "RETURN POLICY" },
             { id: "PRIVACY POLICY", path: "/private", label: "PRIVACY POLICY" },
             { id: "TERMS & CONDITIONS", path: "/terms", label: "TERMS & CONDITIONS" },
+            { id: "SHIPPING POLICY", path: "/ship", label: "SHIPPING POLICY" },
         ],
         product: {
-            name: "Dr. Joints Pain Relief Oil - Natural Healing Elixir",
+            name: "Dr. Joints Pain Relief Oil - Natural Healing",
             fakeqty: "23 bottles sold in the last 3 hours",
             off: "Flat 50% OFF - Limited Time Offer",
             off2: "Flat 70% OFF on Bulk Purchase",
-            buynow: "Heal Now",
+            buynow: "Buy Now",
             qty: "Quantity",
             price: "₹ 3,495 - Cash on Delivery",
             price2: "₹ 3,145 - Express Online Delivery",
@@ -161,8 +74,8 @@ const translations = {
             rating2: "18,300+ Verified Reviews"
         },
         about: {
-            title: "The Dr. Joints Healing Journey",
-            sub: "More than a pain relief oil – we're a wellness movement rooted in ancient Ayurvedic wisdom and modern scientific research. Our mission is to transform lives by providing natural, holistic solutions that address pain at its core.",
+            title: "The Dr. Joints Healing",
+            sub: "Dr. Joints Oil is a premium herbal formulation designed to alleviate joint discomfort and support mobility. Combining the wisdom of traditional Ayurveda with modern scientific techniques, this therapeutic oil provides fast-acting relief for joint and muscle pain. Its carefully selected natural ingredients penetrate deep into the skin to reduce inflammation, improve blood circulation, and promote overall joint health.",
             titlesec: "Our Impact in Numbers",
             successData: [
                 { id: "SUCCESSFUL_CONSULTATIONS", value: "1,523,654", label: "Lives Transformed" },
@@ -187,7 +100,9 @@ const translations = {
                 { review: "Ankle Joint Freedom", image: painfourth },
                 { review: "Incredible Support System", image: painsecond },
                 { review: "Life-Changing Wellness Journey", image: painthird }
-            ]
+            ],
+            seccontent: "Dr. Joints Oil is a premium herbal formulation designed to alleviate joint discomfort and support mobility. Combining the wisdom of traditional Ayurveda with modern scientific techniques, this therapeutic oil provides fast-acting relief for joint and muscle pain. Its carefully selected natural ingredients penetrate deep into the skin to reduce inflammation, improve blood circulation, and promote overall joint health.",
+            secTitle: "Manage Your Joint Pain",
         },
         checkout: {
             title: "Checkout",
@@ -346,117 +261,170 @@ const translations = {
             pageinmessage: "Write you present condition...",
             pagesubbutton: "Send Message",
         },
+        shippingPolicyContent: {
+            title: "Shipping Policy",
+            lastUpdated: "Last Updated: [Insert Last Update Date]",
+            sections: [
+                {
+                    heading: "1. Shipping Coverage",
+                    content: `**Domestic Shipping**: We deliver to all major cities and towns across India. Pin code verification is available at checkout. Remote locations may require additional delivery time. Certain restricted areas may not be serviceable.\n\n**International Shipping**: We are happy to offer international shipping to customers worldwide. Our goal is to deliver your order as quickly and efficiently as possible, no matter where you are.`,
+                },
+                {
+                    heading: "2. Shipping Methods",
+                    content: `**Standard Delivery**: Delivery within 5–7 business days. Available across all serviceable locations.`,
+                },
+                {
+                    heading: "3. Shipping Partners",
+                    content: `We work with reputed courier partners, including:\n- Aramex\n- DHL\n- Blue Dart\n- DTDC`,
+                },
+                {
+                    heading: "4. Order Processing",
+                    content: `**Processing Time**: Orders are processed within 24 hours of placement. Order confirmation is sent via email. Bulk orders may require additional processing time.\n\n**Order Tracking**: A tracking number is provided via email. Customer service assistance is available for tracking queries.`,
+                },
+                {
+                    heading: "5. Delivery Guidelines",
+                    content: `**Delivery Attempts**: A maximum of 3 delivery attempts will be made. Delivery reattempts are scheduled within 24 hours. Customers will be notified before each delivery attempt. Orders returned to the seller after 3 failed attempts may incur reshipping fees. Refunds will be processed for the product price, excluding initial shipping charges.\n\n**Delivery Verification**: Valid ID proof may be required for specific items. Digital signature capture is required at delivery. Unattended delivery is not permitted.`,
+                },
+                {
+                    heading: "6. Special Cases",
+                    content: `**Bulk Orders**: Special shipping arrangements are available for bulk orders. Custom delivery timelines can be discussed with our team. Additional handling charges may apply.`,
+                },
+                {
+                    heading: "7. Shipping Restrictions",
+                    content: `**Weather Conditions**: Delivery times may be affected during severe weather conditions, natural disasters, or local disturbances. In such cases, orders will be rescheduled, and customers will be notified with updated timelines.`,
+                },
+                {
+                    heading: "8. Lost or Damaged Shipments",
+                    content: `**Lost Packages**: Investigations are initiated within 24 hours of receiving a complaint. Regular updates will be provided to the customer. Refunds or resolutions are provided within 15 business days for eligible cases, including the full product and shipping cost.\n\n**Damaged Packages**: Refuse delivery if external damage is visible. Report damage within 24 hours of delivery with photo documentation. Replacement or refunds are processed after an investigation.`,
+                },
+                {
+                    heading: "9. Holiday Shipping",
+                    content: `**Peak Seasons**: Processing times may be extended during festivals and peak seasons. We recommend additional delivery buffer time during these periods. Customers will be notified of any delays.\n\n**Business Hours**: Order processing: Monday to Sunday, 9 AM to 6 PM IST. Customer service is available: Monday to Saturday, 9 AM to 8 PM IST.`,
+                },
+                {
+                    heading: "10. Environmental Commitment",
+                    content: `**Packaging**: We use eco-friendly packaging materials with minimal plastic usage. Packaging materials are made from recycled sources where possible. We ensure right-sized packaging to reduce waste.`,
+                },
+                {
+                    heading: "11. Communication",
+                    content: `**Shipping Updates**: Customers receive:\n- Order confirmation emails\n- Shipping confirmations with tracking details\n- Delivery attempt notifications\n- Delivery completion confirmations`,
+                },
+                {
+                    heading: "12. Customer Support",
+                    content: `**Email**: hello@drjoints.ae\n\n**Phone**: [customer care number]\n\n**Response time**: Within 4 business hours during operational hours.`,
+                },
+                {
+                    heading: "13. Policy Updates",
+                    content: `This policy is subject to change. Updates will be posted on our website. Customers will be notified via email for significant changes at least 7 days in advance. Continued use of our services implies acceptance of the updated policy.`,
+                },
+            ],
+        },
     },
     ar: {
         home: {
             title: "اشعر بتحسن",
             titlesec: "تحرك بشكل أفضل",
-            button: "ابدأ الشفاء الآن",
-            question: "لماذا تختار زيت تخفيف آلام المفاصل د. جويتس؟",
-            answer: `اكتشف ابتكارًا جديدًا في تخفيف الألم الطبيعي. زيت تخفيف آلام المفاصل د. جويتس هو حل طبيعي 100% مصمم علميًا لتحريرك من آلام المفاصل والعضلات. نحن لا نخفي الألم فقط – بل نستهدف جذوره باستخدام قوة الشفاء للأعشاب الأيورفيدا الممتازة.`,
-            answertwo: `في د. جويتس، نمزج الحكمة القديمة مع الأبحاث الحديثة لتقديم تجربة صحية تحولية. التزامنا يتجاوز التخفيف المؤقت – نحن مكرسون لشفائك على المدى الطويل وتحسين جودة حياتك.`,
-            title2: "طريقك الطبيعي لحياة خالية من الألم",
-            sub2: "تمكينك من التحرك بحرية مع شفاء أيورفيدا الممتاز",
-            trust: "موثوق به من قبل أبرز المهنيين الصحيين",
+            button: "اشتري الآن",
+            question: "لماذا تختار زيت تخفيف آلام المفاصل Dr. Joints؟",
+            answer: `اكتشف طفرة في تخفيف الألم الطبيعي. تم تصميم زيت Dr. Joints لتخفيف آلام المفاصل بطريقة علمية وبمكونات طبيعية 100٪ ليحررك من الانزعاج في المفاصل والعضلات. نحن لا نخفي الألم فقط - بل نستهدف جذوره باستخدام قوة الشفاء من الأعشاب الأيورفيدية الممتازة.`,
+            answertwo: `في Dr. Joints، نمزج بين الحكمة القديمة والبحث الحديث لتقديم العافية التحويلية. التزامنا يتجاوز الراحة المؤقتة - نحن ملتزمون بشفائك على المدى الطويل وتحسين جودة حياتك.`,
+            title2: "طريقك الطبيعي للعيش دون ألم",
+            sub2: "تمكينك من التحرك بحرية باستخدام الشفاء الأيورفيدي الممتاز",
+            trust: "موثوق به من قبل كبار محترفي الرعاية الصحية",
             follow: "انضم إلى رحلتنا نحو العافية الطبيعية",
-            client: "قصص غيرت الحياة من مستخدمي زيت د. جويتس",
-            goproduct: "غير حياتك مع زيت تخفيف آلام المفاصل د. جويتس",
+            client: "قصص تغيّر الحياة من مستخدمي Dr. Joints",
+            goproduct: "اشتري الآن",
             reviews: [
-                { id: 1, name: "أحمد المنصوري", review: "كمدير موقع بناء، كانت آلام الركبة تعيق عملي. أعاد لي د. جويتس حركتي وكفاءتي المهنية!", stars: 5 },
-                { id: 2, name: "فاطمة حسن", review: "حلم مدرب اليوغا! احترافي، طبيعي، وفعال بشكل لا يصدق لتحسين مرونة مفاصلي.", stars: 4 },
-                { id: 3, name: "سلطان السويدي", review: "العيش مع التهاب المفاصل في مناخ دبي تحدٍ حقيقي. هذا الزيت هو الحل المثالي لراحتي اليومية.", stars: 5 },
-                { id: 4, name: "ليلى بن دراي", review: "كمتحمسة للياقة البدنية، يعد التعافي السريع أمرًا ضروريًا. جودة استثنائية وراحة سريعة!", stars: 4 },
-                { id: 5, name: "خالد محمد", review: "العمل لساعات طويلة في مكاتب مكيفة يمكن أن يسبب تصلب المفاصل. د. جويتس تجاوز كل توقعاتي!", stars: 5 },
-                { id: 6, name: "مريم المكتوم", review: "توصية صادقة من محترف في مجال الصحة. منتج داعم يقدم نتائج حقيقية!", stars: 4 },
-                { id: 7, name: "عمر عبد الله", review: "كعداء يعاني من آلام الركبة المستمرة، هذا هو حلي الذي غير حياتي!", stars: 5 },
+                { id: 1, name: "أحمد المنصوري", review: "بصفتي مدير موقع بناء، كانت آلام الركبة تعيق عملي. أعاد لي Dr. Joints حركتي وكفاءتي المهنية!", stars: 5 },
+                { id: 2, name: "فاطمة حسن", review: "حلم كل مدرب يوجا! منتج احترافي وطبيعي وفعال للغاية لتحسين مرونة مفاصلي.", stars: 4 },
+                { id: 3, name: "سلطان السويدي", review: "العيش مع التهاب المفاصل في مناخ دبي يمثل تحديًا. هذا الزيت غيّر حياتي اليومية.", stars: 5 },
+                { id: 4, name: "ليلى بن دراي", review: "كمتحمسة للياقة البدنية، التعافي السريع أمر بالغ الأهمية. جودة استثنائية وراحة سريعة!", stars: 4 },
+                { id: 5, name: "خالد محمد", review: "العمل لساعات طويلة في مكاتب مكيفة يمكن أن يسبب تصلب المفاصل. تجاوز Dr. Joints كل توقعاتي!", stars: 5 },
+                { id: 6, name: "مريم المكتوم", review: "توصية صادقة من محترف رعاية صحية. منتج داعم يوفر نتائج حقيقية!", stars: 4 },
+                { id: 7, name: "عمر عبد الله", review: "بصفتي عدّاء يعاني من آلام مستمرة في الركبة، هذا الحل غير حياتي!", stars: 5 },
                 { id: 8, name: "سارة الفهيم", review: "مثالي للمحترفين النشطين في دبي. علاج طبيعي يوفر راحة فورية!", stars: 5 },
-                { id: 9, name: "أحمد المنصوري", review: "كمدير موقع بناء، كانت آلام الركبة تعيق عملي. أعاد لي د. جويتس حركتي وكفاءتي المهنية!", stars: 5 },
-                { id: 10, name: "فاطمة حسن", review: "حلم مدرب اليوغا! احترافي، طبيعي، وفعال بشكل لا يصدق لتحسين مرونة مفاصلي.", stars: 4 },
-                { id: 11, name: "سلطان السويدي", review: "العيش مع التهاب المفاصل في مناخ دبي تحدٍ حقيقي. هذا الزيت هو الحل المثالي لراحتي اليومية.", stars: 5 },
-                { id: 12, name: "ليلى بن دراي", review: "كمتحمسة للياقة البدنية، يعد التعافي السريع أمرًا ضروريًا. جودة استثنائية وراحة سريعة!", stars: 4 },
-                { id: 13, name: "خالد محمد", review: "العمل لساعات طويلة في مكاتب مكيفة يمكن أن يسبب تصلب المفاصل. د. جويتس تجاوز كل توقعاتي!", stars: 5 },
-                { id: 14, name: "مريم المكتوم", review: "توصية صادقة من محترف في مجال الصحة. منتج داعم يقدم نتائج حقيقية!", stars: 4 },
-                { id: 15, name: "عمر عبد الله", review: "كعداء يعاني من آلام الركبة المستمرة، هذا هو حلي الذي غير حياتي!", stars: 5 },
-                { id: 16, name: "سارة الفهيم", review: "مثالي للمحترفين النشطين في دبي. علاج طبيعي يوفر راحة فورية!", stars: 5 }
-
+                // Add additional reviews as needed
             ],
         },
         navbar: {
-            home: "متجر الصحة",
-            about: "قصتنا",
-            contact: "تواصل معنا",
+            home: "المنتج",
+            about: "من نحن",
+            contact: "اتصل بنا",
         },
         navLinks: [
-            { id: "product", path: "/product", label: "متجر الصحة" },
-            { id: "about", path: "/about", label: "قصتنا" },
-            { id: "contact", path: "/contact", label: "تواصل معنا" },
+            { id: "product", path: "/product", label: "المنتج" },
+            { id: "about", path: "/about", label: "من نحن" },
+            { id: "contact", path: "/contact", label: "اتصل بنا" },
         ],
         footer: [
             { id: "HOME", path: "/", label: "الرئيسية" },
-            { id: "SHOP", path: "/product", label: "متجر الصحة" },
+            { id: "SHOP", path: "/product", label: "المنتج" },
             { id: "ABOUT", path: "/about", label: "قصتنا" },
-            { id: "CONTACT", path: "/contact", label: "تواصل معنا" },
+            { id: "CONTACT", path: "/contact", label: "اتصل بنا" },
             { id: "RETURN POLICY", path: "/return", label: "سياسة الإرجاع" },
             { id: "PRIVACY POLICY", path: "/private", label: "سياسة الخصوصية" },
             { id: "TERMS & CONDITIONS", path: "/terms", label: "الشروط والأحكام" },
+            { id: "SHIPPING POLICY", path: "/ship", label: "سياسة الشحن" },
         ],
         product: {
-            name: "زيت تخفيف آلام المفاصل د. جويتس - إكسير الشفاء الطبيعي",
+            name: "زيت Dr. Joints لتخفيف آلام المفاصل - الشفاء الطبيعي",
             fakeqty: "تم بيع 23 زجاجة في آخر 3 ساعات",
             off: "خصم 50% - عرض لفترة محدودة",
-            off2: "خصم 70% على الشراء بالجملة",
-            buynow: "ابدأ الشفاء الآن",
+            off2: "خصم 70% عند الشراء بالجملة",
+            buynow: "اشتري الآن",
             qty: "الكمية",
             price: "₹ 3,495 - الدفع عند الاستلام",
-            price2: "₹ 3,145 - توصيل سريع عبر الإنترنت",
-            para: `أطلق العنان لقوة الشفاء الطبيعي مع زيت تخفيف آلام المفاصل د. جويتس. تركيبتنا الأيورفيدا الثورية مصممة بعناية لتقديم راحة فورية وشفاء طويل الأمد. مليء بمكونات عشبية قوية، يخترق زيتنا بعمق لمعالجة آلام المفاصل والعضلات من جذورها. نحن لا نقدم منتجًا فقط – نحن نوفر طريقًا شاملًا للعافية، يمكّنك من استعادة حركتك والعيش بأقصى إمكانياتك.`,
-            doctor: "موصى به من قبل المهنيين الصحيين",
-            docpara: "حل موثوق وطبيعي وفعال لتخفيف آلام المفاصل معتمد من الخبراء الطبيين.",
+            price2: "₹ 3,145 - التوصيل السريع عبر الإنترنت",
+            para: `استمتع بقوة الشفاء الطبيعي مع زيت Dr. Joints لتخفيف آلام المفاصل. تم صياغة تركيبتنا الأيورفيدية الثورية بعناية لتوفير راحة فورية وشفاء طويل الأمد. مليء بالمكونات العشبية الفعالة، يتغلغل الزيت بعمق لمعالجة آلام المفاصل والعضلات من جذورها. نحن لا نقدم منتجًا فحسب - بل نقدم طريقًا شاملًا للعافية، يمكّنك من استعادة حركتك والعيش حياة مليئة بالحيوية.`,
+            doctor: "موصى به من قبل متخصصي الرعاية الصحية",
+            docpara: "حل موثوق لتخفيف آلام المفاصل الطبيعي والفعال يوصي به الخبراء الطبيون.",
             rating: "متوسط تقييم العملاء",
             rating2: "18,300+ تقييم موثوق"
         },
         about: {
-            title: "رحلة الشفاء مع د. جويتس",
-            sub: "أكثر من مجرد زيت لتخفيف الآلام – نحن حركة للصحة والعافية متجذرة في حكمة الأيورفيدا القديمة والبحث العلمي الحديث. مهمتنا هي تغيير الحياة من خلال تقديم حلول طبيعية شاملة تعالج الألم من جذوره.",
+            title: "علاج Dr. Joints",
+            sub: "زيت Dr. Joints هو تركيبة عشبية مميزة مصممة لتخفيف انزعاج المفاصل ودعم الحركة. من خلال دمج الحكمة التقليدية للأيورفيدا مع التقنيات العلمية الحديثة، يوفر هذا الزيت العلاجي راحة سريعة لآلام المفاصل والعضلات. تتغلغل مكوناته الطبيعية المختارة بعناية بعمق في الجلد لتقليل الالتهاب، وتحسين الدورة الدموية، وتعزيز صحة المفاصل بشكل عام.",
             titlesec: "تأثيرنا بالأرقام",
             successData: [
-                { id: "SUCCESSFUL_CONSULTATIONS", value: "1,523,654", label: "حيوات تم تغييرها" },
+                { id: "SUCCESSFUL_CONSULTATIONS", value: "1,523,654", label: "حيوات تحولت" },
                 { id: "CUSTOMER_SATISFACTION", value: "97%", label: "ضمان السعادة" },
-                { id: "GLOBAL_REACH", value: "85", label: "بلدان خدمناها" },
-                { id: "EXPERTISE_YEARS", value: "20+", label: "سنوات من خبرة الشفاء" }
+                { id: "GLOBAL_REACH", value: "85", label: "بلدان تم خدمتها" },
+                { id: "EXPERTISE_YEARS", value: "20+", label: "سنوات من الخبرة العلاجية" }
             ],
-            relief: "طريقك إلى حياة خالية من الألم",
+            relief: "طريقك للحياة بدون ألم",
             pain1: "- حل كامل لآلام المفاصل",
             paint2: "- تخفيف انزعاج العضلات",
             paint3: "- إدارة التهاب المفاصل",
             stats: [
-                { icon: ThumbsUp, value: 5, suffix: '+', label: 'سنوات من الشفاء' },
+                { icon: ThumbsUp, value: 5, suffix: '+', label: 'سنوات من العلاج' },
                 { icon: Users, value: 103000, suffix: '+', label: 'أفراد راضون' },
-                { icon: UserCircle, value: 125, suffix: '', label: 'خبراء صحة وعافية' },
+                { icon: UserCircle, value: 125, suffix: '', label: 'خبراء العافية' },
                 { icon: Star, value: 4.9, suffix: '', label: 'ثقة العملاء' }
             ],
             reviews: [
-                { review: "تحول مفصل الكوع", image: painone },
+                { review: "تحول في مفصل الكوع", image: painone },
                 { review: "التغلب على آلام التهاب المفاصل", image: painsecond },
                 { review: "استعادة حركة الكتف", image: painthird },
-                { review: "حرية مفصل الكاحل", image: painfourth },
+                { review: "حرية في مفصل الكاحل", image: painfourth },
                 { review: "نظام دعم مذهل", image: painsecond },
-                { review: "رحلة صحة وحيوية غيرت الحياة", image: painthird }
-            ]
+                { review: "رحلة عافية غيرت الحياة", image: painthird }
+            ],
+            seccontent: "زيت Dr. Joints هو تركيبة عشبية مميزة مصممة لتخفيف انزعاج المفاصل ودعم الحركة. من خلال دمج الحكمة التقليدية للأيورفيدا مع التقنيات العلمية الحديثة، يوفر هذا الزيت العلاجي راحة سريعة لآلام المفاصل والعضلات. تتغلغل مكوناته الطبيعية المختارة بعناية بعمق في الجلد لتقليل الالتهاب، وتحسين الدورة الدموية، وتعزيز صحة المفاصل بشكل عام.",
+            secTitle: "تحكم في آلام مفاصلك",
         },
         checkout: {
             title: "الدفع",
             sectitle: "تفاصيل الفاتورة",
-            firstname: 'الاسم الأول',
-            lastname: 'اسم العائلة',
-            country: 'الدولة/المنطقة',
-            address: 'عنوان الشارع',
-            city: 'المدينة/البلدة',
-            countrytitle: "الدولة",
-            phone: "رقم الهاتف",
+            firstname: "الاسم الأول",
+            lastname: "اسم العائلة",
+            country: "البلد/المنطقة",
+            address: "عنوان الشارع",
+            city: "المدينة/البلدة",
+            countrytitle: "البلد",
+            phone: "الهاتف",
             email: "عنوان البريد الإلكتروني",
             order: "طلبك",
-            clientaddress: "الشقة/الجناح",
+            clientaddress: "شقة/جناح",
             mode: "طريقة الدفع",
             total: "الإجمالي",
             shipping: "الشحن",
@@ -464,148 +432,207 @@ const translations = {
             product: "المنتج",
             order: "إتمام الطلب",
             processing: "جارٍ المعالجة...",
-            successfully: "تم تقديم الطلب بنجاح!",
+            successfully: "تم الطلب بنجاح!",
             thank: "شكرًا لشرائك. ستتلقى رسالة تأكيد بالبريد الإلكتروني قريبًا.",
-            continue: "متابعة التسوق"
+            continue: "مواصلة التسوق"
         },
         returnPolicy: {
-            title: 'سياسة الإرجاع',
-            sections: [
+            "title": "سياسة الإرجاع",
+            "sections": [
                 {
-                    title: 'الأهلية للإرجاع',
-                    content: 'شراءك مؤهل للإرجاع إذا استوفى الشروط التالية: يجب إعادة المنتج في عبوته الأصلية (سواء كان مستخدمًا أو غير مستخدم)، إلى العنوان المحدد المذكور على موقعنا الإلكتروني، وأن يصل خلال 15 يومًا من تاريخ الشراء. لن يتم قبول المنتجات التالفة.'
+                    "title": "أهلية الإرجاع",
+                    "content": "يحق لك إرجاع المنتج إذا كان يستوفي المعايير التالية: يجب أن يُعاد المنتج في تغليفه الأصلي (مستخدم أو غير مستخدم)، الوصول إلى العنوان المحدد على موقعنا، والوصول خلال 15 يومًا من تاريخ الشراء. لن يتم قبول المنتجات التالفة."
                 },
                 {
-                    title: 'عملية استرداد الأموال',
-                    content: 'لإتمام عملية استرداد الأموال، يجب على العملاء بدء عملية الإرجاع وإرسال المنتج إلى العنوان المحدد. بمجرد استلام المنتج وفحصه، سيتم رد الأموال إلى طريقة الدفع الأصلية خلال 10 أيام عمل، باستثناء تكاليف الشحن.'
+                    "title": "عملية الاسترداد",
+                    "content": "لإتمام عملية الاسترداد، يجب على العملاء بدء عملية الإرجاع وإرسال المنتج إلى العنوان المحدد. بمجرد استلام المنتج وفحصه، سيتم إرجاع المبالغ المدفوعة إلى طريقة الدفع الأصلية خلال 10 أيام عمل، باستثناء تكاليف الشحن."
                 },
                 {
-                    title: 'شحن المرتجعات',
-                    content: 'عملية الإرجاع تتم بمبادرة العميل، ويتحمل العملاء مسؤولية التأكد من شحن المنتج إلى العنوان المحدد. لا تغطي تكاليف شحن المرتجعات إلا إذا كان الإرجاع بسبب عيب في التصنيع أو خطأ.'
+                    "title": "إرجاع الشحنات",
+                    "content": "عملية الإرجاع يتم البدء بها من العميل، وهم مسؤولون عن ضمان شحن المنتج إلى العنوان المحدد. تكاليف شحن الإرجاع غير مغطاة ما لم يكن الإرجاع بسبب عيب في التصنيع أو خطأ."
                 }
             ],
-            contactInfo: 'للاستفسارات المتعلقة بالإرجاع، يرجى الاتصال بنا على hello@drjoints.in.'
+            "contactInfo": "لأي استفسارات حول الإرجاع، يرجى الاتصال بنا على hello@drjoints.in."
         },
         privacyPolicy: {
-            heading: 'سياسة الخصوصية',
-            lastUpdated: 'آخر تحديث: ديسمبر 2024',
-            sections: [
+            "heading": "سياسة الخصوصية",
+            "lastUpdated": "آخر تحديث: ديسمبر 2024",
+            "sections": [
                 {
-                    title: 'جمع المعلومات',
-                    content: 'نحن نجمع المعلومات الشخصية التي تقدمها لنا مباشرة، مثل اسمك، عنوان الفواتير، عنوان الشحن، عنوان البريد الإلكتروني، ورقم الهاتف. يتم تقديم هذه المعلومات عند الاتصال بنا من خلال نموذج على الموقع. كما نقوم بجمع معلومات غير شخصية تلقائيًا عند استخدامك للموقع، بما في ذلك نوع المتصفح، نظام التشغيل، عنوان IP، نشاط التصفح، والتفاصيل الديموغرافية.'
+                    "title": "جمع المعلومات",
+                    "content": "نقوم بجمع المعلومات الشخصية التي تقدمها لنا مباشرة مثل اسمك، عنوان الفوترة، عنوان الشحن، عنوان البريد الإلكتروني، ورقم الهاتف. يتم تقديم هذه المعلومات عندما تتواصل معنا عبر نموذج على الموقع. كما نقوم أيضًا بجمع المعلومات غير الشخصية، مثل نوع المتصفح، ونظام التشغيل، وعنوان IP، ونشاط التصفح، والتفاصيل الديموغرافية بشكل تلقائي عند استخدام الموقع."
                 },
                 {
-                    title: 'استخدام البيانات',
-                    content: 'نستخدم المعلومات الشخصية للرد على استفساراتك وطلباتك. تُستخدم المعلومات غير الشخصية لتحسين الموقع، وتعزيز تجربة المستخدم، ودعم جهود التسويق الداخلي. لن نشارك معلوماتك الشخصية مع أطراف ثالثة دون موافقتك، إلا إذا كان ذلك مطلوبًا بموجب القانون.'
+                    "title": "استخدام البيانات",
+                    "content": "نستخدم المعلومات الشخصية للرد على استفساراتك وطلبك. يتم استخدام المعلومات غير الشخصية لتحسين الموقع، وتعزيز تجربة المستخدم، ودعم الجهود التسويقية الداخلية. لن نشارك معلوماتك الشخصية مع أطراف ثالثة دون موافقتك، إلا إذا كان ذلك مطلوبًا بموجب القانون."
                 },
                 {
-                    title: 'الكوكيز والتتبع',
-                    content: 'نستخدم الكوكيز وتقنيات التتبع المشابهة لجمع معلومات غير شخصية حول استخدامك للموقع. تساعدنا الكوكيز في تذكر تفضيلاتك وتحسين تجربتك في التصفح. تستمر الكوكيز لتسجيل الدخول لمدة يومين، وتستمر خيارات الشاشة لمدة عام، بينما تنتهي الكوكيز الإضافية المستخدمة أثناء تحرير المقالات بعد يوم. تحديد "تذكرني" يمدد تسجيل الدخول إلى أسبوعين. تسجيل الخروج سيزيل كوكيز تسجيل الدخول.'
+                    "title": "الكوكيز والتتبع",
+                    "content": "نستخدم الكوكيز وتقنيات التتبع المشابهة لجمع معلومات غير شخصية حول استخدامك للموقع. تساعدنا الكوكيز في تذكر تفضيلاتك وتحسين تجربة التصفح الخاصة بك. الكوكيز الخاصة بتسجيل الدخول تدوم لمدة يومين، وكوكيز خيارات الشاشة تدوم لمدة عام، والكوكيز الإضافية المستخدمة أثناء تحرير المقالات تنتهي صلاحيتها بعد يوم واحد. عند تحديد \"تذكرني\"، سيتم تمديد مدة تسجيل الدخول إلى أسبوعين. سيتم إزالة كوكيز تسجيل الدخول عند الخروج."
                 },
                 {
-                    title: 'مزودي الخدمة الخارجيين',
-                    content: 'قد نستخدم مزودي خدمة خارجيين لتشغيل الموقع وتقديم خدماتنا. قد يكون لدى هؤلاء المزودين إمكانية الوصول إلى المعلومات غير الشخصية. لن يتم مشاركة المعلومات الشخصية مع أطراف ثالثة لأغراض تسويقية دون موافقتك.'
+                    "title": "مقدمو الخدمات من أطراف ثالثة",
+                    "content": "قد نستخدم مقدمي خدمات من أطراف ثالثة لتشغيل الموقع وتقديم خدماتنا. قد يكون لهؤلاء المزودين وصول إلى المعلومات غير الشخصية. لن تتم مشاركة المعلومات الشخصية مع أطراف ثالثة لأغراض التسويق دون موافقتك."
                 },
                 {
-                    title: 'حماية البيانات',
-                    content: 'نتخذ خطوات معقولة لحماية معلوماتك من الوصول غير المصرح به أو الكشف أو التغيير أو التدمير. ومع ذلك، فإن أي نقل عبر الإنترنت أو موقع إلكتروني لا يكون آمنًا بالكامل. نشجع المستخدمين على اتخاذ الاحتياطات عند مشاركة البيانات الشخصية عبر الإنترنت.'
+                    "title": "حماية البيانات",
+                    "content": "نقوم باتخاذ خطوات معقولة لحماية معلوماتك من الوصول غير المصرح به أو الكشف أو التغيير أو التدمير. ومع ذلك، لا توجد أي وسيلة نقل عبر الإنترنت أو موقع ويب آمن تمامًا. نشجع المستخدمين على اتخاذ الاحتياطات عند مشاركة البيانات الشخصية عبر الإنترنت."
                 },
                 {
-                    title: 'خصوصية الأطفال',
-                    content: 'الموقع غير مخصص للأطفال تحت سن 13 عامًا. نحن لا نجمع معلومات شخصية عن قصد من الأطفال تحت 13 عامًا. إذا كنت تعتقد أن طفلك قد زودنا بمعلومات شخصية، يرجى الاتصال بنا لإزالتها.'
+                    "title": "خصوصية الأطفال",
+                    "content": "الموقع غير مخصص للأطفال دون سن 13 عامًا. نحن لا نجمع معلومات شخصية من الأطفال دون سن 13 عامًا. إذا كنت تعتقد أن طفلك قد قدم لنا معلومات شخصية، يرجى الاتصال بنا لإزالتها."
                 },
                 {
-                    title: 'تحديثات السياسة',
-                    content: 'قد يتم تحديث سياسة الخصوصية هذه بشكل دوري. سيتم نشر التغييرات على الموقع، ونشجعك على مراجعة هذه السياسة بانتظام لمعرفة ممارساتنا.'
+                    "title": "تحديثات السياسة",
+                    "content": "قد يتم تحديث سياسة الخصوصية هذه بين الحين والآخر. سيتم نشر التغييرات على الموقع، ونشجعك على مراجعة هذه السياسة بانتظام للبقاء على اطلاع بممارساتنا."
                 }
             ],
-            contactPrivacy: 'إذا كان لديك أي أسئلة حول ممارسات الخصوصية لدينا، يرجى الاتصال بنا على hello@drjoints.in.'
+            "contactPrivacy": "إذا كان لديك أي أسئلة حول ممارسات الخصوصية لدينا، يرجى الاتصال بنا على hello@drjoints.in."
         },
         termsConditions: {
-            heading: 'الشروط والأحكام',
-            lastUpdated: 'آخر تحديث: ديسمبر 2024',
-            sections: [
+            "heading": "الشروط والأحكام",
+            "lastUpdated": "آخر تحديث: ديسمبر 2024",
+            "sections": [
                 {
-                    heading: "قبول الشروط",
-                    content: "بتنزيل أو تثبيت أو استخدام تطبيق Genius-Baby ('التطبيق')، فإنك توافق على الالتزام بهذه الشروط والأحكام ('الشروط'). إذا كنت لا توافق على هذه الشروط، فلا تستخدم التطبيق."
+                    "heading": "قبول الشروط",
+                    "content": "من خلال تنزيل أو تثبيت أو استخدام تطبيق Genius-Baby ('التطبيق')، فإنك توافق على الالتزام بهذه الشروط والأحكام ('الشروط'). إذا كنت لا توافق على هذه الشروط، فلا تستخدم التطبيق."
                 },
                 {
-                    heading: "الرخصة",
-                    content: "تمنحك Genius-Baby رخصة محدودة وغير حصرية وغير قابلة للتحويل وقابلة للإلغاء لاستخدام التطبيق لأغراض شخصية وغير تجارية، وفقًا لهذه الشروط."
+                    "heading": "الرخصة",
+                    "content": "يمنحك تطبيق Genius-Baby ترخيصًا محدودًا وغير حصري وغير قابل للتحويل وقابلًا للإلغاء لاستخدام التطبيق لأغراض شخصية وغير تجارية، وفقًا لهذه الشروط."
                 },
                 {
-                    heading: "التزامات المستخدم",
-                    content: [
+                    "heading": "التزامات المستخدم",
+                    "content": [
                         "يجب أن يكون عمرك 18 عامًا على الأقل لاستخدام التطبيق.",
-                        "توافق على استخدام التطبيق فقط للأغراض القانونية ووفقًا لهذه الشروط.",
+                        "توافق على استخدام التطبيق فقط لأغراض قانونية ووفقًا لهذه الشروط.",
                         "يجب ألا تحاول التدخل في تشغيل التطبيق أو أمانه."
                     ]
                 },
                 {
-                    heading: "الملكية الفكرية",
-                    content: "جميع المحتويات والميزات والوظائف (بما في ذلك على سبيل المثال لا الحصر النصوص والرسومات والشعارات والبرامج) مملوكة لـ Genius-Baby أو مرخصيها وتحميها قوانين حقوق النشر وغيرها من القوانين. توافق على عدم نسخ أو بيع أو استغلال أي جزء من التطبيق بدون إذن كتابي صريح."
+                    "heading": "الملكية الفكرية",
+                    "content": "جميع المحتويات والميزات والوظائف (بما في ذلك على سبيل المثال لا الحصر النصوص، الرسومات، الشعارات، والبرامج) هي ملك لـ Genius-Baby أو مرخصيها ومحميّة بموجب حقوق النشر والقوانين الأخرى. توافق على عدم إعادة إنتاج أو تكرار أو نسخ أو بيع أو إعادة بيع أو استغلال أي جزء من التطبيق دون إذن خطي مسبق منا."
                 },
                 {
-                    heading: "المحتوى المقدم من المستخدم",
-                    content: "قد تتمكن من تقديم أو تحميل أو إتاحة محتوى (مثل القوائم أو المراجعات) عبر التطبيق. من خلال القيام بذلك، تمنح Genius-Baby حقًا عالميًا وخاليًا من الإتاوات ودائمًا وغير قابل للإلغاء وغير حصري وقابل للترخيص لاستخدام وتعديل وتوزيع وعرض هذا المحتوى فيما يتعلق بالتطبيق."
+                    "heading": "المحتوى الذي ينشئه المستخدم",
+                    "content": "قد تتمكن من تقديم أو تحميل أو جعل المحتوى (مثل قوائم التشغيل أو المراجعات) متاحًا من خلال التطبيق. من خلال القيام بذلك، فإنك تمنح Genius-Baby حقًا عالميًا وغير حصري وبدون رسوم ملكية ودائمًا وقابلًا للتحويل لاستخدام هذا المحتوى وتعديله وتوزيعه وعرضه بالاتصال مع التطبيق."
                 },
                 {
-                    heading: "الخصوصية",
-                    content: "خصوصيتك تهمنا. يرجى مراجعة سياسة الخصوصية لدينا لفهم كيفية جمع واستخدام وحماية معلوماتك."
+                    "heading": "الخصوصية",
+                    "content": "خصوصيتك مهمة بالنسبة لنا. يرجى مراجعة سياسة الخصوصية الخاصة بنا لفهم كيفية جمع معلوماتك واستخدامها وحمايتها."
                 },
                 {
-                    heading: "الإنهاء",
-                    content: "نحتفظ بالحق في إنهاء أو تعليق وصولك إلى التطبيق في أي وقت، مع أو بدون إشعار، لأي سبب، بما في ذلك إذا انتهكت هذه الشروط."
+                    "heading": "الإلغاء",
+                    "content": "نحتفظ بالحق في إنهاء أو تعليق وصولك إلى التطبيق في أي وقت، مع أو بدون إشعار، لأي سبب كان، بما في ذلك إذا خالفت هذه الشروط."
                 },
                 {
-                    heading: "تحديد المسؤولية",
-                    content: [
-                        "إلى أقصى حد يسمح به القانون، لا تتحمل Genius-Baby وتابعيها وموظفيها ووكلائها ومرخصيها أي مسؤولية عن أي أضرار غير مباشرة أو عرضية أو خاصة أو تبعية أو عقابية، أو أي خسارة للأرباح أو الإيرادات، سواء تم تكبدها مباشرة أو غير مباشرة، أو أي فقدان للبيانات أو الاستخدام أو حسن النية أو الخسائر غير الملموسة الأخرى، الناتجة عن:",
+                    "heading": "تحديد المسؤولية",
+                    "content": [
+                        "إلى أقصى حد يسمح به القانون، فإن تطبيق Genius-Baby والشركات التابعة له، والمسؤولين، والمديرين، والموظفين، والوكلاء، والمرخصين لن يتحملوا أي مسؤولية عن أي أضرار غير مباشرة أو عرضية أو خاصة أو تبعية أو عقابية، أو أي خسارة في الأرباح أو الإيرادات، سواء كانت ناتجة بشكل مباشر أو غير مباشر، أو أي خسارة في البيانات أو الاستخدام أو السمعة أو أي خسائر غير مادية أخرى، الناتجة عن:",
                         "- استخدامك أو عدم قدرتك على استخدام التطبيق؛",
-                        "- أي وصول غير مصرح به إلى خوادمنا أو أي معلومات شخصية مخزنة فيها؛",
-                        "- أي أخطاء أو فيروسات قد تنتقل إلى التطبيق بواسطة طرف ثالث؛",
-                        "- أي أخطاء أو إغفالات في أي محتوى."
+                        "- أي وصول غير مصرح به إلى أو استخدام لخوادمنا وأي معلومات شخصية مخزنة بها؛",
+                        "- أي أخطاء أو عيوب في المحتوى."
                     ]
                 },
                 {
-                    heading: "التغييرات في الشروط",
-                    content: "قد نقوم بتعديل هذه الشروط من وقت لآخر. سنخطرك بأي تغييرات من خلال نشر الشروط الجديدة على التطبيق. استمرار استخدامك للتطبيق بعد إجراء التغييرات يشكل قبولًا للشروط الجديدة."
+                    "heading": "التغييرات في الشروط",
+                    "content": "قد نقوم بتعديل هذه الشروط من وقت لآخر. سيتم إشعارك بأي تغييرات من خلال نشر الشروط الجديدة على التطبيق. يعتبر استمرارك في استخدام التطبيق بعد إجراء التغييرات موافقة منك على الشروط الجديدة."
                 },
                 {
-                    heading: "القانون الحاكم",
-                    content: "تخضع هذه الشروط وتفسر وفقًا لقوانين الهند، دون اعتبار لتعارضها مع أحكام القوانين."
+                    "heading": "القانون المعمول به",
+                    "content": "تخضع هذه الشروط وتُفسر وفقًا لقوانين الهند، دون مراعاة أحكام تعارض القوانين."
                 },
                 {
-                    heading: "معلومات الاتصال",
-                    content: "إذا كانت لديك أي أسئلة حول هذه الشروط، يرجى الاتصال بنا على srilogishyd@gmail.com."
+                    "heading": "معلومات الاتصال",
+                    "content": "إذا كانت لديك أي أسئلة حول هذه الشروط، يرجى الاتصال بنا على srilogishyd@gmail.com."
                 }
             ],
-            disclaimer: 'نحتفظ بالحق في تعديل هذه الشروط في أي وقت. استمرار استخدام خدماتنا يشكل قبولًا لأي تغييرات.',
-            contactTerms: 'لأي أسئلة تتعلق بشروطنا، يرجى الاتصال بنا على hello@drjoints.in.'
+            "disclaimer": "نحتفظ بالحق في تعديل هذه الشروط في أي وقت. يعتبر الاستمرار في استخدام خدماتنا قبولًا لأي تغييرات.",
+            "contactTerms": "لأي استفسارات بشأن شروطنا، يرجى الاتصال بـ hello@drjoints.in."
         },
         contact: {
-            title: 'اتصل بنا',
-            address: 'بيجومبيت، حيدر أباد، تيلانجانا، الهند 500016',
-            phone: '+91 9908 016 333',
-            email: 'hello@drjoints.ae',
-            info: "معلومات",
-            det: "تفاصيل",
-            pagetitle: 'تحتاج إلى مساعدتنا؟',
-            pagesectitle: 'يمكنك الاتصال بنا اليوم',
-            pageinname: "اسمك",
-            pageinemail: "بريدك الإلكتروني",
-            pageinphone: "رقم هاتفك",
-            pageinsubject: "الموضوع",
-            pageinmessage: "اكتب حالتك الحالية...",
-            pagesubbutton: "إرسال الرسالة",
+            "title": "اتصل بنا",
+            "address": "بيجومبت، حيدر آباد، تلانجانا، الهند 500016",
+            "phone": "+91 9908 016 333",
+            "email": "hello@drjoints.ae",
+            "info": "المعلومات",
+            "det": "التفاصيل",
+            "pagetitle": "هل تحتاج إلى مساعدتنا؟",
+            "pagesectitle": "يمكنك الاتصال بنا اليوم",
+            "pageinname": "اسمك",
+            "pageinemail": "بريدك الإلكتروني",
+            "pageinphone": "هاتفك",
+            "pageinsubject": "الموضوع",
+            "pageinmessage": "اكتب حالتك الحالية...",
+            "pagesubbutton": "إرسال رسالة"
         },
+        shippingPolicyContent: {
+            "title": "سياسة الشحن",
+            "lastUpdated": "آخر تحديث: [أدخل تاريخ التحديث الأخير]",
+            "sections": [
+                {
+                    "heading": "1. تغطية الشحن",
+                    "content": "**الشحن المحلي**: نحن نقوم بالتوصيل إلى جميع المدن الكبرى والبلدات عبر الهند. التحقق من الرمز البريدي متاح عند الدفع. قد تتطلب المواقع البعيدة وقت تسليم إضافي. قد تكون بعض المناطق المحظورة غير قابلة للخدمة.\n\n**الشحن الدولي**: نحن نقدم الشحن الدولي للعملاء في جميع أنحاء العالم. هدفنا هو تسليم طلبك بسرعة وكفاءة بغض النظر عن مكانك."
+                },
+                {
+                    "heading": "2. طرق الشحن",
+                    "content": "**التوصيل القياسي**: التسليم في غضون 5-7 أيام عمل. متاح في جميع المواقع التي يمكن خدمتها."
+                },
+                {
+                    "heading": "3. شركاء الشحن",
+                    "content": "نحن نعمل مع شركاء الشحن المعروفين، مثل:\n- أرامكس\n- دي إتش إل\n- بلو دارت\n- دي تي دي سي"
+                },
+                {
+                    "heading": "4. معالجة الطلب",
+                    "content": "**وقت المعالجة**: تتم معالجة الطلبات في غضون 24 ساعة من تقديمها. يتم إرسال تأكيد الطلب عبر البريد الإلكتروني. قد تتطلب الطلبات الكبيرة وقت معالجة إضافي.\n\n**تتبع الطلب**: يتم تقديم رقم تتبع عبر البريد الإلكتروني. تتوفر مساعدة خدمة العملاء لاستفسارات التتبع."
+                },
+                {
+                    "heading": "5. إرشادات التسليم",
+                    "content": "**محاولات التسليم**: سيتم إجراء 3 محاولات لتسليم الطلب. يتم تحديد محاولات إعادة التسليم في غضون 24 ساعة. سيتم إخطار العملاء قبل كل محاولة تسليم. قد يتم فرض رسوم إعادة الشحن على الطلبات التي تم إرجاعها للبائع بعد 3 محاولات فاشلة للتسليم. سيتم معالجة المبالغ المستردة لسعر المنتج فقط، باستثناء تكاليف الشحن الأولية.\n\n**التحقق من التسليم**: قد يكون من الضروري تقديم إثبات هوية صالح لبعض العناصر. يتعين التقاط توقيع رقمي عند التسليم. لا يسمح بالتسليم دون شخص."
+                },
+                {
+                    "heading": "6. الحالات الخاصة",
+                    "content": "**الطلبات الكبيرة**: تتوفر ترتيبات شحن خاصة للطلبات الكبيرة. يمكن مناقشة جداول التسليم المخصصة مع فريقنا. قد تنطبق رسوم إضافية للمعالجة."
+                },
+                {
+                    "heading": "7. قيود الشحن",
+                    "content": "**ظروف الطقس**: قد تتأثر أوقات التسليم في الظروف الجوية السيئة، والكوارث الطبيعية، أو الاضطرابات المحلية. في هذه الحالات، سيتم إعادة جدولة الطلبات، وسيتم إخطار العملاء بالجداول الزمنية المحدّثة."
+                },
+                {
+                    "heading": "8. الشحنات المفقودة أو التالفة",
+                    "content": "**الطرود المفقودة**: يتم بدء التحقيقات في غضون 24 ساعة من استلام الشكوى. سيتم تزويد العميل بتحديثات منتظمة. سيتم توفير استرداد أو حلول خلال 15 يوم عمل للحالات المؤهلة، بما في ذلك تكلفة المنتج بالكامل وتكاليف الشحن.\n\n**الطرود التالفة**: يرجى رفض التسليم إذا كانت هناك أضرار ظاهرة. يجب الإبلاغ عن الأضرار في غضون 24 ساعة من التسليم مع وثائق فوتوغرافية. تتم معالجة الاستبدال أو الاسترداد بعد التحقيق."
+                },
+                {
+                    "heading": "9. الشحن خلال العطلات",
+                    "content": "**المواسم المزدحمة**: قد يتم تمديد أوقات المعالجة خلال العطلات والمواسم المزدحمة. نوصي بترك وقت إضافي للتسليم خلال هذه الفترات. سيتم إخطار العملاء بأي تأخير.\n\n**ساعات العمل**: معالجة الطلبات: من الإثنين إلى الأحد، من الساعة 9 صباحًا حتى 6 مساءً بتوقيت الهند. خدمة العملاء متاحة: من الإثنين إلى السبت، من الساعة 9 صباحًا حتى 8 مساءً بتوقيت الهند."
+                },
+                {
+                    "heading": "10. الالتزام البيئي",
+                    "content": "**التغليف**: نحن نستخدم مواد تعبئة صديقة للبيئة مع الحد الأدنى من استخدام البلاستيك. يتم تصنيع مواد التعبئة من مصادر معاد تدويرها حيثما أمكن. نحن نحرص على استخدام التعبئة بحجم مناسب لتقليل النفايات."
+                },
+                {
+                    "heading": "11. التواصل",
+                    "content": "**تحديثات الشحن**: يتلقى العملاء:\n- رسائل تأكيد الطلب\n- رسائل تأكيد الشحن مع تفاصيل التتبع\n- إشعارات محاولات التسليم\n- إشعارات إتمام التسليم"
+                },
+                {
+                    "heading": "12. دعم العملاء",
+                    "content": "**البريد الإلكتروني**: hello@drjoints.ae\n\n**الهاتف**: [رقم رعاية العملاء]\n\n**وقت الاستجابة**: خلال 4 ساعات عمل خلال ساعات العمل."
+                },
+                {
+                    "heading": "13. تحديثات السياسة",
+                    "content": "قد تخضع هذه السياسة للتغيير. سيتم نشر التحديثات على موقعنا. سيتم إشعار العملاء عبر البريد الإلكتروني لأي تغييرات هامة قبل 7 أيام على الأقل. يعتبر الاستمرار في استخدام خدماتنا قبولًا للسياسة المحدثة."
+                }
+            ]
+
+        }
+
 
     },
     hi: {
         home: {
             title: "बेहतर महसूस करें",
             titlesec: "बेहतर चलें",
-            button: "अब हील करें",
+            button: "अभी खरीदें",
             question: "डॉ. जोइंट्स पेन रिलीफ ऑयल क्यों चुनें?",
             answer: `प्राकृतिक दर्द राहत में एक क्रांति की खोज करें। हमारा डॉ. जोइंट्स पेन रिलीफ ऑयल एक वैज्ञानिक रूप से तैयार, 100% प्राकृतिक समाधान है, जिसे आपके जोड़ों और मांसपेशियों की असुविधा से आपको आजाद करने के लिए डिज़ाइन किया गया है। हम केवल दर्द को छुपाते नहीं हैं – हम इसे जड़ से ठीक करने के लिए प्रीमियम आयुर्वेदिक जड़ी-बूटियों की उपचार शक्ति का उपयोग करते हैं।`,
             answertwo: `डॉ. जोइंट्स में, हम प्राचीन ज्ञान और आधुनिक शोध को मिलाकर आपका स्वास्थ्य बदलने के लिए समर्पित हैं। हमारा समर्पण अस्थायी राहत तक सीमित नहीं है – हम आपके दीर्घकालिक उपचार और जीवन की गुणवत्ता के प्रति प्रतिबद्ध हैं।`,
