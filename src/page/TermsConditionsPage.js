@@ -44,25 +44,52 @@ const TermsConditionsPage = ({ currentLang }) => {
                     <img src={rating} alt="review" className="w-32 md:w-auto" />
                     <h1 className='text-xl md:text-3xl'>{t.product.rating2}</h1>
                 </div>
-                <div className="container mx-auto px-4 pt-32">
-                    <div className="w-full h-[1px] bg-black mb-10"></div>
+                <div className="bg-white">
+                    <div className="container mx-auto px-4 pt-32">
+                        <div className="w-full h-[1px] bg-black mb-10"></div>
 
-                    <div className="flex flex-col md:flex-row justify-between">
-                        <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">
-                            <img src={logo} alt="Dr. Joints Logo" className="w-48 mb-6" />
-                            <button className="bg-[#6DB5AE] text-black text-lg md:text-xl px-8 py-4 rounded-full shadow-md hover:bg-green-500 hover:text-white transition duration-300">Shop Now</button>
-                        </div>
+                        <div className="flex flex-col md:flex-row justify-between">
+                            <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">
+                                <img src={logo} alt="Dr. Joints Logo" className="w-48 mb-6" />
+                            </div>
 
-                        <div className="grid grid-cols-2 md:grid-cols-1 gap-4 text-center md:text-right text-xl cursor-pointer">
-                            {t.footer.map((link) => (
-                                <Link
-                                    key={link.id}
-                                    to={link.path}
-                                    className="text-gray-800 hover:text-blue-600 transition-colors"
-                                >
-                                    {link.label}
-                                </Link>
-                            ))}
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left text-xl">
+                                <div className="flex flex-col space-y-4">
+                                    {t.footer.slice(0, 3).map((link) => (
+                                        <Link
+                                            key={link.id}
+                                            to={link.path}
+                                            className="text-black hover:text-blue-600 hover:underline underline-offset-4 transition-colors duration-300"
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    ))}
+                                </div>
+
+                                <div className="flex flex-col space-y-4">
+                                    {t.footer.slice(3, 6).map((link) => (
+                                        <Link
+                                            key={link.id}
+                                            to={link.path}
+                                            className="text-black hover:text-blue-600 hover:underline underline-offset-4 transition-colors duration-300"
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    ))}
+                                </div>
+
+                                <div className="flex flex-col space-y-4">
+                                    {t.footer.slice(6, 9).map((link) => (
+                                        <Link
+                                            key={link.id}
+                                            to={link.path}
+                                            className="text-black hover:text-blue-600 hover:underline underline-offset-4 transition-colors duration-300"
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

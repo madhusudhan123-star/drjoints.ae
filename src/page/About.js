@@ -1,26 +1,128 @@
-import React from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
+import translations from '../utils/translations';
+import { Link } from 'react-router-dom'
+
+// image and svg files
 import first from '../assets/about_first.svg'
-import painone from '../assets/pain_first.svg';
-import painsecond from '../assets/pain_second.svg';
-import painthird from '../assets/pain_three.svg';
-import painfourth from '../assets/pain_four.svg';
+import doctor from '../assets/doctor.svg';
 import logo from '../assets/logo.svg';
 import rating from '../assets/rating.svg';
-import { Link } from 'react-router-dom'
-import translations from '../utils/translations';
+import { ChevronLeft, ChevronRight, ThumbsUp, Store, Users, UserCircle, Star } from 'lucide-react';
+
+
+const AnimatedCounter = ({ end, duration = 2000, suffix = '' }) => {
+    const [count, setCount] = useState(0);
+    const [isVisible, setIsVisible] = useState(false);
+    const counterRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (counterRef.current) {
+            observer.observe(counterRef.current);
+        }
+
+        return () => {
+            if (counterRef.current) {
+                observer.unobserve(counterRef.current);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        if (!isVisible) return;
+
+        let startTime;
+        const step = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            setCount(Math.floor(progress * end));
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            }
+        };
+
+        requestAnimationFrame(step);
+    }, [end, duration, isVisible]);
+
+    return (
+        <div ref={counterRef} className="text-4xl font-bold text-white">
+            {count}
+            {suffix}
+        </div>
+    );
+};
+
+const StatCard = ({ icon: Icon, value, suffix, label }) => (
+    <div className="flex flex-col items-center text-center p-4">
+        <Icon className="w-12 h-12 text-orange-500 mb-3" />
+        <AnimatedCounter end={value} suffix={suffix} />
+        <p className="mt-2 text-white">{label}</p>
+    </div>
+);
 
 
 const About = ({ currentLang }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [itemsToShow, setItemsToShow] = useState(3);
+    const [isMobile, setIsMobile] = useState(false);
     const t = translations[currentLang] || translations.ENGLISH;
-    const card = Array(5).fill(null);
+
+    // Handle window resize and set items to show
+    const handleResize = useCallback(() => {
+        const width = window.innerWidth;
+        if (width < 640) {
+            setItemsToShow(1);
+            setIsMobile(true);
+        } else if (width < 768) {
+            setItemsToShow(2);
+            setIsMobile(true);
+        } else if (width < 1024) {
+            setItemsToShow(3);
+            setIsMobile(false);
+        } else {
+            setItemsToShow(3);
+            setIsMobile(false);
+        }
+    }, []);
+
+    useEffect(() => {
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, [handleResize]);
+
+    // Auto-slide logic
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentIndex((prevIndex) => {
+                const totalSlides = t.about.reviews.length;
+                const maxIndex = totalSlides - itemsToShow;
+                return prevIndex >= maxIndex ? 0 : prevIndex + 1;
+            });
+        }, 3000);
+
+        return () => clearInterval(timer);
+    }, [t.about.reviews.length, itemsToShow]);
+
+    // Calculate total dots
+    const totalDots = Math.max(1, Math.ceil(t.about.reviews.length / itemsToShow));
     return (
-        <div className='bg-gradient-to-b from-[#B1F3FC] to-[#737373]'>
+        <div className='bg-gradient-to-b from-[#0060D9] to-[#00618E]'>
             {/* First Section */}
             <div className=''>
                 <div className='flex flex-col md:flex-row p-6 md:p-20'>
                     <div className='w-full md:w-1/2 flex flex-col justify-center mb-6 md:mb-0'>
-                        <h1 className='text-2xl md:text-3xl mb-4'>All About Product</h1>
-                        <p className='text-base md:text-xl'>Some other benefits of this menu? Way less prep—instead of days of chopping and prepping, these recipes can be cooked from start to finish in a matter of a couple hours, which means less time in the kitchen and more time for you to relax. And, there's no turkey to thaw out! For all of us out there who have had that memorable experience of forgetting to take the turkey out of the freezer for it to be fully cooked in time, this is a relief.</p>
+                        <h1 className='text-2xl md:text-3xl mb-4'>{t.about.title}</h1>
+                        <p className='text-base md:text-xl'>{t.about.sub}</p>
                     </div>
                     <div className='w-full md:w-1/2 flex justify-center items-center'>
                         <img src={first} alt="product" className='max-w-full h-auto' />
@@ -29,95 +131,211 @@ const About = ({ currentLang }) => {
             </div>
 
             {/* Success Numbers Section */}
-            <div className=''>
-                <div className='p-6 md:p-20'>
-                    <h1 className='text-3xl md:text-5xl text-center pb-10 md:pb-16'>Our Success in Numbers!</h1>
-                    <div className='grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8'>
-                        {t.about.successData.map((data, index) => (
-                            <div key={index} className='flex justify-center'>
-                                <div className='w-full max-w-[300px] rounded-xl overflow-hidden shadow-lg'>
-                                    <div className='bg-[#008DC7] rounded-xl'>
-                                        <div className='bg-[#B2EBF2] rounded-t-xl p-6 md:p-10 text-center'>
-                                            <h1 className='text-3xl md:text-5xl font-bold'>{data.value}</h1>
-                                            <p className='text-sm md:text-base'>{data.id}</p>
-                                        </div>
-                                        <p className='p-4 md:p-6 text-white text-center'>{data.label}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+            <div className='flex justify-around items-center'>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
+                    {t.about.stats.map((stat, index) => (
+                        <StatCard
+                            key={index}
+                            icon={stat.icon}
+                            value={stat.value}
+                            suffix={stat.suffix}
+                            label={stat.label}
+                        />
+                    ))}
                 </div>
             </div>
+
+
+
             {/* Pain Relief Section */}
-            <div className=''>
-                <h1 className='text-2xl md:text-5xl text-center py-6 md:py-10'>{t.about.relief}</h1>
-                <div className='flex flex-col md:flex-row'>
-                    <div className='w-full md:w-2/3 flex flex-wrap justify-center'>
-                        <div className='w-full md:w-1/2 p-2'>
-                            <div>
-                                <img src={painone} alt="product" className='w-full' />
-                            </div>
-                            <div className='flex justify-center items-center'>
-                                <h1 className='text-2xl md:text-5xl'>{t.about.pain1}</h1>
-                            </div>
-                        </div>
-                        <div className='w-full md:w-1/2 p-2'>
-                            <div>
-                                <img src={painsecond} alt="product" className='w-full' />
-                            </div>
-                            <div className='flex justify-center items-center'>
-                                <h1 className='text-2xl md:text-5xl'>{t.about.pain1}</h1>
-                            </div>
-                        </div>
-                        <div className='w-full md:w-1/2 p-2'>
-                            <div>
-                                <img src={painthird} alt="product" className='w-full' />
-                            </div>
-                            <div className='flex justify-center items-center'>
-                                <h1 className='text-2xl md:text-5xl'>{t.about.pain1}</h1>
-                            </div>
+            {/* Pain Relief Section */}
+            {/* <div id="reviews" className="w-full py-16 text-black relative z-10">
+                < className="max-w-7xl mx-auto px-4">
+                    <h2 className="text-3xl font-bold text-center mb-12 text-white">{t.about.titlethree}</h2>
+
+                    <div className="relative overflow-hidden">
+                        <div
+                            className="flex transition-transform duration-500 ease-in-out"
+                            style={{
+                                transform: `translateX(-${(currentIndex * 100) / itemsToShow}%)`,
+                                width: `${(t.about.reviews.length / itemsToShow) * 100}%`
+                            }}
+                        >
+                            {t.about.reviews.map((review, index) => (
+                                <div
+                                    key={index}
+                                    className={`
+                                     flex-shrink-0 
+                                     px-2 
+                                     flex 
+                                     items-center 
+                                     justify-center 
+                                     ${isMobile ? "w-full" : ``}
+                                 `}
+                                >
+                                    <div className="flex justify-center flex-col items-center transition-shadow duration-300 w- text-white">
+                                        <img
+                                            src={review.image}
+                                            alt={review.review}
+                                            className="h-full"
+                                        />
+                                        <h3 className="text-lg font-bold text-center">{review.review}</h3>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
-                    <div className='w-full md:w-1/3 p-2'>
-                        <img src={painfourth} alt="pain fourth" className='w-full' />
+
+                    {/* Navigation Dots */}
+            {/* <div className="flex justify-center mt-8 gap-2">
+                {[...Array(totalDots)].map((_, index) => (
+                    <button
+                        key={index}
+                        className={`
+                                 w-3 h-3 rounded-full transition-colors duration-300 
+                                 ${currentIndex === index ? "bg-blue-600" : "bg-gray-300"}
+                             `}
+                        onClick={() => setCurrentIndex(index)}
+                        aria-label={`Go to slide ${index + 1}`}
+                    />
+                ))}
+            </div> */}
+
+            {/* Doctor Section */}
+            <div className='relative'>
+                <img src={doctor} alt='doctor' className='w-full' />
+                <div className='absolute bottom-0 w-full flex justify-center items-center'>
+                    <div className='bg-[#ffffff90] w-full md:w-1/2 p-4 md:p-10 text-center'>
+                        <h1 className='text-3xl md:text-6xl'>{t.product.doctor}</h1>
+                        <p className='text-base md:text-2xl md:pl-5'>
+                            {t.product.doctorpara}
+                        </p>
                     </div>
                 </div>
             </div>
 
             {/* Footer Section */}
-            <div className="">
-                {/* Rating */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 p-4">
-                    <h1 className='text-xl md:text-3xl'>{t.product.rating}</h1>
-                    <img src={rating} alt="review" className="w-32 md:w-auto" />
-                    <h1 className='text-xl md:text-3xl'>{t.product.rating2}</h1>
-                </div>
+            <div className="bg-white">
                 <div className="container mx-auto px-4 pt-32">
                     <div className="w-full h-[1px] bg-black mb-10"></div>
 
                     <div className="flex flex-col md:flex-row justify-between">
                         <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">
                             <img src={logo} alt="Dr. Joints Logo" className="w-48 mb-6" />
-                            <button className="bg-[#6DB5AE] text-black text-lg md:text-xl px-8 py-4 rounded-full shadow-md hover:bg-green-500 hover:text-white transition duration-300">Shop Now</button>
                         </div>
 
-                        <div className="grid grid-cols-2 md:grid-cols-1 gap-4 text-center md:text-right text-xl cursor-pointer">
-                            {t.footer.map((link) => (
-                                <Link
-                                    key={link.id}
-                                    to={link.path}
-                                    className="text-gray-800 hover:text-blue-600 transition-colors"
-                                >
-                                    {link.label}
-                                </Link>
-                            ))}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left text-xl">
+                            <div className="flex flex-col space-y-4">
+                                {t.footer.slice(0, 3).map((link) => (
+                                    <Link
+                                        key={link.id}
+                                        to={link.path}
+                                        className="text-black hover:text-blue-600 hover:underline underline-offset-4 transition-colors duration-300"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                ))}
+                            </div>
+
+                            <div className="flex flex-col space-y-4">
+                                {t.footer.slice(3, 6).map((link) => (
+                                    <Link
+                                        key={link.id}
+                                        to={link.path}
+                                        className="text-black hover:text-blue-600 hover:underline underline-offset-4 transition-colors duration-300"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                ))}
+                            </div>
+
+                            <div className="flex flex-col space-y-4">
+                                {t.footer.slice(6, 9).map((link) => (
+                                    <Link
+                                        key={link.id}
+                                        to={link.path}
+                                        className="text-black hover:text-blue-600 hover:underline underline-offset-4 transition-colors duration-300"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
 export default About
+
+// import React, { useState, useEffect, useCallback } from 'react'
+// import translations from '../utils/translations';
+// import { Link } from 'react-router-dom'
+
+// // image and svg files
+// import first from '../assets/about_first.svg'
+// import doctor from '../assets/doctor.svg';
+// import logo from '../assets/logo.svg';
+// import rating from '../assets/rating.svg';
+// import { ChevronLeft, ChevronRight, ThumbsUp, Store, Users, UserCircle, Star } from 'lucide-react';
+
+// const About = ({ currentLang }) => {
+//     const [currentIndex, setCurrentIndex] = useState(0);
+//     const [itemsToShow, setItemsToShow] = useState(3);
+//     const [isMobile, setIsMobile] = useState(false);
+//     const t = translations[currentLang] || translations.ENGLISH;
+
+//     // Handle window resize and set items to show
+//     const handleResize = useCallback(() => {
+//         const width = window.innerWidth;
+//         if (width < 640) {
+//             setItemsToShow(1);
+//             setIsMobile(true);
+//         } else if (width < 768) {
+//             setItemsToShow(2);
+//             setIsMobile(true);
+//         } else if (width < 1024) {
+//             setItemsToShow(3);
+//             setIsMobile(false);
+//         } else {
+//             setItemsToShow(3);
+//             setIsMobile(false);
+//         }
+//     }, []);
+
+//     useEffect(() => {
+//         handleResize();
+//         window.addEventListener("resize", handleResize);
+//         return () => window.removeEventListener("resize", handleResize);
+//     }, [handleResize]);
+
+//     // Auto-slide logic
+//     useEffect(() => {
+//         const timer = setInterval(() => {
+//             setCurrentIndex((prevIndex) => {
+//                 const totalSlides = t.about.reviews.length;
+//                 const maxIndex = totalSlides - itemsToShow;
+//                 return prevIndex >= maxIndex ? 0 : prevIndex + 1;
+//             });
+//         }, 3000);
+
+//         return () => clearInterval(timer);
+//     }, [t.about.reviews.length, itemsToShow]);
+
+//     // Calculate total dots
+//     const totalDots = Math.max(1, Math.ceil(t.about.reviews.length / itemsToShow));
+
+//     return (
+//         <div className='bg-gradient-to-b from-[#0060D9] to-[#00618E]'>
+//             {/* Previous sections remain the same */}
+
+
+
+//             {/* Rest of the component remains the same */}
+//         </div>
+//     )
+// }
+
+// export default About

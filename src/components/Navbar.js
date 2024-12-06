@@ -42,8 +42,8 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
 
     // Desktop Navigation
     const renderDesktopNavbar = () => (
-        <nav className="bg-gradient-to-br from-[#B0F1FA] to-[#B0F1F9]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav className="bg-[#fffff]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-5">
                 <div className="flex justify-between items-center ">
                     {/* Instagram Logo */}
                     <div className="flex items-center space-x-4">
@@ -70,7 +70,7 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
                     <select
                         value={currentLang}
                         onChange={(e) => onLanguageChange(e.target.value)}
-                        className="p-2 border rounded"
+                        className=" border rounded shadow-xl text-lg px-5 py-2"
                     >
                         {languages.map((lang) => (
                             <option key={lang.code} value={lang.code}>
