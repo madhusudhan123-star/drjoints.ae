@@ -6,8 +6,8 @@ import painfourth from '../assets/legpain.jpeg';
 const translations = {
     ENGLISH: {
         home: {
-            title: "Feel Better",
-            titlesec: "Move Better",
+            title: "Pain Relief at Your Fingertips",
+            titlesec: "Dr. Joint Does It Right!",
             button: "Buy Now",
             question: "Why Choose Dr. Joints Pain Relief Oil?",
             answer: `Discover a breakthrough in natural pain relief. Our Dr. Joints Pain Relief Oil is a scientifically formulated, 100% natural solution designed to liberate you from joint and muscle discomfort. We don't just mask pain – we target its root cause with the healing power of premium Ayurvedic herbs.`,
@@ -37,6 +37,7 @@ const translations = {
                 { id: 16, name: "Sara Al Fahim", review: "Perfect for active professionals in Dubai. Natural remedy that provides instant relief!", stars: 5 }
 
             ],
+            Youtube: "ZbFxAmE81js"
         },
         navbar: {
             home: "PRODUCT",
@@ -345,6 +346,7 @@ const translations = {
                 { id: 8, name: "سارة الفهيم", review: "مثالي للمحترفين النشطين في دبي. علاج طبيعي يوفر راحة فورية!", stars: 5 },
                 // Add additional reviews as needed
             ],
+            Youtube: "nZp3ltq0b3k"
         },
         navbar: {
             home: "المنتج",
@@ -660,6 +662,7 @@ const translations = {
                 { id: 15, name: "ओमर अब्दुल्ला", review: "एक धावक के रूप में जो लगातार घुटने के दर्द से जूझ रहा था, यह मेरे लिए जीवन बदलने वाला समाधान है!", stars: 5 },
                 { id: 16, name: "सारा अल फहीम", review: "दुबई में सक्रिय पेशेवरों के लिए परफेक्ट। एक प्राकृतिक उपाय जो तुरंत राहत प्रदान करता है!", stars: 5 }
             ],
+            Youtube: "ZbFxAmE81js"
         },
         navbar: {
             home: "वेलनेस शॉप",

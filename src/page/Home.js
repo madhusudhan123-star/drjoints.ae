@@ -14,6 +14,30 @@ import left from '../assets/right.svg';
 import right from '../assets/left.svg';
 import logo from '../assets/logo.svg';
 import { Link } from 'react-router-dom';
+import { Smoke } from "react-smoke";
+import { Canvas } from "@react-three/fiber";
+import { Suspense, useMemo } from "react";
+import * as THREE from "three";
+
+const CustomSmoke = () => {
+    return (
+        <mesh>
+            <Smoke
+                // scale={[30, 10, 1]}
+                opacity={0.40}
+                // speed={0.1}
+                segments={20}
+                thickness={4}
+                color="#ffffff"
+                emissive="#ffffff"
+                emissiveIntensity={2}
+            />
+            <ambientLight intensity={2} color="#ffffff" />
+            <pointLight position={[0, 0, 10]} intensity={1} color="#ffffff" />
+            <directionalLight position={[0, 0, 5]} intensity={1} color="#ffffff" />
+        </mesh>
+    );
+};
 
 
 
@@ -23,8 +47,6 @@ const App = ({ currentLang }) => {
     const [itemsToShow, setItemsToShow] = useState(5);
     const [isMobile, setIsMobile] = useState(false);
     const t = translations[currentLang] || translations.ENGLISH;
-
-
 
     // Handle window resize and set items to show
     const handleResize = useCallback(() => {
@@ -68,33 +90,46 @@ const App = ({ currentLang }) => {
     return (
         <div className="overflow-hidden bg-gradient-to-b from-[#0060D9] to-[#00618E]">
             {/* Hero Section */}
-            <div className="h-full w-screen">
-                {/* <div className="w-screen flex  md:flex-row justify-center items-center py-20">
-                    <div className="w-full md:w-1/2 space-y-6 flex ">
-                        <img src={head} alt="Person Holding Product" className="" />
-                        <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-white  ">
-                            {t.home.title}
-                        </h1>
-                    </div>
-                    <div className="w-full md:w-1/2 space-y-6 flex items-end justify-end">
-                        <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-white mb-20">
-                            {t.home.titlesec}
-                        </h1>
-                        <img src={head2} alt="Person Holding Product" className="" />
-                    </div>
-                </div> */}
-                <div className="w-screen flex flex-col md:flex-row justify-center items-center py-20 space-y-6 md:space-y-0">
-                    <div className="w-full md:w-1/2 space-y-6 flex flex-col md:flex-row items-center md:items-start">
-                        <img src={head} alt="Person Holding Product" className="w-full md:w-auto" />
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-white text-center md:text-left">
-                            {t.home.title}
-                        </h1>
-                    </div>
-                    <div className="w-full md:w-1/2 space-y-6 flex flex-col md:flex-row items-center md:items-end justify-center md:justify-end">
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-white text-center md:text-right mb-4 md:mb-20">
-                            {t.home.titlesec}
-                        </h1>
-                        <img src={head2} alt="Person Holding Product" className="w-full md:w-auto" />
+            <div className="h-[80vh] w-screen relative">
+                <div className="absolute inset-0 pointer-events-none">
+                    <Canvas
+                        camera={{ position: [0, 0, 10], fov: 75 }}
+                        style={{ background: 'transparent' }}
+                    >
+                        <Suspense fallback={null}>
+                            <CustomSmoke />
+                        </Suspense>
+                    </Canvas>
+                </div>
+                <div className="relative z-10 h-full">
+                    <div className="flex flex-col md:flex-row items-center justify-between py-8 md:py-20 px-4 md:px-12">
+                        {/* Left Side */}
+                        <div className="w-full md:w-1/4 flex justify-start mb-6 md:mb-0">
+                            <img
+                                src={head}
+                                alt="Person Holding Product"
+                                className="w-32 sm:w-40 md:w-[24vw] lg:w-[24vw] object-contain"
+                            />
+                        </div>
+
+                        {/* Center Text */}
+                        <div className="w-full md:w-2/4 flex flex-col items-center space-y-4 md:space-y-8 mb-6 md:mb-0">
+                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center transform -translate-y-4">
+                                {t.home.title}
+                            </h1>
+                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center transform translate-y-4">
+                                {t.home.titlesec}
+                            </h1>
+                        </div>
+
+                        {/* Right Side */}
+                        <div className="w-full md:w-1/4 flex justify-end">
+                            <img
+                                src={head2}
+                                alt="Person Holding Product"
+                                className="w-32 sm:w-40 md:w-[24vw] lg:w-[24vw] object-contain"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

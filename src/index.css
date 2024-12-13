@@ -6,14 +6,14 @@
 /* Hide navigation arrows */
 .swiper-button-next,
 .swiper-button-prev {
-    display: none !important;
+  display: none !important;
 }
 
 /* Hide pagination dots */
 .swiper-pagination {
-    display: none !important;
+  display: none !important;
 }
 
 .should {
-    direction: ltr !important;
+  direction: ltr !important;
 }
