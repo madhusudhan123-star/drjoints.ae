@@ -14,38 +14,27 @@ import left from '../assets/right.svg';
 import right from '../assets/left.svg';
 import logo from '../assets/logo.svg';
 import { Link } from 'react-router-dom';
-import { Smoke } from "react-smoke";
-import { Canvas } from "@react-three/fiber";
-import { Suspense, useMemo } from "react";
-import * as THREE from "three";
-
-const CustomSmoke = () => {
-    return (
-        <mesh>
-            <Smoke
-                // scale={[30, 10, 1]}
-                opacity={0.40}
-                // speed={0.1}
-                segments={20}
-                thickness={4}
-                color="#ffffff"
-                emissive="#ffffff"
-                emissiveIntensity={2}
-            />
-            <ambientLight intensity={2} color="#ffffff" />
-            <pointLight position={[0, 0, 10]} intensity={1} color="#ffffff" />
-            <directionalLight position={[0, 0, 5]} intensity={1} color="#ffffff" />
-        </mesh>
-    );
-};
+import { Swiper, SwiperSlide } from 'swiper/react';
+import slide1 from '../assets/slide1.svg';
+import slider2 from '../assets/slider2.svg';
+import slider3 from '../assets/slider3.svg';
+import slider4 from '../assets/slider4.svg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+// import required modules
+import { Pagination, Autoplay } from 'swiper/modules';
 
 const App = ({ currentLang }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [itemsToShow, setItemsToShow] = useState(5);
     const [isMobile, setIsMobile] = useState(false);
+    const [scrollPosition, setScrollPosition] = useState(0);
     const t = translations[currentLang] || translations.ENGLISH;
 
     // Handle window resize and set items to show
@@ -83,6 +72,25 @@ const App = ({ currentLang }) => {
         return () => clearInterval(timer);
     }, [t.home.reviews.length, itemsToShow]);
 
+    // Add scroll handler
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollPosition(window.scrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Initialize AOS
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true
+        });
+    }, []);
+
     const renderStars = (count) =>
         Array.from({ length: count }, (_, i) => (
             <span key={i} className="text-yellow-500 text-lg">★</span>
@@ -90,87 +98,86 @@ const App = ({ currentLang }) => {
     return (
         <div className="overflow-hidden bg-gradient-to-b from-[#0060D9] to-[#00618E]">
             {/* Hero Section */}
-            <div className="h-[80vh] w-screen relative">
-                <div className="absolute inset-0 pointer-events-none">
-                    <Canvas
-                        camera={{ position: [0, 0, 10], fov: 75 }}
-                        style={{ background: 'transparent' }}
+            <div className="h-full w-screen relative">
+                <div className="h-screen text-black font-sans">
+
+                    <div
+                        className="flex text-white flex-col items-center justify-center font-libre-franklin font-normal text-5xl mt-5 transition-all duration-300"
+                        style={{
+                            transform: `translateY(${scrollPosition * 0.5}px) scale(${1 + scrollPosition * 0.001})`,
+                            opacity: Math.max(0, 1 - scrollPosition / 300)
+                        }}
                     >
-                        <Suspense fallback={null}>
-                            <CustomSmoke />
-                        </Suspense>
-                    </Canvas>
-                </div>
-                <div className="relative z-10 h-full">
-                    <div className="flex flex-col md:flex-row items-center justify-between py-8 md:py-20 px-4 md:px-12">
-                        {/* Left Side */}
-                        <div className="w-full md:w-1/4 flex justify-start mb-6 md:mb-0">
-                            <img
-                                src={head}
-                                alt="Person Holding Product"
-                                className="w-32 sm:w-40 md:w-[24vw] lg:w-[24vw] object-contain"
-                            />
-                        </div>
-
-                        {/* Center Text */}
-                        <div className="w-full md:w-2/4 flex flex-col items-center space-y-4 md:space-y-8 mb-6 md:mb-0">
-                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center transform -translate-y-4">
-                                {t.home.title}
-                            </h1>
-                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center transform translate-y-4">
-                                {t.home.titlesec}
-                            </h1>
-                        </div>
-
-                        {/* Right Side */}
-                        <div className="w-full md:w-1/4 flex justify-end">
-                            <img
-                                src={head2}
-                                alt="Person Holding Product"
-                                className="w-32 sm:w-40 md:w-[24vw] lg:w-[24vw] object-contain"
-                            />
-                        </div>
+                        <h1>{t.home.title}</h1>
+                        <h1>{t.home.titlesec}</h1>
                     </div>
+                    <Swiper
+                        slidesPerView={3}
+                        spaceBetween={30}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        loop={true}
+                        autoplay={{
+                            delay: 3000,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: true
+                        }}
+                        modules={[Pagination, Autoplay]}
+                        className="w-full mt-24 should"
+                    >
+                        <SwiperSlide className="flex justify-end items-end rounded-md overflow-hidden">
+                            <img
+                                src={slide1}
+                                className="rounded-md transition-transform duration-300 hover:scale-110 w-full h-full object-cover"
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide className="flex justify-end items-end rounded-md overflow-hidden">
+                            <img
+                                src={slider2}
+                                className="rounded-md rounded-tl-[10rem] transition-transform duration-300 hover:scale-110 w-full h-full object-cover"
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide className="flex justify-end items-end rounded-md overflow-hidden">
+                            <img
+                                src={slider3}
+                                className="rounded-md transition-transform duration-300 hover:scale-110 w-full h-full object-cover"
+                            />
+                        </SwiperSlide>
+                        <SwiperSlide className="flex justify-end items-end rounded-md overflow-hidden">
+                            <img
+                                src={slider4}
+                                className="rounded-md rounded-tl-[10rem] transition-transform duration-300 hover:scale-110 w-full h-full object-cover"
+                            />
+                        </SwiperSlide>
+                    </Swiper>
                 </div>
             </div>
 
             {/* Why Choose Section */}
             <div className=" w-full flex flex-col items-center px-0 md:px-20 sm:px-20">
-                <h1 className="text-2xl md:text-3xl lg:text-5xl pb-6 font-bold text-white text-center">
+                <h1 className="text-2xl font-libre-franklin font-normal md:text-3xl lg:text-5xl pb-6 font-bold text-white text-center">
                     {t.home.question}
                 </h1>
                 <div className="flex flex-col md:flex-row gap-10">
                     {/* Left Section */}
-                    <div className="w-full md:w-1/2 flex flex-col">
-                        <div className="flex justify-center mb-6">
-                            <img
-                                src={leftImage}
-                                alt="Person Holding Leg"
-                                className="rounded-lg object-cover w-[70%]"
-                            />
-                        </div>
+                    <div className="w-full h-full md:w-1/2 flex flex-col">
 
-                        <div className="text-center md:text-left text-white">
-                            <p className="text-base md:text-lg leading-relaxed mt-2">
-                                {t.home.answertwo}
+                        <div data-aos="fade-right" className=" h-full text-white">
+                            <p className="text-2xl font-Poppins font-medium leading-relaxed leading-[3rem] antialiased mt-2">
+                                {t.home.answer}
                             </p>
                         </div>
                     </div>
 
                     {/* Right Section */}
-                    <div className="w-full md:w-1/2 flex flex-col">
+                    <div data-aos="fade-left" className="w-full md:w-1/2 flex flex-col">
                         <div className="flex justify-center mb-6">
                             <img
                                 src={rightImage}
                                 alt="Person Holding Leg"
                                 className="rounded-lg object-cover w-[70%]"
                             />
-                        </div>
-
-                        <div className="text-center md:text-left text-white">
-                            <p className="text-base md:text-lg leading-relaxed">
-                                {t.home.answer}
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -184,11 +191,21 @@ const App = ({ currentLang }) => {
             </div>
             <div className="w-screen px-4 mt-10 bg-white pb-4">
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-6 justify-items-center items-center">
-                    <img src={one} alt="Trusted Brand 1" className="max-w-full h-auto" />
-                    <img src={two} alt="Trusted Brand 2" className="max-w-full h-auto" />
-                    <img src={three} alt="Trusted Brand 3" className="max-w-full h-auto" />
-                    <img src={four} alt="Trusted Brand 4" className="max-w-full h-auto" />
-                    <img src={five} alt="Trusted Brand 4" className="max-w-full h-auto" />
+                    <div data-aos="fade-right" data-aos-delay="0">
+                        <img src={one} alt="Trusted Brand 1" className="max-w-full h-auto" />
+                    </div>
+                    <div data-aos="fade-right" data-aos-delay="200">
+                        <img src={two} alt="Trusted Brand 2" className="max-w-full h-auto" />
+                    </div>
+                    <div data-aos="fade-right" data-aos-delay="400">
+                        <img src={three} alt="Trusted Brand 3" className="max-w-full h-auto" />
+                    </div>
+                    <div data-aos="fade-right" data-aos-delay="600">
+                        <img src={four} alt="Trusted Brand 4" className="max-w-full h-auto" />
+                    </div>
+                    <div data-aos="fade-right" data-aos-delay="800">
+                        <img src={five} alt="Trusted Brand 5" className="max-w-full h-auto" />
+                    </div>
                 </div>
             </div>
 
@@ -197,7 +214,7 @@ const App = ({ currentLang }) => {
 
                 <div className="mx-auto w-screen h-screen flex flex-col items-center justify-between px-4 gap-5">
                     <iframe
-                        src="https://www.youtube.com/embed/xFQblbvIjwU?autoplay=1&loop=1&playlist=xFQblbvIjwU"
+                        src={`https://www.youtube.com/embed/${t.home.Youtube}?autoplay=1&loop=1&playlist=${t.home.Youtube}`}
                         className="rounded-lg shadow-lg w-screen h-screen"
                         allow="autoplay; encrypted-media"
                         title="YouTube Video"
@@ -211,7 +228,7 @@ const App = ({ currentLang }) => {
                 </div>
                 <div id="reviews" className="w-full py-16 text-black relative z-10">
                     <div className="max-w-7xl mx-auto px-4">
-                        <h2 className="text-3xl font-bold text-center mb-12 text-white">{t.home.client}</h2>
+                        <h2 className="text-5xl font-bold text-center mb-12 font-libre-franklin font-normal text-white">{t.home.client}</h2>
 
                         <div className="relative overflow-hidden should touch-pan-y">
                             <div

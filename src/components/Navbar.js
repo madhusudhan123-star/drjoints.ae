@@ -50,8 +50,8 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
 
     // Desktop Navigation
     const renderDesktopNavbar = () => (
-        <nav className="bg-[#fffff]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-5">
+        <nav className="bg-[#fffff] w-screen">
+            <div className="w-screen px-4 sm:px-6 lg:px-8 pb-5">
                 <div className="flex justify-between items-center ">
                     {/* Instagram Logo */}
                     <div className="flex items-center flex-col gap-3">
@@ -76,7 +76,7 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
                                         disableOnInteraction: false,
                                     }}
                                     modules={[EffectCube, Autoplay]} // Remove Pagination module
-                                    className="w-[100px] h-[100px]"
+                                    className="w-[50px] h-[50px]"
                                 >
                                     <SwiperSlide>
                                         <img
@@ -198,7 +198,7 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
     );
 
     return (
-        <>
+        <div className='font-libre-franklin font-normal'>
             {isMobile ? (
                 <>
                     {renderMobileMenuTrigger()}
@@ -207,61 +207,9 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
             ) : (
                 renderDesktopNavbar()
             )}
-        </>
+        </div>
     );
 };
 
 export default Navbar;
 
-
-// import React from 'react';
-
-
-// export default function App() {
-//   return (
-//     <div className="h-screen bg-gray-200 flex items-center justify-center">
-//       <Swiper
-//         effect={'cube'}
-//         grabCursor={true}
-//         cubeEffect={{
-//           shadow: true,
-//           slideShadows: true,
-//           shadowOffset: 20,
-//           shadowScale: 0.94,
-//         }}
-//         pagination={true}
-//         modules={[EffectCube, Pagination]}
-//         className="w-[300px] h-[300px]"
-//       >
-//         <SwiperSlide>
-//           <img
-//             src="https://swiperjs.com/demos/images/nature-1.jpg"
-//             alt="Nature 1"
-//             className="block w-full h-full object-cover"
-//           />
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <img
-//             src="https://swiperjs.com/demos/images/nature-2.jpg"
-//             alt="Nature 2"
-//             className="block w-full h-full object-cover"
-//           />
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <img
-//             src="https://swiperjs.com/demos/images/nature-3.jpg"
-//             alt="Nature 3"
-//             className="block w-full h-full object-cover"
-//           />
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <img
-//             src="https://swiperjs.com/demos/images/nature-4.jpg"
-//             alt="Nature 4"
-//             className="block w-full h-full object-cover"
-//           />
-//         </SwiperSlide>
-//       </Swiper>
-//     </div>
-//   );
-// }

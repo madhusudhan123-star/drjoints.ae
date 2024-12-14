@@ -12,6 +12,10 @@ import ReturnPolicyPage from './page/ReturnPolicyPage';
 import TermsConditionsPage from './page/TermsConditionsPage';
 import Carousel from './page/Carousel';
 import ShippingPolicyPage from './page/Shipping';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 function App() {
   // Ensure the language exists in translations, fallback to 'ENGLISH'
@@ -46,7 +50,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className={`app ${currentLang === 'ar' ? 'rtl' : 'ltr'}`}>
+      <div className={`app overflow-hidden ${currentLang === 'ar' ? 'rtl' : 'ltr'}`}>
         <Navbar
           currentLang={currentLang}
           onLanguageChange={handleLanguageChange}

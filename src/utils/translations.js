@@ -7,11 +7,10 @@ const translations = {
     ENGLISH: {
         home: {
             title: "Pain Relief at Your Fingertips",
-            titlesec: "Dr. Joint Does It Right!",
+            titlesec: "Dr. Joints Does It Right!",
             button: "Buy Now",
-            question: "Why Choose Dr. Joints Pain Relief Oil?",
-            answer: `Discover a breakthrough in natural pain relief. Our Dr. Joints Pain Relief Oil is a scientifically formulated, 100% natural solution designed to liberate you from joint and muscle discomfort. We don't just mask pain – we target its root cause with the healing power of premium Ayurvedic herbs.`,
-            answertwo: `At Dr. Joints, we blend ancient wisdom with modern research to deliver transformative wellness. Our commitment goes beyond temporary relief – we're dedicated to your long-term healing and quality of life.`,
+            question: "Why Choose Dr. Joints Pain Relief Oil",
+            answer: `Discover a breakthrough in natural pain relief. Our Dr. Joints Pain Relief Oil is a scientifically formulated, 100% natural solution designed to liberate you from joint and muscle discomfort. We don't just mask pain – we target its root cause with the healing power of premium Ayurvedic herbs. At Dr. Joints, we blend ancient wisdom with modern research to deliver transformative wellness. Our commitment goes beyond temporary relief – we're dedicated to your long-term healing and quality of life.`,
             title2: "Your Natural Path to Pain-Free Living",
             sub2: "Empowering you to move freely with premium Ayurvedic healing",
             trust: "Trusted By Leading Healthcare Professionals",
@@ -37,7 +36,7 @@ const translations = {
                 { id: 16, name: "Sara Al Fahim", review: "Perfect for active professionals in Dubai. Natural remedy that provides instant relief!", stars: 5 }
 
             ],
-            Youtube: "ZbFxAmE81js"
+            Youtube: "U_qUf6Bovb0"
         },
         navbar: {
             home: "PRODUCT",
@@ -326,9 +325,8 @@ const translations = {
             title: "اشعر بتحسن",
             titlesec: "تحرك بشكل أفضل",
             button: "اشتري الآن",
-            question: "لماذا تختار زيت تخفيف آلام المفاصل Dr. Joints؟",
-            answer: `اكتشف طفرة في تخفيف الألم الطبيعي. تم تصميم زيت Dr. Joints لتخفيف آلام المفاصل بطريقة علمية وبمكونات طبيعية 100٪ ليحررك من الانزعاج في المفاصل والعضلات. نحن لا نخفي الألم فقط - بل نستهدف جذوره باستخدام قوة الشفاء من الأعشاب الأيورفيدية الممتازة.`,
-            answertwo: `في Dr. Joints، نمزج بين الحكمة القديمة والبحث الحديث لتقديم العافية التحويلية. التزامنا يتجاوز الراحة المؤقتة - نحن ملتزمون بشفائك على المدى الطويل وتحسين جودة حياتك.`,
+            question: "لماذا تختار زيت تخفيف آلام المفاصل Dr. Joints",
+            answer: `اكتشف طفرة في تخفيف الألم الطبيعي. تم تصميم زيت Dr. Joints لتخفيف آلام المفاصل بطريقة علمية وبمكونات طبيعية 100٪ ليحررك من الانزعاج في المفاصل والعضلات. نحن لا نخفي الألم فقط - بل نستهدف جذوره باستخدام قوة الشفاء من الأعشاب الأيورفيدية الممتازة. في Dr. Joints، نمزج بين الحكمة القديمة والبحث الحديث لتقديم العافية التحويلية. التزامنا يتجاوز الراحة المؤقتة - نحن ملتزمون بشفائك على المدى الطويل وتحسين جودة حياتك.`,
             title2: "طريقك الطبيعي للعيش دون ألم",
             sub2: "تمكينك من التحرك بحرية باستخدام الشفاء الأيورفيدي الممتاز",
             trust: "موثوق به من قبل كبار محترفي الرعاية الصحية",
@@ -346,7 +344,7 @@ const translations = {
                 { id: 8, name: "سارة الفهيم", review: "مثالي للمحترفين النشطين في دبي. علاج طبيعي يوفر راحة فورية!", stars: 5 },
                 // Add additional reviews as needed
             ],
-            Youtube: "nZp3ltq0b3k"
+            Youtube: "GDej8paLw6I"
         },
         navbar: {
             home: "المنتج",
@@ -636,8 +634,7 @@ const translations = {
             titlesec: "बेहतर चलें",
             button: "अभी खरीदें",
             question: "डॉ. जोइंट्स पेन रिलीफ ऑयल क्यों चुनें?",
-            answer: `प्राकृतिक दर्द राहत में एक क्रांति की खोज करें। हमारा डॉ. जोइंट्स पेन रिलीफ ऑयल एक वैज्ञानिक रूप से तैयार, 100% प्राकृतिक समाधान है, जिसे आपके जोड़ों और मांसपेशियों की असुविधा से आपको आजाद करने के लिए डिज़ाइन किया गया है। हम केवल दर्द को छुपाते नहीं हैं – हम इसे जड़ से ठीक करने के लिए प्रीमियम आयुर्वेदिक जड़ी-बूटियों की उपचार शक्ति का उपयोग करते हैं।`,
-            answertwo: `डॉ. जोइंट्स में, हम प्राचीन ज्ञान और आधुनिक शोध को मिलाकर आपका स्वास्थ्य बदलने के लिए समर्पित हैं। हमारा समर्पण अस्थायी राहत तक सीमित नहीं है – हम आपके दीर्घकालिक उपचार और जीवन की गुणवत्ता के प्रति प्रतिबद्ध हैं।`,
+            answer: `प्राकृतिक दर्द राहत में एक क्रांति की खोज करें। हमारा डॉ. जोइंट्स पेन रिलीफ ऑयल एक वैज्ञानिक रूप से तैयार, 100% प्राकृतिक समाधान है, जिसे आपके जोड़ों और मांसपेशियों की असुविधा से आपको आजाद करने के लिए डिज़ाइन किया गया है। हम केवल दर्द को छुपाते नहीं हैं – हम इसे जड़ से ठीक करने के लिए प्रीमियम आयुर्वेदिक जड़ी-बूटियों की उपचार शक्ति का उपयोग करते हैं। डॉ. जोइंट्स में, हम प्राचीन ज्ञान और आधुनिक शोध को मिलाकर आपका स्वास्थ्य बदलने के लिए समर्पित हैं। हमारा समर्पण अस्थायी राहत तक सीमित नहीं है – हम आपके दीर्घकालिक उपचार और जीवन की गुणवत्ता के प्रति प्रतिबद्ध हैं।`,
             title2: "दर्द-मुक्त जीवन के लिए आपका प्राकृतिक मार्ग",
             sub2: "प्रीमियम आयुर्वेदिक उपचार के साथ आपको स्वतंत्र रूप से चलने में सक्षम बनाना",
             trust: "प्रमुख स्वास्थ्य देखभाल पेशेवरों द्वारा भरोसेमंद",
@@ -662,7 +659,7 @@ const translations = {
                 { id: 15, name: "ओमर अब्दुल्ला", review: "एक धावक के रूप में जो लगातार घुटने के दर्द से जूझ रहा था, यह मेरे लिए जीवन बदलने वाला समाधान है!", stars: 5 },
                 { id: 16, name: "सारा अल फहीम", review: "दुबई में सक्रिय पेशेवरों के लिए परफेक्ट। एक प्राकृतिक उपाय जो तुरंत राहत प्रदान करता है!", stars: 5 }
             ],
-            Youtube: "ZbFxAmE81js"
+            Youtube: "U_qUf6Bovb0"
         },
         navbar: {
             home: "वेलनेस शॉप",
