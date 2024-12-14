@@ -36,7 +36,12 @@ const translations = {
                 { id: 16, name: "Sara Al Fahim", review: "Perfect for active professionals in Dubai. Natural remedy that provides instant relief!", stars: 5 }
 
             ],
-            Youtube: "U_qUf6Bovb0"
+            Youtube: "U_qUf6Bovb0",
+            joint1: "Elbow Pain",
+            joint2: "Knee Pain",
+            homec1: "Relieve Joint, Muscle, and Body Pain Naturally – Feel Better, Move Freely.",
+            homec2: "Organic oils made from natural herbs and ingredients",
+            bannerimg: "Say Goodbye to Pain – Discover Natural Solutions for Lasting Relief.",
         },
         navbar: {
             home: "PRODUCT",
@@ -71,7 +76,8 @@ const translations = {
             doctor: "Endorsed by Healthcare Professionals",
             docpara: "Trusted solution for natural, effective joint pain relief by medical experts.",
             rating: "Average Customer Rating",
-            rating2: "18,300+ Verified Reviews"
+            rating2: "18,300+ Verified Reviews",
+
         },
         about: {
             title: "The Dr. Joints Healing",
@@ -344,7 +350,12 @@ const translations = {
                 { id: 8, name: "سارة الفهيم", review: "مثالي للمحترفين النشطين في دبي. علاج طبيعي يوفر راحة فورية!", stars: 5 },
                 // Add additional reviews as needed
             ],
-            Youtube: "GDej8paLw6I"
+            Youtube: "GDej8paLw6I",
+            bannerimg: "قل وداعًا للألم – اكتشف حلولًا طبيعية للراحة الدائمة.",
+            homec1: "خفف آلام المفاصل والعضلات والجسم بشكل طبيعي – اشعر بتحسن وتحرك بحرية.",
+            homec2: "زيوت عضوية مصنوعة من الأعشاب والمكونات الطبيعية.",
+            joint1: "ألم الكوع", // Elbow Pain in Arabic
+            joint2: "ألم الركبة",
         },
         navbar: {
             home: "المنتج",
@@ -659,7 +670,12 @@ const translations = {
                 { id: 15, name: "ओमर अब्दुल्ला", review: "एक धावक के रूप में जो लगातार घुटने के दर्द से जूझ रहा था, यह मेरे लिए जीवन बदलने वाला समाधान है!", stars: 5 },
                 { id: 16, name: "सारा अल फहीम", review: "दुबई में सक्रिय पेशेवरों के लिए परफेक्ट। एक प्राकृतिक उपाय जो तुरंत राहत प्रदान करता है!", stars: 5 }
             ],
-            Youtube: "U_qUf6Bovb0"
+            Youtube: "U_qUf6Bovb0",
+            bannerimg: "दर्द को कहें अलविदा – लंबे समय तक राहत के लिए प्राकृतिक समाधान खोजें।",
+            homec1: "जोड़ों, मांसपेशियों और शरीर के दर्द को प्राकृतिक रूप से दूर करें – बेहतर महसूस करें और स्वतंत्र रूप से चलें।",
+            homec2: "प्राकृतिक जड़ी-बूटियों और सामग्री से बने ऑर्गेनिक तेल।",
+            joint1: "कोहनी का दर्द", // Elbow Pain in Hindi
+            joint2: "घुटने का दर्द", // Knee Pain in Hindi
         },
         navbar: {
             home: "वेलनेस शॉप",
