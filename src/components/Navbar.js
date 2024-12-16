@@ -50,8 +50,8 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
 
     // Desktop Navigation
     const renderDesktopNavbar = () => (
-        <nav className="bg-[#fffff] w-screen">
-            <div className="w-screen px-4 sm:px-6 lg:px-8 pb-5">
+        <nav className="bg-white w-screen sticky top-0 z-50 shadow-md">
+            <div className="w-screen px-4 sm:px-6 lg:px-8 pb-5 pt-3">
                 <div className="flex justify-between items-center ">
                     {/* Instagram Logo */}
                     <div className="flex items-center flex-col gap-3">
@@ -144,7 +144,7 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
 
     // Mobile Menu
     const renderMobileMenu = () => (
-        <div className={`fixed inset-0 bg-white z-50 ${isMenuOpen ? "block" : "hidden"}`}>
+        <div className={`fixed inset-0 bg-white z-50 shadow-lg ${isMenuOpen ? "block" : "hidden"}`}>
             <div className="flex flex-col h-full">
                 <div className="flex justify-between items-center p-4 border-b">
                     <Link to="/" className="mx-auto" onClick={handleLinkClick}>
@@ -191,7 +191,7 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
     // 9
     // Mobile Menu Trigger
     const renderMobileMenuTrigger = () => (
-        <div>
+        <div className="bg-white w-full sticky top-0 z-40 shadow-md py-3">
             <div className={`relative should`}>
                 <div className="flex flex-col items-center gap-10 mb-10  ">
                     <Link to="/">

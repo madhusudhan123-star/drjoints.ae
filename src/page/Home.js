@@ -25,6 +25,8 @@ import pain1 from '../assets/home1.jpg';
 import pain2 from '../assets/home2.jpg';
 import pain3 from '../assets/home3.jpg';
 import ScrollToTop from "../components/ScrollToTop";
+import SmokeEffect from '../components/SmokeEffect';
+import CanvasBackground from '../components/CanvasBackground';
 
 
 
@@ -100,8 +102,9 @@ const App = ({ currentLang }) => {
             <span key={i} className="text-yellow-500 text-lg">★</span>
         ));
     return (
-        <div className="overflow-hidden bg-gradient-to-b from-[#0060D9] to-[#00618E]">
-            {/* Hero Section */}
+        <div className="overflow-hidden relative">
+            <CanvasBackground />
+            <SmokeEffect />
             <ScrollToTop />
             <div className="h-full w-full relative px-4 md:px-0">
                 <div className="text-black font-sans">
