@@ -51,14 +51,24 @@ const Product = ({ currentLang }) => {
             return;
         }
 
-        const selectedPrice = t.product.price2;
+        // Get the correct price based on payment mode and translations
+        let basePrice;
+        if (formData.paymentMode === 'cod') {
+            basePrice = parseFloat(t.product.price.replace(/[^0-9.]/g, '')); // Extract number from price string
+        } else {
+            basePrice = parseFloat(t.product.price2.replace(/[^0-9.]/g, '')); // Extract number from price2 string
+        }
 
+        // Calculate total amount
+        const totalAmount = basePrice * quantity;
+
+        // Navigate to checkout with all necessary data
         navigate("/checkout", {
             state: {
                 quantity,
-                totalAmount: selectedPrice * quantity,
-                productName: "Pain Relief Oil For Muscles",
-                unitPrice: selectedPrice,
+                totalAmount: totalAmount, // Pass the calculated total amount
+                productName: t.product.name,
+                unitPrice: basePrice,
                 paymentMode: formData.paymentMode,
             },
         });
@@ -69,6 +79,36 @@ const Product = ({ currentLang }) => {
     if (isLoading) {
         return <LoadingSpinner />;
     }
+
+    const renderPaymentOptions = () => (
+        <div className="space-y-4">
+            <label
+                className={`block p-4 border rounded-lg bg-white cursor-pointer transition ${formData.paymentMode === "online"
+                        ? "border-green-500 bg-green-50"
+                        : "border-gray-300"
+                    }`}
+            >
+                <div className="flex justify-between font-bold items-center">
+                    <div>
+                        <input
+                            type="radio"
+                            name="paymentMode"
+                            value="online"
+                            checked={formData.paymentMode === "online"}
+                            onChange={handleInputChange}
+                            className="mr-2"
+                        />
+                        <span className="text-sm text-black ml-1">
+                            {t.product.price2}
+                        </span>
+                    </div>
+                    <span className="text-sm text-red-500 font-medium">
+                        {t.product.off2}
+                    </span>
+                </div>
+            </label>
+        </div>
+    );
 
     return (
         <div className='bg-gradient-to-b from-[#0060D9] to-[#00618E]'>
@@ -93,63 +133,7 @@ const Product = ({ currentLang }) => {
                         </div>
 
                         {/* Payment Options */}
-                        <div className="space-y-4">
-                            {/* COD Option */}
-                            {/* <label
-                                className={`block p-4 border rounded-lg cursor-pointer transition ${formData.paymentMode === "cod"
-                                    ? "border-green-500 bg-green-50"
-                                    : "border-gray-300"
-                                    }`}
-                            >
-                                <div className="flex justify-between font-bold items-center">
-                                    <div>
-                                        <input
-                                            type="radio"
-                                            name="paymentMode"
-                                            value="cod"
-                                            checked={formData.paymentMode === "cod"}
-                                            onChange={handleInputChange}
-                                            className="mr-2"
-                                        />
-
-                                        <span className="text-sm text-black ml-1">
-                                            {t.product.price}
-                                        </span>
-                                    </div>
-                                    <span className="text-sm text-red-500 font-medium">
-                                        {t.product.off}
-                                    </span>
-                                </div>
-                            </label> */}
-
-                            {/* Online Payment Option */}
-                            <label
-                                className={`block p-4 border rounded-lg bg-white cursor-pointer transition ${formData.paymentMode === "online"
-                                    ? "border-green-500 bg-green-50"
-                                    : "border-gray-300"
-                                    }`}
-                            >
-                                <div className="flex justify-between font-bold items-center">
-                                    <div>
-                                        <input
-                                            type="radio"
-                                            name="paymentMode"
-                                            value="online"
-                                            checked={formData.paymentMode === "online"}
-                                            onChange={handleInputChange}
-                                            className="mr-2"
-                                        />
-
-                                        <span className="text-sm text-black ml-1">
-                                            {t.product.price2}
-                                        </span>
-                                    </div>
-                                    <span className="text-sm text-red-500 font-medium">
-                                        {t.product.off2}
-                                    </span>
-                                </div>
-                            </label>
-                        </div>
+                        {renderPaymentOptions()}
 
                         {/* Quantity Selector */}
                         <div className="flex items-center mt-4 justify-center md:justify-start">

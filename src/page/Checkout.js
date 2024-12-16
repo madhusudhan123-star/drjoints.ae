@@ -138,8 +138,26 @@ const Checkout = ({ currentLang }) => {
 
             // Convert amount from INR to selected currency
             const baseAmount = orderDetails.totalAmount; // Amount in INR
-            const convertedValue = (baseAmount * foundCurrency.rate).toFixed();
-            setConvertedAmount(convertedValue);
+            //  getDefaultCountry = (lang) => {
+            //     switch (lang) {
+            //         case 'ar':
+            //             return 'United Arab Emirates';
+            //         case 'ENGLISH':
+            //         case 'hi':
+            //             return 'India';
+            //         default:
+            //             return 'India';
+            //     }
+            // };
+            if (currentLang == 'ar') {
+                setConvertedAmount(baseAmount);
+                console.log(convertedAmount)
+            } else {
+                const convertedValue = (baseAmount * foundCurrency.rate).toFixed();
+                setConvertedAmount(convertedValue);
+                console.log(convertedAmount)
+
+            }
         }
     }, [formData.country, orderDetails]);
 
@@ -183,20 +201,20 @@ const Checkout = ({ currentLang }) => {
         return errors;
     };
 
-    useEffect(() => {
-        if (orderDetails) {
-            const foundCurrency = COUNTRY_CURRENCY_MAP[formData.country] || DEFAULT_CURRENCY;
-            setCurrentCurrency(foundCurrency);
+    // useEffect(() => {
+    //     if (orderDetails) {
+    //         const foundCurrency = COUNTRY_CURRENCY_MAP[formData.country] || DEFAULT_CURRENCY;
+    //         setCurrentCurrency(foundCurrency);
 
-            let baseAmount = orderDetails.totalAmount; // Amount in INR
-            if (isPromoApplied) {
-                baseAmount *= 0.5; // Apply 50% discount
-            }
+    //         let baseAmount = orderDetails.totalAmount; // Amount in INR
+    //         if (isPromoApplied) {
+    //             baseAmount *= 0.5; // Apply 50% discount
+    //         }
 
-            const convertedValue = (baseAmount * foundCurrency.rate).toFixed(2);
-            setConvertedAmount(convertedValue);
-        }
-    }, [formData.country, orderDetails, isPromoApplied]);
+    //         const convertedValue = (baseAmount * foundCurrency.rate).toFixed(2);
+    //         setConvertedAmount(convertedValue);
+    //     }
+    // }, [formData.country, orderDetails, isPromoApplied]);
 
     const handlePromoCodeApply = () => {
         if (promoCode.trim().toUpperCase() === VALID_PROMO_CODE) {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'; // Add useLocation import
 import { Globe } from 'lucide-react';
 import translations from '../utils/translations';
 import languages from '../utils/languages';
@@ -20,6 +20,8 @@ import menuIcon from '../assets/menu-icon.svg';
 import closeIcon from '../assets/close-icon.svg';
 
 const Navbar = ({ currentLang, onLanguageChange }) => {
+    const location = useLocation(); // Add this hook
+    const isCheckoutPage = location.pathname === '/checkout';
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -131,7 +133,9 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
                     <select
                         value={currentLang}
                         onChange={(e) => onLanguageChange(e.target.value)}
-                        className=" border rounded shadow-xl text-lg px-5 py-2"
+                        disabled={isCheckoutPage}
+                        className={`border rounded shadow-xl text-lg px-5 py-2 ${isCheckoutPage ? 'opacity-50 cursor-not-allowed' : ''
+                            }`}
                     >
                         <option value="ENGLISH">English</option>
                         <option value="ar">عربي</option>
@@ -186,7 +190,9 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
                                 // Optional: close menu after language change
                                 handleLinkClick();
                             }}
-                            className="p-2 border rounded w-full"
+                            disabled={isCheckoutPage}
+                            className={`p-2 border rounded w-full ${isCheckoutPage ? 'opacity-50 cursor-not-allowed' : ''
+                                }`}
                         >
                             {languages.map((lang) => (
                                 <option key={lang.code} value={lang.code}>
