@@ -55,7 +55,7 @@ const COUNTRY_CURRENCY_MAP = {
     'Romania': { currency: 'RON', symbol: 'lei', rate: 0.05 },
     'Hungary': { currency: 'HUF', symbol: 'Ft', rate: 4.12 }
 };
-const DEFAULT_COUNTRY = 'Saudi Arabia';
+const DEFAULT_COUNTRY = 'United Arab Emirates';
 const DEFAULT_CURRENCY = COUNTRY_CURRENCY_MAP[DEFAULT_COUNTRY];
 const VALID_PROMO_CODE = "";
 

@@ -34,6 +34,8 @@ function App() {
     const validLang = getValidLanguage(langCode);
     setCurrentLang(validLang);
     localStorage.setItem('preferredLanguage', validLang);
+    // Force page reload after language change
+    window.location.reload();
   };
 
   // Effect to ensure language persists on page reload

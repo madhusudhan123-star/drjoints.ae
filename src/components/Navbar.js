@@ -76,7 +76,7 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
                                         disableOnInteraction: false,
                                     }}
                                     modules={[EffectCube, Autoplay]} // Remove Pagination module
-                                    className="w-[50px] h-[50px]"
+                                    className="w-[80px] h-[80px]"
                                 >
                                     <SwiperSlide>
                                         <img
@@ -129,11 +129,9 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
                         onChange={(e) => onLanguageChange(e.target.value)}
                         className=" border rounded shadow-xl text-lg px-5 py-2"
                     >
-                        {languages.map((lang) => (
-                            <option key={lang.code} value={lang.code}>
-                                {lang.name}
-                            </option>
-                        ))}
+                        <option value="ENGLISH">English</option>
+                        <option value="ar">عربي</option>
+                        <option value="hi">हिंदी</option>
                     </select>
                 </div>
             </div>

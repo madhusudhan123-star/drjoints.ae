@@ -73,15 +73,15 @@ const Product = ({ currentLang }) => {
                                 {t.product.name}
                             </h1>
                             <div className="flex items-center justify-center md:justify-start text-lg">
-                                <del className="text-gray-400 mr-2">₹6990</del>
-                                <span className="text-white text-2xl font-bold">₹3495</span>
+                                <del className="text-gray-400 mr-2">{t.product.cutamount}</del>
+                                <span className="text-white text-2xl font-bold">{t.product.amount}</span>
                             </div>
                         </div>
 
                         {/* Payment Options */}
                         <div className="space-y-4">
                             {/* COD Option */}
-                            <label
+                            {/* <label
                                 className={`block p-4 border rounded-lg cursor-pointer transition ${formData.paymentMode === "cod"
                                     ? "border-green-500 bg-green-50"
                                     : "border-gray-300"
@@ -106,7 +106,7 @@ const Product = ({ currentLang }) => {
                                         {t.product.off}
                                     </span>
                                 </div>
-                            </label>
+                            </label> */}
 
                             {/* Online Payment Option */}
                             <label
@@ -204,7 +204,7 @@ const Product = ({ currentLang }) => {
                                     <img
                                         src={img}
                                         alt={`Product view ${index + 1}`}
-                                        className="block w-full h-full object-cover rounded-lg shadow-lg"
+                                        className="block w-full h-full rounded-lg shadow-lg"
                                     />
                                 </SwiperSlide>
                             ))}

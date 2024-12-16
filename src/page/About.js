@@ -12,7 +12,6 @@ import 'swiper/css/autoplay';
 
 // Import required modules
 import { EffectFlip, Pagination, Navigation, Autoplay } from 'swiper/modules';
-
 // image and svg files
 import first from '../assets/about_first.svg'
 import two from '../assets/about_second.svg'
@@ -139,9 +138,9 @@ const About = ({ currentLang }) => {
             {/* First Section */}
             <div className=''>
                 <div className='flex flex-col md:flex-row p-6 md:p-20'>
-                    <div className='w-full md:w-1/2 flex flex-col justify-center mb-6 md:mb-0'>
-                        <h1 className='text-2xl md:text-3xl mb-4'>{t.about.title}</h1>
-                        <p className='text-base md:text-xl'>{t.about.sub}</p>
+                    <div className='w-full text-white md:w-1/2 flex flex-col justify-center mb-6 md:mb-0'>
+                        <h1 className='text-2xl font-libre-franklin md:text-5xl mb-8'>{t.about.title}</h1>
+                        <p className='text-base font-Poppins md:text-xl'>{t.about.sub}</p>
                     </div>
                     <div className='w-full md:w-1/2 flex justify-center items-center'>
                         <Swiper

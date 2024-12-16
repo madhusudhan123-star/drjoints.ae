@@ -21,8 +21,8 @@ import slider3 from '../assets/slider3.svg';
 import slider4 from '../assets/slider4.svg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import pain1 from '../assets/home1.webp';
-import pain2 from '../assets/home2.webp';
+import pain1 from '../assets/home1.jpg';
+import pain2 from '../assets/home2.jpg';
 import pain3 from '../assets/home3.jpg';
 
 
@@ -227,7 +227,7 @@ const App = ({ currentLang }) => {
             {/* Detail of pain Section */}
             <div className="w-full min-h-screen bg-[#0060B9]  grid grid-cols-1 md:grid-cols-2 gap-0">
                 {/* Top Left Section - Text */}
-                <div className="flex justify-center items-center p-8 ">
+                <div data-aos="fade-right" className="flex justify-center items-center p-8 ">
                     <div>
                         <p className="text-white font-serif text-3xl md:text-4xl text-center">
                             {t.home.homec1}
@@ -236,7 +236,7 @@ const App = ({ currentLang }) => {
                 </div>
 
                 {/* Top Right Section - Image */}
-                <div className="relative h-[50vh] md:h-full">
+                <div data-aos="fade-left" className="relative h-[50vh] md:h-full">
                     <img
                         src={pain2}
                         alt="Herbs and Flowers"
@@ -245,7 +245,7 @@ const App = ({ currentLang }) => {
                 </div>
 
                 {/* Bottom Left Section - Image */}
-                <div className="relative h-[50vh] md:h-full">
+                <div data-aos="fade-right" className="relative h-[50vh] md:h-full">
                     <img
                         src={pain1}
                         alt="White Flowers"
@@ -254,7 +254,7 @@ const App = ({ currentLang }) => {
                 </div>
 
                 {/* Bottom Right Section - Text */}
-                <div className="flex justify-center items-center p-8">
+                <div data-aos="fade-left" className="flex justify-center items-center p-8">
                     <div>
                         <p className="text-white font-serif text-3xl md:text-4xl text-center">
                             {t.home.homec2}
@@ -281,13 +281,13 @@ const App = ({ currentLang }) => {
             </div>
 
             <div className="w-full py-10 md:py-20 ">
-                <img src={pain3} className="w-screen h-[50vh]" />
+                <img src={pain3} className="w-screen md: lg:h-[50vh] sm:h-full " />
                 <h1 className="text-center text-4xl mt-3 text-white">{t.home.bannerimg}</h1>
             </div>
 
             {/* Reviews Section */}
             <div id="reviews" className="w-full py-10 md:py-16 relative z-10">
-                <div className="max-w-7xl mx-auto px-4">
+                <div className=" mx-auto px-4">
                     <h2 className="text-3xl md:text-5xl font-bold text-center mb-8 md:mb-12 font-libre-franklin text-white">
                         {t.home.client}
                     </h2>
