@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router';
 import product from '../assets/product_one.svg';
 import product2 from '../assets/product_three.svg';
 import product4 from '../assets/product5.svg';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 import rating from '../assets/rating.svg';
 import logo from '../assets/logo.svg';
@@ -14,6 +15,8 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
+import { Scroll } from 'lucide-react';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Product = ({ currentLang }) => {
     const navigate = useNavigate();
@@ -21,10 +24,20 @@ const Product = ({ currentLang }) => {
     const [selectedImage, setSelectedImage] = useState(0);
     const [formErrors, setFormErrors] = useState({});
     const [quantity, setQuantity] = useState(1);
+    const [isLoading, setIsLoading] = useState(true);
     const t = translations[currentLang] || translations.ENGLISH;
     const basePrice = 6990; // Original price
     const codPrice = 3495; // Price for COD
     const onlinePrice = 3145; // Price for Online Payment
+
+    useEffect(() => {
+        // Simulate loading delay
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -57,8 +70,13 @@ const Product = ({ currentLang }) => {
 
     const productImages = [product, product2, product4];
 
+    if (isLoading) {
+        return <LoadingSpinner />;
+    }
+
     return (
         <div className='bg-gradient-to-b from-[#0060D9] to-[#00618E]'>
+            <ScrollToTop />
             {/* First Section - Product Details */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

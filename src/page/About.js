@@ -25,6 +25,7 @@ import painsecond from '../assets/pain_second.svg';
 import painthird from '../assets/pain_three.svg';
 import painfourth from '../assets/legpain.jpeg';
 import { ChevronLeft, ChevronRight, ThumbsUp, Store, Users, UserCircle, Star } from 'lucide-react';
+import ScrollToTop from '../components/ScrollToTop';
 
 
 
@@ -135,6 +136,7 @@ const About = ({ currentLang }) => {
     const totalDots = Math.max(1, Math.ceil(t.about.reviews.length / itemsToShow));
     return (
         <div className='bg-gradient-to-b from-[#0060D9] to-[#00618E]'>
+            <ScrollToTop />
             {/* First Section */}
             <div className=''>
                 <div className='flex flex-col md:flex-row p-6 md:p-20'>

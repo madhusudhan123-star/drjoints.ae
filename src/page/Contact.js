@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail, Scroll } from 'lucide-react';
 import rating from '../assets/rating.svg';
 import logo from '../assets/logo.svg';
 import translations from '../utils/translations';
 import { Link } from 'react-router-dom';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Contact = ({ currentLang }) => {
     const [status, setStatus] = useState('');
@@ -34,6 +35,7 @@ const Contact = ({ currentLang }) => {
 
     return (
         <div className="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-16">
+            <ScrollToTop />
             {/* Form Section */}
             <div className="bg-gray-50 rounded-3xl p-8 shadow-sm">
                 <h2 className="text-2xl font-medium text-olive-700 mb-2">{t.contact.pagetitle}</h2>

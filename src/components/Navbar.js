@@ -55,8 +55,12 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
                 <div className="flex justify-between items-center ">
                     {/* Instagram Logo */}
                     <div className="flex items-center flex-col gap-3">
-                        <img src={inst} alt="Instagram Logo" className="w-5" />
-                        <img src={face} alt="Instagram Logo" className="w-5" />
+                        <a href='https://www.instagram.com/drjoints4/?fbclid=IwZXh0bgNhZW0CMTEAAR0zq6U6kixRokZ5GV0AznSvHEfs9AWiJLrezaTE6vgAKYrXfdmktokb818_aem_HwMrzEhaE6oZzz3RMrjtiw'>
+                            <img src={inst} alt="Instagram Logo" className="w-5" />
+                        </a>
+                        <a href='https://www.facebook.com/profile.php?id=61569695579623https://www.facebook.com/profile.php?id=61569695579623'>
+                            <img src={face} alt="Instagram Logo" className="w-5" />
+                        </a>
                     </div>
                     {/* Logo and Navigation Links */}
                     <div className={`relative should`}>

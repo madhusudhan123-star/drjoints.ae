@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from '@formspree/react';
 import translations from '../utils/translations';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const COUNTRY_CURRENCY_MAP = {
     'India': { currency: 'INR', symbol: '₹', rate: 1 },
@@ -74,6 +75,7 @@ const Checkout = ({ currentLang }) => {
     const [isPromoApplied, setIsPromoApplied] = useState(false);
     const [state, handleFormspreeSubmit] = useForm("xjkvpbyr");
     const [orderNumber, setOrderNumber] = useState(1); // Initial order number
+    const [pageLoading, setPageLoading] = useState(true);
 
     const [paymentMode, setPaymentMode] = useState("online");
 
@@ -455,6 +457,23 @@ const Checkout = ({ currentLang }) => {
             }));
         }
     };
+
+    useEffect(() => {
+        if (!orderDetails) {
+            return;
+        }
+
+        // Simulate loading delay
+        const timer = setTimeout(() => {
+            setPageLoading(false);
+        }, 800);
+
+        return () => clearTimeout(timer);
+    }, [orderDetails]);
+
+    if (pageLoading || !orderDetails) {
+        return <LoadingSpinner />;
+    }
 
     if (!orderDetails) {
         return (

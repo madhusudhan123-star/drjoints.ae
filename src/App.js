@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './page/Home';
 import About from './page/About';
@@ -14,8 +14,28 @@ import Carousel from './page/Carousel';
 import ShippingPolicyPage from './page/Shipping';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import LoadingSpinner from './components/LoadingSpinner';
+// import LocomotiveScroll from 'locomotive-scroll';
 // ..
 AOS.init();
+
+
+// Create a component to handle route change loading
+const RouteChangeListener = ({ setIsLoading }) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsLoading(true);
+    // Simulate minimum loading time of 500ms
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [location, setIsLoading]);
+
+  return null;
+};
 
 function App() {
   // Ensure the language exists in translations, fallback to 'ENGLISH'
@@ -50,9 +70,13 @@ function App() {
     document.documentElement.lang = currentLang;
   }, [currentLang]);
 
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <BrowserRouter>
       <div className={`app overflow-hidden ${currentLang === 'ar' ? 'rtl' : 'ltr'}`}>
+        <RouteChangeListener setIsLoading={setIsLoading} />
+        {isLoading && <LoadingSpinner />}
         <Navbar
           currentLang={currentLang}
           onLanguageChange={handleLanguageChange}

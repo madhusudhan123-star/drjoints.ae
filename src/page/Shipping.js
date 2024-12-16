@@ -3,12 +3,14 @@ import logo from '../assets/logo.svg';
 import { Link } from 'react-router-dom';
 import rating from '../assets/rating.svg';
 import translations from '../utils/translations';
+import ScrollToTop from '../components/ScrollToTop';
 
 const ShippingPolicyPage = ({ currentLang }) => {
     const t = translations[currentLang] || translations.ENGLISH;
 
     return (
         <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+            <ScrollToTop />
             <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-lg p-10">
                 <h1 className="text-4xl font-extrabold text-center mb-4">{t.shippingPolicyContent.title}</h1>
                 <p className="text-center text-gray-600 mb-10">{t.shippingPolicyContent.lastUpdated}</p>

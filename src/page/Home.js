@@ -24,6 +24,7 @@ import 'aos/dist/aos.css';
 import pain1 from '../assets/home1.jpg';
 import pain2 from '../assets/home2.jpg';
 import pain3 from '../assets/home3.jpg';
+import ScrollToTop from "../components/ScrollToTop";
 
 
 
@@ -101,6 +102,7 @@ const App = ({ currentLang }) => {
     return (
         <div className="overflow-hidden bg-gradient-to-b from-[#0060D9] to-[#00618E]">
             {/* Hero Section */}
+            <ScrollToTop />
             <div className="h-full w-full relative px-4 md:px-0">
                 <div className="text-black font-sans">
                     <div
@@ -184,9 +186,12 @@ const App = ({ currentLang }) => {
                     {/* Left Section */}
                     <div className="w-full md:w-1/2">
                         <div data-aos="fade-right" className="text-white">
-                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-Poppins font-medium leading-relaxed md:leading-[3rem] antialiased">
+                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-Poppins font-medium">
                                 {t.home.answer}
                             </p>
+                            <button className="bg-white mt-10 text-black text-base md:text-2xl px-6 py-3 rounded-full shadow-md hover:bg-blue-500 transition duration-300">
+                                <a href="/product">{t.home.goproduct}</a>
+                            </button>
                         </div>
                     </div>
 
