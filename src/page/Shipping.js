@@ -30,6 +30,63 @@ const ShippingPolicyPage = ({ currentLang }) => {
                     </p>
                 </div>
             </div>
+            <div className="">
+                {/* Rating */}
+                <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 p-4">
+                    <h1 className='text-xl md:text-3xl'>{t.product.rating}</h1>
+                    <img src={rating} alt="review" className="w-32 md:w-auto" />
+                    <h1 className='text-xl md:text-3xl'>{t.product.rating2}</h1>
+                </div>
+                <div className="bg-white">
+                    <div className="container mx-auto px-4 pt-32">
+                        <div className="w-full h-[1px] bg-black mb-10"></div>
+
+                        <div className="flex flex-col md:flex-row justify-between">
+                            <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">
+                                <img src={logo} alt="Dr. Joints Logo" className="w-48 mb-6" />
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left text-xl">
+                                <div className="flex flex-col space-y-4">
+                                    {t.footer.slice(0, 3).map((link) => (
+                                        <Link
+                                            key={link.id}
+                                            to={link.path}
+                                            className="text-black hover:text-blue-600 hover:underline underline-offset-4 transition-colors duration-300"
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    ))}
+                                </div>
+
+                                <div className="flex flex-col space-y-4">
+                                    {t.footer.slice(3, 6).map((link) => (
+                                        <Link
+                                            key={link.id}
+                                            to={link.path}
+                                            className="text-black hover:text-blue-600 hover:underline underline-offset-4 transition-colors duration-300"
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    ))}
+                                </div>
+
+                                <div className="flex flex-col space-y-4">
+                                    {t.footer.slice(6, 9).map((link) => (
+                                        <Link
+                                            key={link.id}
+                                            to={link.path}
+                                            className="text-black hover:text-blue-600 hover:underline underline-offset-4 transition-colors duration-300"
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

@@ -188,15 +188,70 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
             </div>
         </div>
     );
-
+    // 9
     // Mobile Menu Trigger
     const renderMobileMenuTrigger = () => (
-        <button
-            onClick={toggleMenu}
-            className="fixed top-4 left-4 z-40 bg-white rounded-full p-2 shadow-lg"
-        >
-            <img src={isMenuOpen ? closeIcon : menuIcon} alt="Menu Toggle" className="h-6 w-6" />
-        </button>
+        <div>
+            <div className={`relative should`}>
+                <div className="flex flex-col items-center gap-10 mb-10  ">
+                    <Link to="/">
+                        <Swiper
+                            effect={'cube'}
+                            grabCursor={true}
+                            cubeEffect={{
+                                shadow: true,
+                                slideShadows: true,
+                                shadowOffset: 20,
+                                shadowScale: 0.94,
+                            }}
+                            autoplay={{
+                                delay: 1000,
+                                disableOnInteraction: false,
+                            }}
+                            modules={[EffectCube, Autoplay]} // Remove Pagination module
+                            className="w-[80px] h-[80px]"
+                        >
+                            <SwiperSlide>
+                                <img
+                                    src={logo}
+                                    alt="Logo 1"
+                                    className="block w-full h-full object-fit"
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img
+                                    src={logo}
+                                    alt="Logo 2"
+                                    className="block w-full h-full object-fit"
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img
+                                    src={logo}
+                                    alt="Logo 3"
+                                    className="block w-full h-full object-fit"
+                                />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img
+                                    src={logo}
+                                    alt="Logo 4"
+                                    className="block w-full h-full object-fit"
+                                />
+                            </SwiperSlide>
+                        </Swiper>
+                        {/* <img src={logo} alt="Dr. Joints Logo" /> */}
+                    </Link>
+
+                </div>
+            </div>
+            <button
+                onClick={toggleMenu}
+                className="fixed top-4 left-4 z-40 bg-white rounded-full p-2 shadow-lg"
+            >
+                <img src={isMenuOpen ? closeIcon : menuIcon} alt="Menu Toggle" className="h-6 w-6" />
+            </button>
+        </div>
     );
 
     return (

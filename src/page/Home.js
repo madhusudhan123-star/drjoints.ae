@@ -269,7 +269,7 @@ const App = ({ currentLang }) => {
             </div>
 
             {/* YouTube Section */}
-            <div className="w-full py-10 md:py-20">
+            {/* <div className="w-full py-10 md:py-20">
                 <div className="aspect-video w-full mx-auto px-4">
                     <iframe
                         src={`https://www.youtube.com/embed/${t.home.Youtube}?autoplay=1&loop=1&playlist=${t.home.Youtube}`}
@@ -283,7 +283,23 @@ const App = ({ currentLang }) => {
                         <a href="/product">{t.home.goproduct}</a>
                     </button>
                 </div>
+            </div> */}
+            <div className="w-full py-10 md:py-20">
+                <div className="aspect-video w-full mx-auto px-4">
+                    <iframe
+                        src={`https://www.youtube.com/embed/${t.home.Youtube}?autoplay=1&loop=1&playlist=${t.home.Youtube}&rel=0`}
+                        className="rounded-lg shadow-lg w-full h-full"
+                        allow="autoplay; encrypted-media"
+                        title="YouTube Video"
+                    ></iframe>
+                </div>
+                <div className="mt-6 md:mt-8 flex justify-center">
+                    <button className="bg-blue-500 text-white text-base md:text-lg px-6 py-3 rounded-full shadow-md hover:bg-blue-600 transition duration-300">
+                        <a href="/product">{t.home.goproduct}</a>
+                    </button>
+                </div>
             </div>
+
 
             <div className="w-full py-10 md:py-20 ">
                 <img src={pain3} className="w-screen md: lg:h-[50vh] sm:h-full " />
