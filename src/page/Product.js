@@ -26,9 +26,6 @@ const Product = ({ currentLang }) => {
     const [quantity, setQuantity] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
     const t = translations[currentLang] || translations.ENGLISH;
-    const basePrice = 6990; // Original price
-    const codPrice = 3495; // Price for COD
-    const onlinePrice = 3145; // Price for Online Payment
 
     useEffect(() => {
         // Simulate loading delay
@@ -54,8 +51,7 @@ const Product = ({ currentLang }) => {
             return;
         }
 
-        const selectedPrice =
-            formData.paymentMode === "online" ? onlinePrice : codPrice;
+        const selectedPrice = t.product.price2;
 
         navigate("/checkout", {
             state: {

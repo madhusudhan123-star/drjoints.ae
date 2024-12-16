@@ -138,7 +138,7 @@ const Checkout = ({ currentLang }) => {
 
             // Convert amount from INR to selected currency
             const baseAmount = orderDetails.totalAmount; // Amount in INR
-            const convertedValue = (baseAmount * foundCurrency.rate).toFixed(2);
+            const convertedValue = (baseAmount * foundCurrency.rate).toFixed();
             setConvertedAmount(convertedValue);
         }
     }, [formData.country, orderDetails]);
