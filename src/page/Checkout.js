@@ -60,6 +60,18 @@ const DEFAULT_COUNTRY = 'United Arab Emirates';
 const DEFAULT_CURRENCY = COUNTRY_CURRENCY_MAP[DEFAULT_COUNTRY];
 const VALID_PROMO_CODE = "";
 
+// Modify the DEFAULT_COUNTRY constant to be a function
+const getDefaultCountry = (lang) => {
+    switch (lang) {
+        case 'ar':
+            return 'United Arab Emirates';
+        case 'ENGLISH':
+        case 'hi':
+            return 'India';
+        default:
+            return 'India';
+    }
+};
 
 const Checkout = ({ currentLang }) => {
     const t = translations[currentLang] || translations.ENGLISH;
@@ -101,7 +113,7 @@ const Checkout = ({ currentLang }) => {
         firstName: '',
         lastName: '',
         companyName: '',
-        country: DEFAULT_COUNTRY,
+        country: getDefaultCountry(currentLang), // Use the function here
         streetAddress: '',
         apartment: '',
         townCity: '',
@@ -109,6 +121,14 @@ const Checkout = ({ currentLang }) => {
         email: '',
         paymentMode: ""
     });
+
+    // Add useEffect to update country when language changes
+    useEffect(() => {
+        setFormData(prev => ({
+            ...prev,
+            country: getDefaultCountry(currentLang)
+        }));
+    }, [currentLang]);
 
     // Update currency and convert amount when country changes
     useEffect(() => {

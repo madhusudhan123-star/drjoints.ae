@@ -155,6 +155,17 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
                     </button>
                 </div>
                 <nav className="flex flex-col flex-grow justify-center items-center space-y-4 p-4">
+                    {/* Add social icons here */}
+                    <div className="flex gap-4 mb-4">
+                        <a href='https://www.instagram.com/drjoints4/?fbclid=IwZXh0bgNhZW0CMTEAAR0zq6U6kixRokZ5GV0AznSvHEfs9AWiJLrezaTE6vgAKYrXfdmktokb818_aem_HwMrzEhaE6oZzz3RMrjtiw'>
+                            <img src={inst} alt="Instagram Logo" className="w-6" />
+                        </a>
+                        <a href='https://www.facebook.com/profile.php?id=61569695579623'>
+                            <img src={face} alt="Facebook Logo" className="w-6" />
+                        </a>
+                    </div>
+
+                    {/* Existing navigation links */}
                     {t.navLinks.map((link) => (
                         <Link
                             key={link.id}
@@ -188,10 +199,20 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
             </div>
         </div>
     );
-    // 9
+
     // Mobile Menu Trigger
     const renderMobileMenuTrigger = () => (
         <div className="bg-white w-full sticky top-0 z-40 shadow-md py-3">
+            {/* Add social icons in the header */}
+            {/* <div className="absolute top-4 right-4 flex gap-3">
+                <a href='https://www.instagram.com/drjoints4/?fbclid=IwZXh0bgNhZW0CMTEAAR0zq6U6kixRokZ5GV0AznSvHEfs9AWiJLrezaTE6vgAKYrXfdmktokb818_aem_HwMrzEhaE6oZzz3RMrjtiw'>
+                    <img src={inst} alt="Instagram Logo" className="w-5" />
+                </a>
+                <a href='https://www.facebook.com/profile.php?id=61569695579623'>
+                    <img src={face} alt="Facebook Logo" className="w-5" />
+                </a>
+            </div> */}
+
             <div className={`relative should`}>
                 <div className="flex flex-col items-center gap-10 mb-10  ">
                     <Link to="/">
