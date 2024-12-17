@@ -7,7 +7,7 @@ import productImage from '../assets/third.svg';
 import one from '../assets/t_one.svg';
 import two from '../assets/t_two.svg';
 import three from '../assets/t_three.svg';
-import four from '../assets/t_four.svg';
+import four from '../assets/t_four.png';
 import five from '../assets/hala.png';
 import head2 from '../assets/head2.svg';
 import left from '../assets/right.svg';
@@ -27,6 +27,7 @@ import pain3 from '../assets/home3.jpg';
 import ScrollToTop from "../components/ScrollToTop";
 import SmokeEffect from '../components/SmokeEffect';
 import CanvasBackground from '../components/CanvasBackground';
+import WhatsAppButton from '../components/WhatsAppButton';
 
 
 
@@ -106,10 +107,11 @@ const App = ({ currentLang }) => {
             <CanvasBackground />
             <SmokeEffect />
             <ScrollToTop />
+            <WhatsAppButton currentLang={currentLang} /> {/* Add this line */}
             <div className="h-full w-full relative px-4 md:px-0">
                 <div className="text-black font-sans">
                     <div
-                        className="flex text-white flex-col items-center justify-center font-libre-franklin font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-5 md:mt-10 transition-all duration-300 px-4 text-center"
+                        className="flex text-white flex-col items-center justify-center font-Poppins font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-5 md:mt-10 transition-all duration-300 px-4 text-center"
                         style={{
                             transform: `translateY(${scrollPosition * 0.5}px) scale(${1 + scrollPosition * 0.001})`,
                             opacity: Math.max(0, 1 - scrollPosition / 300)
@@ -185,7 +187,7 @@ const App = ({ currentLang }) => {
                 <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl pb-6 font-bold text-white text-center">
                     {t.home.question}
                 </h1>
-                <div className="flex flex-col md:flex-row gap-6 md:gap-10 w-full">
+                <div className="flex flex-col md:flex-row gap-6 md:gap-10 mt-10 w-full">
                     {/* Left Section */}
                     <div className="w-full md:w-1/2">
                         <div data-aos="fade-right" className="text-white">
@@ -224,7 +226,7 @@ const App = ({ currentLang }) => {
                         <img src={three} alt="Trusted Brand 3" className="max-w-full h-auto" />
                     </div>
                     <div data-aos="fade-right" data-aos-delay="600">
-                        <img src={four} alt="Trusted Brand 4" className="max-w-full h-auto" />
+                        <img src={four} alt="Trusted Brand 4" className="w-[8.5rem] h-auto" />
                     </div>
                     <div data-aos="fade-right" data-aos-delay="800">
                         <img src={five} alt="Trusted Brand 5" className="max-w-full h-auto" />
@@ -272,22 +274,7 @@ const App = ({ currentLang }) => {
             </div>
 
             {/* YouTube Section */}
-            {/* <div className="w-full py-10 md:py-20">
-                <div className="aspect-video w-full mx-auto px-4">
-                    <iframe
-                        src={`https://www.youtube.com/embed/${t.home.Youtube}?autoplay=1&loop=1&playlist=${t.home.Youtube}`}
-                        className="rounded-lg shadow-lg w-full h-full"
-                        allow="autoplay; encrypted-media"
-                        title="YouTube Video"
-                    ></iframe>
-                </div>
-                <div className="mt-6 md:mt-8 flex justify-center">
-                    <button className="bg-blue-500 text-white text-base md:text-lg px-6 py-3 rounded-full shadow-md hover:bg-blue-600 transition duration-300">
-                        <a href="/product">{t.home.goproduct}</a>
-                    </button>
-                </div>
-            </div> */}
-            <div className="w-full py-10 md:py-20">
+            <div className="w-full py-10 md:py-20 relative z-10">
                 <div className="aspect-video w-full mx-auto px-4">
                     <iframe
                         src={`https://www.youtube.com/embed/${t.home.Youtube}?autoplay=1&loop=1&playlist=${t.home.Youtube}&rel=0`}

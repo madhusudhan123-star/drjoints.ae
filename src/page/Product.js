@@ -51,22 +51,27 @@ const Product = ({ currentLang }) => {
             return;
         }
 
-        // Get the correct price based on payment mode and translations
-        let basePrice;
-        if (formData.paymentMode === 'cod') {
-            basePrice = parseFloat(t.product.price.replace(/[^0-9.]/g, '')); // Extract number from price string
-        } else {
-            basePrice = parseFloat(t.product.price2.replace(/[^0-9.]/g, '')); // Extract number from price2 string
-        }
+        // Extract the numeric value from the price string
+        const extractNumericValue = (priceString) => {
+            // Remove all non-numeric characters except decimal point
+            const numericString = priceString.replace(/[^0-9.]/g, '');
+            return parseFloat(numericString);
+        };
+
+        // Get base price from the product amount
+        const basePrice = extractNumericValue(translations.amount);
 
         // Calculate total amount
         const totalAmount = basePrice * quantity;
 
-        // Navigate to checkout with all necessary data
+        console.log('Base Price:', basePrice);
+        console.log('Quantity:', quantity);
+        console.log('Total Amount:', totalAmount);
+
         navigate("/checkout", {
             state: {
                 quantity,
-                totalAmount: totalAmount, // Pass the calculated total amount
+                totalAmount: totalAmount, // This will now have the correct numeric value
                 productName: t.product.name,
                 unitPrice: basePrice,
                 paymentMode: formData.paymentMode,
@@ -84,8 +89,8 @@ const Product = ({ currentLang }) => {
         <div className="space-y-4">
             <label
                 className={`block p-4 border rounded-lg bg-white cursor-pointer transition ${formData.paymentMode === "online"
-                        ? "border-green-500 bg-green-50"
-                        : "border-gray-300"
+                    ? "border-green-500 bg-green-50"
+                    : "border-gray-300"
                     }`}
             >
                 <div className="flex justify-between font-bold items-center">

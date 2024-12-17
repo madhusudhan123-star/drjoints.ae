@@ -42,6 +42,7 @@ const translations = {
             homec1: "Relieve Joint, Muscle, and Body Pain Naturally – Feel Better, Move Freely.",
             homec2: "Organic oils made from natural herbs and ingredients",
             bannerimg: "Say Goodbye to Pain – Discover Natural Solutions for Lasting Relief.",
+            whatsapp: "9030202444",
         },
         navbar: {
             home: "PRODUCT",
@@ -70,8 +71,8 @@ const translations = {
             buynow: "Buy Now",
             qty: "Quantity",
             cutamount: "₹ 6,672",
-            amount: "₹ 6,472",
-            price2: "₹ 6,472 - Express Online Delivery",
+            amount: "₹ 6,474",
+            price2: "₹ 6,474 - Express Online Delivery",
             para: `Unleash the power of natural healing with Dr. Joints Pain Relief Oil. Our revolutionary Ayurvedic formula is meticulously crafted to provide instant relief and long-term healing. Packed with potent herbal ingredients, our oil penetrates deep to address joint and muscle pain at its source. We're not just offering a product – we're providing a holistic path to wellness, empowering you to reclaim your mobility and live life to the fullest.`,
             doctor: "Endorsed by Healthcare Professionals",
             docpara: "Trusted solution for natural, effective joint pain relief by medical experts.",
@@ -356,6 +357,7 @@ const translations = {
             homec2: "زيوت عضوية مصنوعة من الأعشاب والمكونات الطبيعية.",
             joint1: "ألم الكوع", // Elbow Pain in Arabic
             joint2: "ألم الركبة",
+            whatsapp: "9030652444",
         },
         navbar: {
             home: "المنتج",
@@ -380,7 +382,7 @@ const translations = {
         product: {
             name: "زيت تخفيف آلام المفاصل من Dr. Joints - الشفاء الطبيعي",
             fakeqty: "تم بيع 23 زجاجة في آخر 3 ساعات",
-            off2: "خصم 70٪ على الشراء بالجملة",
+            // off2: "خصم 70٪ على الشراء بالجملة",
             buynow: "اشترِ الآن",
             qty: "الكمية",
             cutamount: "288.63 ر.س",
@@ -678,6 +680,7 @@ const translations = {
             homec2: "प्राकृतिक जड़ी-बूटियों और सामग्री से बने ऑर्गेनिक तेल।",
             joint1: "कोहनी का दर्द", // Elbow Pain in Hindi
             joint2: "घुटने का दर्द", // Knee Pain in Hindi
+            whatsapp: "9030202444",
         },
         navbar: {
             home: "वेलनेस शॉप",
@@ -705,16 +708,15 @@ const translations = {
             buynow: "अभी खरीदें",
             qty: "मात्रा",
             cutamount: "₹ 6,672",
-            amount: "₹ 6,472",
-            price2: "₹ 6,472 - तेज़ ऑनलाइन डिलीवरी",
+            amount: "₹ 6,474",
+            price2: "₹ 6,474 - तेज़ ऑनलाइन डिलीवरी",
             para: "Dr. Joints पेन रिलीफ ऑयल के साथ प्राकृतिक उपचार की शक्ति का अनुभव करें। हमारा क्रांतिकारी आयुर्वेदिक फॉर्मूला त्वरित राहत और दीर्घकालिक उपचार प्रदान करने के लिए सावधानीपूर्वक तैयार किया गया है। शक्तिशाली जड़ी-बूटियों से भरपूर, यह तेल दर्द के स्रोत तक गहराई से पहुँचता है और जोड़ों और मांसपेशियों के दर्द को दूर करता है। हम केवल एक उत्पाद की पेशकश नहीं कर रहे हैं - बल्कि एक संपूर्ण स्वास्थ्य और कल्याण का मार्ग प्रदान कर रहे हैं, जिससे आप अपनी गतिशीलता वापस पा सकें और जीवन को पूर्णता के साथ जी सकें।",
             doctor: "स्वास्थ्य विशेषज्ञों द्वारा अनुशंसित",
             docpara: "चिकित्सा विशेषज्ञों द्वारा प्राकृतिक और प्रभावी जोड़ों के दर्द से राहत का भरोसेमंद समाधान।",
             rating: "ग्राहकों की औसत रेटिंग",
             rating2: "18,300+ सत्यापित समीक्षाएँ",
             Currency: "भारत"
-        }
-        ,
+        },
         about: {
             title: "डॉ. जोइंट्स का उपचार यात्रा",
             sub: "सिर्फ एक दर्द निवारण तेल नहीं – यह एक स्वास्थ्य आंदोलन है जो प्राचीन आयुर्वेदिक ज्ञान और आधुनिक वैज्ञानिक अनुसंधान में जड़ें जमा चुका है। हमारा मिशन है प्राकृतिक, समग्र समाधान प्रदान करके दर्द को उसकी जड़ से ठीक करना और जीवन बदलना।",
@@ -959,6 +961,9 @@ const translations = {
         },
 
     },
+    cutamount: "₹ 6,674",
+    amount: "₹ 6,474",
 };
+
 
 export default translations; 

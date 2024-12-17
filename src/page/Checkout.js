@@ -24,7 +24,7 @@ const COUNTRY_CURRENCY_MAP = {
     'South Korea': { currency: 'KRW', symbol: '₩', rate: 15.94 },
     'New Zealand': { currency: 'NZD', symbol: 'NZ$', rate: 0.02 },
     'Turkey': { currency: 'TRY', symbol: '₺', rate: 0.23 },
-    'United Arab Emirates': { currency: 'AED', symbol: 'د.إ', rate: 0.044 },
+    'United Arab Emirates': { currency: 'AED', symbol: 'د.إ', rate: 0.043295 }, // Updated rate for more precise conversion
     'Saudi Arabia': { currency: 'SAR', symbol: 'ر.س', rate: 0.045 },
     'Argentina': { currency: 'ARS', symbol: '$', rate: 2.04 },
     'Egypt': { currency: 'EGP', symbol: 'ج.م', rate: 0.36 },
@@ -122,7 +122,7 @@ const Checkout = ({ currentLang }) => {
         paymentMode: ""
     });
 
-    // Add useEffect to update country when language changes
+    // Add useEffect to update country when language changes 
     useEffect(() => {
         setFormData(prev => ({
             ...prev,
@@ -136,30 +136,17 @@ const Checkout = ({ currentLang }) => {
             const foundCurrency = COUNTRY_CURRENCY_MAP[formData.country] || DEFAULT_CURRENCY;
             setCurrentCurrency(foundCurrency);
 
-            // Convert amount from INR to selected currency
-            const baseAmount = orderDetails.totalAmount; // Amount in INR
-            //  getDefaultCountry = (lang) => {
-            //     switch (lang) {
-            //         case 'ar':
-            //             return 'United Arab Emirates';
-            //         case 'ENGLISH':
-            //         case 'hi':
-            //             return 'India';
-            //         default:
-            //             return 'India';
-            //     }
-            // };
-            if (currentLang == 'ar') {
-                setConvertedAmount(baseAmount);
-                console.log(convertedAmount)
+            const baseAmount = orderDetails.totalAmount;
+            if (currentLang === 'ar' || formData.country === 'United Arab Emirates') {
+                // For Arabic language or UAE, ensure the amount is exactly 280 AED
+                setConvertedAmount(280);
             } else {
-                const convertedValue = (baseAmount * foundCurrency.rate).toFixed();
+                // For other currencies, calculate and round to 2 decimal places
+                const convertedValue = Math.round(baseAmount * foundCurrency.rate);
                 setConvertedAmount(convertedValue);
-                console.log(convertedAmount)
-
             }
         }
-    }, [formData.country, orderDetails]);
+    }, [formData.country, orderDetails, currentLang]);
 
     // Original useEffects for initialization and script loading...
     useEffect(() => {
@@ -201,20 +188,20 @@ const Checkout = ({ currentLang }) => {
         return errors;
     };
 
-    // useEffect(() => {
-    //     if (orderDetails) {
-    //         const foundCurrency = COUNTRY_CURRENCY_MAP[formData.country] || DEFAULT_CURRENCY;
-    //         setCurrentCurrency(foundCurrency);
+    useEffect(() => {
+        if (orderDetails) {
+            const foundCurrency = COUNTRY_CURRENCY_MAP[formData.country] || DEFAULT_CURRENCY;
+            setCurrentCurrency(foundCurrency);
 
-    //         let baseAmount = orderDetails.totalAmount; // Amount in INR
-    //         if (isPromoApplied) {
-    //             baseAmount *= 0.5; // Apply 50% discount
-    //         }
+            let baseAmount = orderDetails.totalAmount; // Amount in INR
+            if (isPromoApplied) {
+                baseAmount *= 0.5; // Apply 50% discount
+            }
 
-    //         const convertedValue = (baseAmount * foundCurrency.rate).toFixed(2);
-    //         setConvertedAmount(convertedValue);
-    //     }
-    // }, [formData.country, orderDetails, isPromoApplied]);
+            const convertedValue = (baseAmount * foundCurrency.rate).toFixed(2);
+            setConvertedAmount(convertedValue);
+        }
+    }, [formData.country, orderDetails, isPromoApplied]);
 
     const handlePromoCodeApply = () => {
         if (promoCode.trim().toUpperCase() === VALID_PROMO_CODE) {

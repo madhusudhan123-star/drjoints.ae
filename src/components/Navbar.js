@@ -133,9 +133,8 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
                     <select
                         value={currentLang}
                         onChange={(e) => onLanguageChange(e.target.value)}
-                        disabled={isCheckoutPage}
-                        className={`border rounded shadow-xl text-lg px-5 py-2 ${isCheckoutPage ? 'opacity-50 cursor-not-allowed' : ''
-                            }`}
+                        // disabled={isCheckoutPage}
+                        className={`border rounded shadow-xl text-lg px-5 py-2`}
                     >
                         <option value="ENGLISH">English</option>
                         <option value="ar">عربي</option>
@@ -190,9 +189,7 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
                                 // Optional: close menu after language change
                                 handleLinkClick();
                             }}
-                            disabled={isCheckoutPage}
-                            className={`p-2 border rounded w-full ${isCheckoutPage ? 'opacity-50 cursor-not-allowed' : ''
-                                }`}
+                            className={`p-2 border rounded w-full`}
                         >
                             {languages.map((lang) => (
                                 <option key={lang.code} value={lang.code}>
