@@ -28,7 +28,7 @@ import ScrollToTop from "../components/ScrollToTop";
 import SmokeEffect from '../components/SmokeEffect';
 import CanvasBackground from '../components/CanvasBackground';
 import WhatsAppButton from '../components/WhatsAppButton';
-
+import LoadingSpinner from '../components/LoadingSpinner';
 
 
 // Import Swiper styles
@@ -42,6 +42,8 @@ const App = ({ currentLang }) => {
     const [itemsToShow, setItemsToShow] = useState(5);
     const [isMobile, setIsMobile] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
+    const [imagesLoaded, setImagesLoaded] = useState({});
+    const [youtubeLoaded, setYoutubeLoaded] = useState(false);
     const t = translations[currentLang] || translations.ENGLISH;
 
     // Handle window resize and set items to show
@@ -98,6 +100,13 @@ const App = ({ currentLang }) => {
         });
     }, []);
 
+    const handleImageLoad = (imageId) => {
+        setImagesLoaded(prev => ({
+            ...prev,
+            [imageId]: true
+        }));
+    };
+
     const renderStars = (count) =>
         Array.from({ length: count }, (_, i) => (
             <span key={i} className="text-yellow-500 text-lg">★</span>
@@ -151,31 +160,43 @@ const App = ({ currentLang }) => {
                         className="w-full mt-24 px-4 md:px-8 lg:px-12 should"
                     >
                         <SwiperSlide className="flex justify-center items-center rounded-md overflow-hidden h-[200px] sm:h-[300px] md:h-[400px]">
+                            {!imagesLoaded['slide1'] && <LoadingSpinner />}
                             <img
                                 src={slide1}
-                                className="rounded-md transition-transform duration-300 hover:scale-110 w-full h-full object-cover"
+                                className={`rounded-md transition-transform duration-300 hover:scale-110 w-full h-full object-cover ${!imagesLoaded['slide1'] ? 'hidden' : ''
+                                    }`}
                                 alt="Slider Image 1"
+                                onLoad={() => handleImageLoad('slide1')}
                             />
                         </SwiperSlide>
                         <SwiperSlide className="flex justify-center items-center rounded-md overflow-hidden h-[200px] sm:h-[300px] md:h-[400px]">
+                            {!imagesLoaded['slider2'] && <LoadingSpinner />}
                             <img
                                 src={slider2}
-                                className="rounded-md rounded-tl-[10rem] transition-transform duration-300 hover:scale-110 w-full h-full object-cover"
+                                className={`rounded-md rounded-tl-[10rem] transition-transform duration-300 hover:scale-110 w-full h-full object-cover ${!imagesLoaded['slider2'] ? 'hidden' : ''
+                                    }`}
                                 alt="Slider Image 2"
+                                onLoad={() => handleImageLoad('slider2')}
                             />
                         </SwiperSlide>
                         <SwiperSlide className="flex justify-center items-center rounded-md overflow-hidden h-[200px] sm:h-[300px] md:h-[400px]">
+                            {!imagesLoaded['slider3'] && <LoadingSpinner />}
                             <img
                                 src={slider3}
-                                className="rounded-md transition-transform duration-300 hover:scale-110 w-full h-full object-cover"
+                                className={`rounded-md transition-transform duration-300 hover:scale-110 w-full h-full object-cover ${!imagesLoaded['slider3'] ? 'hidden' : ''
+                                    }`}
                                 alt="Slider Image 3"
+                                onLoad={() => handleImageLoad('slider3')}
                             />
                         </SwiperSlide>
                         <SwiperSlide className="flex justify-center items-center rounded-md overflow-hidden h-[200px] sm:h-[300px] md:h-[400px]">
+                            {!imagesLoaded['slider4'] && <LoadingSpinner />}
                             <img
                                 src={slider4}
-                                className="rounded-md rounded-tl-[10rem] transition-transform duration-300 hover:scale-110 w-full h-full object-cover"
+                                className={`rounded-md rounded-tl-[10rem] transition-transform duration-300 hover:scale-110 w-full h-full object-cover ${!imagesLoaded['slider4'] ? 'hidden' : ''
+                                    }`}
                                 alt="Slider Image 4"
+                                onLoad={() => handleImageLoad('slider4')}
                             />
                         </SwiperSlide>
                     </Swiper>
@@ -202,11 +223,14 @@ const App = ({ currentLang }) => {
 
                     {/* Right Section */}
                     <div data-aos="fade-left" className="w-full md:w-1/2">
-                        <div className="flex justify-center">
+                        <div className="flex justify-center relative">
+                            {!imagesLoaded['rightImage'] && <LoadingSpinner />}
                             <img
                                 src={rightImage}
                                 alt="Person Holding Leg"
-                                className="rounded-lg object-cover w-full md:w-[70%] h-auto"
+                                className={`rounded-lg object-cover w-full md:w-[70%] h-auto ${!imagesLoaded['rightImage'] ? 'hidden' : ''
+                                    }`}
+                                onLoad={() => handleImageLoad('rightImage')}
                             />
                         </div>
                     </div>
@@ -275,12 +299,15 @@ const App = ({ currentLang }) => {
 
             {/* YouTube Section */}
             <div className="w-full py-10 md:py-20 relative z-10">
-                <div className="aspect-video w-full mx-auto px-4">
+                <div className="aspect-video w-full mx-auto px-4 relative">
+                    {!youtubeLoaded && <LoadingSpinner />}
                     <iframe
                         src={`https://www.youtube.com/embed/${t.home.Youtube}?autoplay=1&loop=1&playlist=${t.home.Youtube}&rel=0`}
-                        className="rounded-lg shadow-lg w-full h-full"
+                        className={`rounded-lg shadow-lg w-full h-full ${!youtubeLoaded ? 'invisible' : 'visible'
+                            }`}
                         allow="autoplay; encrypted-media"
                         title="YouTube Video"
+                        onLoad={() => setYoutubeLoaded(true)}
                     ></iframe>
                 </div>
                 <div className="mt-6 md:mt-8 flex justify-center">
@@ -291,8 +318,14 @@ const App = ({ currentLang }) => {
             </div>
 
 
-            <div className="w-full py-10 md:py-20 ">
-                <img src={pain3} className="w-screen md: lg:h-[50vh] sm:h-full " />
+            <div className="w-full py-10 md:py-20 relative">
+                {!imagesLoaded['pain3'] && <LoadingSpinner />}
+                <img
+                    src={pain3}
+                    className={`w-screen md: lg:h-[50vh] sm:h-full ${!imagesLoaded['pain3'] ? 'hidden' : ''
+                        }`}
+                    onLoad={() => handleImageLoad('pain3')}
+                />
                 <h1 className="text-center text-4xl mt-3 text-white">{t.home.bannerimg}</h1>
             </div>
 
