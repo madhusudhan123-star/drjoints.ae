@@ -58,20 +58,16 @@ const Product = ({ currentLang }) => {
             return parseFloat(numericString);
         };
 
-        // Get base price from the product amount
-        const basePrice = extractNumericValue(translations.amount);
+        // Get base price (280 AED fixed)
+        const basePrice = 280;
 
         // Calculate total amount
         const totalAmount = basePrice * quantity;
 
-        console.log('Base Price:', basePrice);
-        console.log('Quantity:', quantity);
-        console.log('Total Amount:', totalAmount);
-
         navigate("/checkout", {
             state: {
                 quantity,
-                totalAmount: totalAmount, // This will now have the correct numeric value
+                totalAmount: totalAmount,
                 productName: t.product.name,
                 unitPrice: basePrice,
                 paymentMode: formData.paymentMode,

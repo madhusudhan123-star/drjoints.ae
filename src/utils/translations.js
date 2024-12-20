@@ -63,6 +63,8 @@ const translations = {
             { id: "PRIVACY POLICY", path: "/private", label: "PRIVACY POLICY" },
             { id: "TERMS & CONDITIONS", path: "/terms", label: "TERMS & CONDITIONS" },
             { id: "SHIPPING POLICY", path: "/ship", label: "SHIPPING POLICY" },
+            { id: "CANCEL POLICY", path: "/cancel", label: "CANCEL POLICY" },
+
         ],
         product: {
             name: "Dr. Joints Pain Relief Oil - Natural Healing",
@@ -70,9 +72,9 @@ const translations = {
             // off2: "Flat 70% OFF on Bulk Purchase",
             buynow: "Buy Now",
             qty: "Quantity",
-            cutamount: "₹ 6,672",
-            amount: "₹ 6,474",
-            price2: "₹ 6,474 - Express Online Delivery",
+            cutamount: "د.إ 288.63", // Updated from ₹ 6,672
+            amount: "د.إ 280", // Updated from ₹ 6,474
+            price2: "د.إ 280 - Express Online Delivery",
             para: `Unleash the power of natural healing with Dr. Joints Pain Relief Oil. Our revolutionary Ayurvedic formula is meticulously crafted to provide instant relief and long-term healing. Packed with potent herbal ingredients, our oil penetrates deep to address joint and muscle pain at its source. We're not just offering a product – we're providing a holistic path to wellness, empowering you to reclaim your mobility and live life to the fullest.`,
             doctor: "Endorsed by Healthcare Professionals",
             docpara: "Trusted solution for natural, effective joint pain relief by medical experts.",
@@ -326,6 +328,34 @@ const translations = {
                 },
             ],
         },
+        cancelPolicy: {
+            title: 'Cancellation Policy',
+            lastUpdated: 'Last Updated: October 2023',
+            sections: [
+                {
+                    heading: '1. Cancellation Period',
+                    content: '• Orders can be canceled within 24 hours of placing the order.\n• After 24 hours, we begin processing and shipping your order, and cancellations will not be possible.'
+                },
+                {
+                    heading: '2. How to Cancel Your Order',
+                    content: 'To cancel your order, please follow these steps:\n1. Contact Us Immediately: Reach out to our customer support team at +919392277389 within 24 hours of your order.\n2. Provide Order Details: Include your order number and reason for cancellation in your message to help us process your request faster.'
+                },
+                {
+                    heading: '3. Cancellations Post-Shipping',
+                    content: '• If your order has already been shipped, we will not be able to cancel it. In this case, you may return the product after receiving it.\n• To initiate a return, please refer to our Return Policy for further instructions.'
+                },
+                {
+                    heading: '4. Refund Process',
+                    content: '• Full Refunds: If your cancellation request is processed before the product is shipped, you will receive a full refund.\n• Partial Refunds: If you cancel the order after the product has been shipped, the cost of the product will be refunded with less shipping charges, once we receive the returned item in its original condition.'
+                },
+                {
+                    heading: '5. Non-Cancellable Conditions',
+                    content: '• Opened/Used Products: Once the product has been opened or used, cancellations will not be accepted. Please check the product carefully upon delivery.\n• Special Promotions or Offers: Orders placed under special promotions or discounts may be subject to different cancellation terms, which will be specified during the purchase process.'
+                }
+            ],
+            disclaimer: 'We aim to provide a seamless experience, and our customer service team is here to assist you with any issues you may encounter.',
+            contactCancel: 'Thank you for choosing Dr. Joints Pain Relief Oil. We appreciate your understanding and support!'
+        },
     },
     ar: {
         home: {
@@ -378,6 +408,7 @@ const translations = {
             { id: "PRIVACY POLICY", path: "/private", label: "سياسة الخصوصية" },
             { id: "TERMS & CONDITIONS", path: "/terms", label: "الشروط والأحكام" },
             { id: "SHIPPING POLICY", path: "/ship", label: "سياسة الشحن" },
+            { id: "Cancel POLICY", path: "/cancel", label: "سياسة الإلغاء" }
         ],
         product: {
             name: "زيت تخفيف آلام المفاصل من Dr. Joints - الشفاء الطبيعي",
@@ -385,9 +416,9 @@ const translations = {
             // off2: "خصم 70٪ على الشراء بالجملة",
             buynow: "اشترِ الآن",
             qty: "الكمية",
-            cutamount: "288.63 ر.س",
-            amount: "280 ر.س",
-            price2: "280 ر.س - توصيل سريع عبر الإنترنت",
+            cutamount: "د.إ 288.63",
+            amount: "د.إ 280",
+            price2: "د.إ 280 - توصيل سريع عبر الإنترنت",
             para: "اكتشف قوة الشفاء الطبيعي مع زيت تخفيف آلام المفاصل من Dr. Joints. صيغتنا الأيورفيدا الثورية مُعدّة بعناية لتوفير تخفيف فوري للألم وشفاء طويل الأمد. محملة بمكونات عشبية فعّالة، يخترق الزيت بعمق لمعالجة آلام المفاصل والعضلات من المصدر. نحن لا نقدم منتجًا فحسب - بل نوفر مسارًا شاملاً للصحة والعافية، مما يمنحك القوة لاستعادة حركتك والعيش بكامل طاقتك.",
             doctor: "موصى به من قبل خبراء الرعاية الصحية",
             docpara: "حل موثوق به وطبيعي لتخفيف آلام المفاصل بشكل فعال من قبل خبراء طبيين.",
@@ -639,8 +670,35 @@ const translations = {
                 }
             ]
 
+        },
+        cancelPolicy: {
+            title: 'سياسة الإلغاء',
+            lastUpdated: 'آخر تحديث: أكتوبر 2023',
+            sections: [
+                {
+                    heading: '١. فترة الإلغاء',
+                    content: '• يمكن إلغاء الطلبات خلال 24 ساعة من تقديم الطلب.\n• بعد 24 ساعة، نبدأ في معالجة وشحن طلبك، ولن يكون الإلغاء ممكناً.'
+                },
+                {
+                    heading: '٢. كيفية إلغاء طلبك',
+                    content: 'لإلغاء طلبك، يرجى اتباع هذه الخطوات:\n1. اتصل بنا فوراً: تواصل مع فريق دعم العملاء على +919392277389 خلال 24 ساعة من طلبك.\n2. قدم تفاصيل الطلب: قم بتضمين رقم طلبك وسبب الإلغاء في رسالتك لمساعدتنا في معالجة طلبك بشكل أسرع.'
+                },
+                {
+                    heading: '٣. الإلغاء بعد الشحن',
+                    content: '• إذا تم شحن طلبك بالفعل، فلن نتمكن من إلغائه. في هذه الحالة، يمكنك إرجاع المنتج بعد استلامه.\n• لبدء عملية الإرجاع، يرجى الرجوع إلى سياسة الإرجاع لمزيد من التعليمات.'
+                },
+                {
+                    heading: '٤. عملية استرداد الأموال',
+                    content: '• استرداد كامل: إذا تمت معالجة طلب الإلغاء الخاص بك قبل شحن المنتج، فستحصل على استرداد كامل.\n• استرداد جزئي: إذا قمت بإلغاء الطلب بعد شحن المنتج، سيتم استرداد تكلفة المنتج مع خصم رسوم الشحن، بمجرد استلامنا للمنتج المرتجع في حالته الأصلية.'
+                },
+                {
+                    heading: '٥. حالات عدم إمكانية الإلغاء',
+                    content: '• المنتجات المفتوحة/المستخدمة: بمجرد فتح المنتج أو استخدامه، لن يتم قبول الإلغاء. يرجى فحص المنتج بعناية عند التسليم.\n• العروض الترويجية الخاصة: قد تخضع الطلبات المقدمة ضمن العروض الترويجية أو الخصومات الخاصة لشروط إلغاء مختلفة، والتي سيتم تحديدها أثناء عملية الشراء.'
+                }
+            ],
+            disclaimer: 'نهدف إلى تقديم تجربة سلسة، وفريق خدمة العملاء لدينا متواجد لمساعدتك في أي مشكلات قد تواجهها.',
+            contactCancel: 'شكراً لاختيارك زيت د. جوينتس لتخفيف الألم. نقدر تفهمك ودعمك!'
         }
-
 
     },
     hi: {
@@ -655,7 +713,7 @@ const translations = {
             trust: "प्रमुख स्वास्थ्य देखभाल पेशेवरों द्वारा भरोसेमंद",
             follow: "प्राकृतिक स्वास्थ्य यात्रा में हमारे साथ शामिल हों",
             client: "डॉ. जोइंट्स उपयोगकर्ताओं की जीवन बदलने वाली कहानियां",
-            goproduct: "डॉ. जोइंट्स पेन रिलीफ ऑयल के साथ अपना जीवन बदलें",
+            goproduct: "अभी खरीदें",
             reviews: [
                 { id: 1, name: "अहमद अल मंसूरी", review: "एक निर्माण साइट प्रबंधक के रूप में, घुटने का दर्द मेरे काम में बाधा डाल रहा था। डॉ. जोइंट्स ने मेरी गतिशीलता और पेशेवर क्षमता को वापस लाया!", stars: 5 },
                 { id: 2, name: "फातिमा हसन", review: "योग प्रशिक्षक के लिए आदर्श! पेशेवर, प्राकृतिक और मेरे जोड़ों की लचीलेपन के लिए बेहद प्रभावी।", stars: 4 },
@@ -700,6 +758,7 @@ const translations = {
             { id: "RETURN POLICY", path: "/return", label: "वापसी नीति" },
             { id: "PRIVACY POLICY", path: "/private", label: "गोपनीयता नीति" },
             { id: "TERMS & CONDITIONS", path: "/terms", label: "नियम और शर्तें" },
+            { id: "CANCEL POLICY", path: "/cancel", label: "रद्द नीति" },
         ],
         product: {
             name: "Dr. Joints पेन रिलीफ ऑयल - प्राकृतिक उपचार",
@@ -707,9 +766,9 @@ const translations = {
             off2: "थोक खरीद पर 70% की सीधी छूट",
             buynow: "अभी खरीदें",
             qty: "मात्रा",
-            cutamount: "₹ 6,672",
-            amount: "₹ 6,474",
-            price2: "₹ 6,474 - तेज़ ऑनलाइन डिलीवरी",
+            cutamount: "د.إ 288.63",
+            amount: "د.إ 280",
+            price2: "د.إ 280 - एक्सप्रेस ऑनलाइन डिलीवरी",
             para: "Dr. Joints पेन रिलीफ ऑयल के साथ प्राकृतिक उपचार की शक्ति का अनुभव करें। हमारा क्रांतिकारी आयुर्वेदिक फॉर्मूला त्वरित राहत और दीर्घकालिक उपचार प्रदान करने के लिए सावधानीपूर्वक तैयार किया गया है। शक्तिशाली जड़ी-बूटियों से भरपूर, यह तेल दर्द के स्रोत तक गहराई से पहुँचता है और जोड़ों और मांसपेशियों के दर्द को दूर करता है। हम केवल एक उत्पाद की पेशकश नहीं कर रहे हैं - बल्कि एक संपूर्ण स्वास्थ्य और कल्याण का मार्ग प्रदान कर रहे हैं, जिससे आप अपनी गतिशीलता वापस पा सकें और जीवन को पूर्णता के साथ जी सकें।",
             doctor: "स्वास्थ्य विशेषज्ञों द्वारा अनुशंसित",
             docpara: "चिकित्सा विशेषज्ञों द्वारा प्राकृतिक और प्रभावी जोड़ों के दर्द से राहत का भरोसेमंद समाधान।",
@@ -959,11 +1018,38 @@ const translations = {
                 },
             ],
         },
-
+        cancelPolicy: {
+            title: 'रद्द करने की नीति',
+            lastUpdated: 'अंतिम अपडेट: अक्टूबर 2023',
+            sections: [
+                {
+                    heading: '1. रद्द करने की अवधि',
+                    content: '• आर्डर को आर्डर करने के 24 घंटे के भीतर रद्द किया जा सकता है।\n• 24 घंटे के बाद, हम आपके आर्डर को प्रोसेस और शिप करना शुरू कर देते हैं, और रद्द करना संभव नहीं होगा।'
+                },
+                {
+                    heading: '2. अपना आर्डर कैसे रद्द करें',
+                    content: 'अपना आर्डर रद्द करने के लिए, कृपया इन चरणों का पालन करें:\n1. तुरंत हमसे संपर्क करें: अपने आर्डर के 24 घंटे के भीतर हमारी ग्राहक सहायता टीम से +919392277389 पर संपर्क करें।\n2. आर्डर विवरण प्रदान करें: अपने संदेश में आर्डर नंबर और रद्द करने का कारण शामिल करें ताकि हम आपके अनुरोध को जल्दी से प्रोसेस कर सकें।'
+                },
+                {
+                    heading: '3. शिपिंग के बाद रद्द करना',
+                    content: '• यदि आपका आर्डर पहले ही शिप कर दिया गया है, तो हम इसे रद्द नहीं कर पाएंगे। इस स्थिति में, आप प्रोडक्ट प्राप्त करने के बाद इसे वापस कर सकते हैं।\n• वापसी शुरू करने के लिए, कृपया आगे के निर्देशों के लिए हमारी रिटर्न पॉलिसी देखें।'
+                },
+                {
+                    heading: '4. रिफंड प्रक्रिया',
+                    content: '• पूर्ण रिफंड: यदि प्रोडक्ट शिप होने से पहले आपका रद्द करने का अनुरोध प्रोसेस हो जाता है, तो आपको पूरा रिफंड मिलेगा।\n• आंशिक रिफंड: यदि आप प्रोडक्ट शिप होने के बाद आर्डर रद्द करते हैं, तो जब हमें वापस किया गया आइटम उसकी मूल स्थिति में प्राप्त होगा, तब प्रोडक्ट की लागत शिपिंग चार्ज घटाकर रिफंड की जाएगी।'
+                },
+                {
+                    heading: '5. गैर-रद्द करने योग्य स्थितियां',
+                    content: '• खोले/इस्तेमाल किए गए प्रोडक्ट: एक बार प्रोडक्ट खोल लिया या इस्तेमाल कर लिया जाता है, तो रद्द करना स्वीकार नहीं किया जाएगा। कृपया डिलीवरी के समय प्रोडक्ट को ध्यान से जांचें।\n• विशेष प्रमोशन या ऑफर: विशेष प्रमोशन या छूट के तहत किए गए आर्डर अलग रद्द करने की शर्तों के अधीन हो सकते हैं, जो खरीद प्रक्रिया के दौरान निर्दिष्ट किए जाएंगे।'
+                }
+            ],
+            disclaimer: 'हम एक सहज अनुभव प्रदान करने का लक्ष्य रखते हैं, और हमारी ग्राहक सेवा टीम आपको किसी भी समस्या में सहायता करने के लिए उपलब्ध है।',
+            contactCancel: 'डॉ. जॉइंट्स पेन रिलीफ ऑयल चुनने के लिए धन्यवाद। हम आपकी समझ और समर्थन की सराहना करते हैं!'
+        }
     },
     cutamount: "₹ 6,674",
     amount: "₹ 6,474",
 };
 
 
-export default translations; 
+export default translations;

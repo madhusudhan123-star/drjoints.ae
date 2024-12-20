@@ -15,6 +15,7 @@ import ShippingPolicyPage from './page/Shipping';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import LoadingSpinner from './components/LoadingSpinner';
+import Cancel from './page/Cancel';
 // import LocomotiveScroll from 'locomotive-scroll';
 // ..
 AOS.init();
@@ -91,6 +92,7 @@ function App() {
           <Route path='/return' element={<ReturnPolicyPage currentLang={currentLang} />} />
           <Route path='/terms' element={<TermsConditionsPage currentLang={currentLang} />} />
           <Route path='/ship' element={<ShippingPolicyPage currentLang={currentLang} />} />
+          <Route path='/cancel' element={<Cancel currentLang={currentLang} />} />
         </Routes>
       </div>
     </BrowserRouter>
