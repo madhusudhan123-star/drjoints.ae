@@ -11,7 +11,7 @@ const UAE_CURRENCY = {
 
 // Fixed conversion rate (1 USD = 3.67 AED)
 const USD_TO_AED_RATE = 3.67;
-const SHIPPING_CHARGE = 40; // 40 AED shipping charge
+const SHIPPING_CHARGE = 0; // 40 AED shipping charge
 
 const Checkout = ({ currentLang }) => {
     const paypalRef = useRef(null);
@@ -67,7 +67,7 @@ const Checkout = ({ currentLang }) => {
             if (window.paypal) return;
 
             const script = document.createElement('script');
-            script.src = "https://www.paypal.com/sdk/js?client-id=AXFjMm6NYC81sxF96VKhLqOVNgR7xz3xDBUd2cx0lO4uuKIo4SVoPRctuYI733LUHwlqErZEuk0AFXcl&currency=USD";
+            script.src = "https://www.paypal.com/sdk/js?client-id=AczLbxl8aDfScqrlsdIV6gbnFj18Z9n2Cm5F0lJU95vPjzy2QQ4LxDtgoNIfAVXmVlfXx9iDETjRwjXA&currency=USD";
             script.async = true;
             document.body.appendChild(script);
 

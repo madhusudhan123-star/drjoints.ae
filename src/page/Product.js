@@ -59,7 +59,7 @@ const Product = ({ currentLang }) => {
         };
 
         // Get base price (280 AED fixed)
-        const basePrice = 280;
+        const basePrice = 5;
 
         // Calculate total amount
         const totalAmount = basePrice * quantity;
