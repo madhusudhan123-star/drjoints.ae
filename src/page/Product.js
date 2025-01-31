@@ -59,7 +59,7 @@ const Product = ({ currentLang }) => {
         };
 
         // Get base price (280 AED fixed)
-        const basePrice = 5;
+        const basePrice = 280;
 
         // Calculate total amount
         const totalAmount = basePrice * quantity;
@@ -141,16 +141,32 @@ const Product = ({ currentLang }) => {
                             <label htmlFor="quantity" className="mr-2 text-gray-700">
                                 {t.product.qty}
                             </label>
-                            <input
-                                type="number"
-                                id="quantity"
-                                min="1"
-                                value={quantity}
-                                onChange={(e) =>
-                                    setQuantity(parseInt(e.target.value) || 1)
-                                }
-                                className="w-16 px-3 py-2 border border-gray-300 rounded-md text-center"
-                            />
+                            <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden shadow-sm">
+                                <button
+                                    onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
+                                    className="px-3 py-2 bg-white hover:bg-gray-100 border-r border-gray-300 transition-colors"
+                                    aria-label="Decrease quantity"
+                                >
+                                    -
+                                </button>
+
+                                <input
+                                    type="number"
+                                    id="quantity"
+                                    min="1"
+                                    value={quantity}
+                                    onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
+                                    className="w-12 px-2 py-2 text-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                />
+
+                                <button
+                                    onClick={() => setQuantity(prev => prev + 1)}
+                                    className="px-3 py-2 bg-white hover:bg-gray-100 border-l border-gray-300 transition-colors"
+                                    aria-label="Increase quantity"
+                                >
+                                    +
+                                </button>
+                            </div>
                         </div>
 
                         {/* Error Message */}
@@ -280,4 +296,3 @@ const Product = ({ currentLang }) => {
 }
 
 export default Product
-

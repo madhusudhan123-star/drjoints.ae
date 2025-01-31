@@ -1,68 +1,88 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 
-const PayPalButton = () => {
-    const paypalRef = useRef(null);
+const ContactForm = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
 
-    useEffect(() => {
-        // Load the PayPal SDK script dynamically
-        const addPayPalScript = async () => {
-            if (window.paypal) {
-                renderPayPalButtons();
-                return;
-            }
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
 
-            const script = document.createElement('script');
-            script.src = "https://www.paypal.com/sdk/js?client-id=AVkWz96gFAr2EU8qwxGitK97bxWbgueLg4te5vaWonFy94OdXgw-cYPnJu7d4sZ5ogH_xhtbz7l_R2gh&currency=USD";
-            script.async = true;
-            script.onload = renderPayPalButtons;
-            document.body.appendChild(script);
-        };
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-        const renderPayPalButtons = () => {
-            window.paypal.Buttons({
-                // Create an order directly on the client
-                createOrder: function (data, actions) {
-                    return actions.order.create({
-                        purchase_units: [
-                            {
-                                amount: {
-                                    value: '49.99', // Set the transaction amount
-                                    currency_code: 'USD', // Currency code
-                                },
-                                description: 'Order Description', // Order description
-                            },
-                        ],
-                    });
-                },
-                // Capture the order on approval
-                onApprove: function (data, actions) {
-                    return actions.order.capture().then(orderData => {
-                        // Successful transaction
-                        const transaction = orderData.purchase_units[0].payments.captures[0];
-                        alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for details`);
-                        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                    });
-                },
-                // Handle cancellation
-                onCancel: function () {
-                    alert('Payment was cancelled!');
-                },
-                // Handle errors
-                onError: function (err) {
-                    console.error('An error occurred during the transaction:', err);
-                    alert('An error occurred during the payment process.');
-                },
-            }).render(paypalRef.current);
-        };
+        // Create a FormData object for submission
+        const form = new FormData();
+        form.append('name', formData.name);
+        form.append('email', formData.email);
+        form.append('message', formData.message);
+        form.append('_next', 'http://localhost:3000/try');  // Replace with your thank you page URL
+        form.append('_subject', 'New Form Submission');  // Set the email subject
 
-        addPayPalScript();
-    }, []);
+        // Send the form data to FormSubmit endpoint
+        fetch('https://formsubmit.co/72cbb4b2a2daec6e7b0347a2e2b9bfa8', {
+            method: 'POST',
+            body: form,
+        })
+            .then((response) => {
+                if (response.ok) {
+                    alert('Form submitted successfully!');
+                    setFormData({ name: '', email: '', message: '' }); // Reset form after submission
+                } else {
+                    alert('There was an error submitting the form.');
+                }
+            })
+            .catch((error) => {
+                alert('Error: ' + error.message);
+            });
+    };
 
     return (
         <div>
-            <div ref={paypalRef}></div>
+            <h2>Contact Us</h2>
+
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="name">Name:</label><br />
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                /><br /><br />
+
+                <label htmlFor="email">Email:</label><br />
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                /><br /><br />
+
+                <label htmlFor="message">Message:</label><br />
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                ></textarea><br /><br />
+
+                <input type="submit" value="Submit" />
+            </form>
         </div>
     );
 };
 
-export default PayPalButton;
+export default ContactForm;

@@ -8,6 +8,8 @@ import { EffectCube, Pagination, Autoplay } from 'swiper/modules'; // Import Aut
 import 'swiper/css';
 import 'swiper/css/effect-cube';
 import 'swiper/css/pagination';
+import whatsappLogo from '../assets/call.png';
+
 
 // Import Swiper styles
 
@@ -117,7 +119,7 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
                             </Link>
 
                         </div>
-                        <div className="flex space-x-6 font-medium">
+                        <div className="flex space-x-6 ">
                             {t.navLinks.map((link) => (
                                 <Link
                                     key={link.id}
@@ -140,6 +142,19 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
                         <option value="ar">عربي</option>
                         <option value="hi">हिंदी</option>
                     </select>
+                    <div className="fixed z-50 top-28 right-10">
+                        <a
+                            href={`tel:+91${t.home.whatsapp}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src={whatsappLogo}
+                                alt="WhatsApp"
+                                className="w-24"
+                            />
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav >
@@ -275,6 +290,19 @@ const Navbar = ({ currentLang, onLanguageChange }) => {
             >
                 <img src={isMenuOpen ? closeIcon : menuIcon} alt="Menu Toggle" className="h-6 w-6" />
             </button>
+            <div className="fixed z-50 top-10 right-0">
+                <a
+                    href={`tel:+91${t.home.whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src={whatsappLogo}
+                        alt="WhatsApp"
+                        className="w-24"
+                    />
+                </a>
+            </div>
         </div>
     );
 

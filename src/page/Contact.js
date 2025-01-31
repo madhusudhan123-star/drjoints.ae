@@ -14,12 +14,14 @@ const Contact = ({ currentLang }) => {
         const form = e.target;
 
         try {
-            const response = await fetch("https://formspree.io/f/xjkvpbyr", {
+            const formData = new FormData(form);
+            formData.append('_subject', 'New Contact Form Submission');
+            formData.append('_template', 'table');
+            formData.append('_captcha', 'false');
+
+            const response = await fetch("https://formsubmit.co/72cbb4b2a2daec6e7b0347a2e2b9bfa8", {
                 method: "POST",
-                body: new FormData(form),
-                headers: {
-                    'Accept': 'application/json'
-                }
+                body: formData
             });
 
             if (response.ok) {
@@ -29,6 +31,7 @@ const Contact = ({ currentLang }) => {
                 setStatus('error');
             }
         } catch (error) {
+            console.error('Form submission error:', error);
             setStatus('error');
         }
     };

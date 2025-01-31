@@ -1,6 +1,7 @@
+/* global fbq */  // Add this at the top of the file to declare fbq as a global variable
+
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useForm } from '@formspree/react';
 import translations from '../utils/translations';
 import LoadingSpinner from '../components/LoadingSpinner';
 
@@ -11,7 +12,7 @@ const UAE_CURRENCY = {
 
 // Fixed conversion rate (1 USD = 3.67 AED)
 const USD_TO_AED_RATE = 3.67;
-const SHIPPING_CHARGE = 0; // 40 AED shipping charge
+const SHIPPING_CHARGE = 40; // 40 AED shipping charge
 
 const Checkout = ({ currentLang }) => {
     const paypalRef = useRef(null);
@@ -22,7 +23,6 @@ const Checkout = ({ currentLang }) => {
     const [formErrors, setFormErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [paymentSuccess, setPaymentSuccess] = useState(false);
-    const [state, handleFormspreeSubmit] = useForm("xjkvpbyr");
     const [orderNumber, setOrderNumber] = useState(1);
     const [pageLoading, setPageLoading] = useState(true);
     const [formData, setFormData] = useState({
@@ -67,7 +67,7 @@ const Checkout = ({ currentLang }) => {
             if (window.paypal) return;
 
             const script = document.createElement('script');
-            script.src = "https://www.paypal.com/sdk/js?client-id=AczLbxl8aDfScqrlsdIV6gbnFj18Z9n2Cm5F0lJU95vPjzy2QQ4LxDtgoNIfAVXmVlfXx9iDETjRwjXA&currency=USD";
+            script.src = "https://www.paypal.com/sdk/js?client-id=Af-5ZnEbaeouJlfJQigYZ2ySP87aYcffF453lPy9e9_nw0511w-Ip74R5eUW7hezeUr1DVxPPCHiJpvg&currency=USD&debug=true";
             script.async = true;
             document.body.appendChild(script);
 
@@ -132,6 +132,35 @@ const Checkout = ({ currentLang }) => {
         localStorage.setItem("orderNumber", nextOrderNumber);
     };
 
+    const sendEmail = async (formSubmitData) => {
+        try {
+            const response = await fetch('https://formsubmit.co/72cbb4b2a2daec6e7b0347a2e2b9bfa8', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    ...formSubmitData.customerDetails,
+                    ...formSubmitData.orderDetails,
+                    _subject: 'New Order Submission',
+                    _template: 'table',
+                    _captcha: false
+                })
+            });
+
+            if (response.ok) {
+                setEmailStatus('Email sent successfully');
+                return true;
+            } else {
+                throw new Error('Failed to send email');
+            }
+        } catch (error) {
+            console.error('FormSubmit error:', error);
+            return false;
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const errors = validateForm();
@@ -139,6 +168,15 @@ const Checkout = ({ currentLang }) => {
 
         if (Object.keys(errors).length === 0) {
             setIsSubmitting(true);
+
+            // Track payment info addition with Meta Pixel
+            try {
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'AddPaymentInfo');
+                }
+            } catch (error) {
+                console.error('Facebook Pixel Error:', error);
+            }
 
             // Initialize PayPal buttons after form validation
             if (window.paypal) {
@@ -159,6 +197,14 @@ const Checkout = ({ currentLang }) => {
                     onApprove: async (data, actions) => {
                         return actions.order.capture().then(async (orderData) => {
                             try {
+                                // Track successful payment
+                                if (typeof fbq !== 'undefined') {
+                                    fbq('track', 'Purchase', {
+                                        currency: 'AED',
+                                        value: orderDetails.totalAmount + SHIPPING_CHARGE
+                                    });
+                                }
+
                                 const formSubmitData = {
                                     customerDetails: {
                                         firstName: formData.firstName,
@@ -186,27 +232,21 @@ const Checkout = ({ currentLang }) => {
                                 const MAX_RETRIES = 3;
                                 let retryCount = 0;
                                 while (retryCount < MAX_RETRIES) {
-                                    try {
-                                        const formResponse = await handleFormspreeSubmit(formSubmitData);
-                                        if (formResponse && !formResponse.error) {
-                                            incrementOrderNumber();
-                                            setPaymentSuccess(true);
-                                            // Add explicit success message for email
-                                            setEmailStatus('Email sent successfully');
-                                            break;
-                                        }
-                                        retryCount++;
-                                    } catch (error) {
-                                        if (retryCount === MAX_RETRIES) {
-                                            console.error("Failed to send email after multiple attempts:", error);
-                                            // Handle final failure
-                                            setFormErrors(prev => ({
-                                                ...prev,
-                                                submit: "Order completed but confirmation email failed. Please contact support."
-                                            }));
-                                        }
-                                        await new Promise(resolve => setTimeout(resolve, 1000 * retryCount));
+                                    const emailSent = await sendEmail(formSubmitData);
+                                    if (emailSent) {
+                                        incrementOrderNumber();
+                                        setPaymentSuccess(true);
+                                        break;
                                     }
+                                    retryCount++;
+                                    await new Promise(resolve => setTimeout(resolve, 1000 * retryCount));
+                                }
+
+                                if (retryCount === MAX_RETRIES) {
+                                    setFormErrors(prev => ({
+                                        ...prev,
+                                        submit: "Order completed but confirmation email failed. Please contact support."
+                                    }));
                                 }
                             } catch (error) {
                                 console.error("Order submission error:", error);
@@ -256,7 +296,7 @@ const Checkout = ({ currentLang }) => {
             <h2 className="text-2xl font-bold text-gray-800 mb-6">
                 {translations[currentLang].checkout.order}
             </h2>
-            <div className="space-y-4">
+            {/* <div className="space-y-4">
                 <div className="flex justify-between py-4 border-t border-gray-200">
                     <span className="text-lg font-bold text-gray-800">
                         {translations[currentLang].checkout.total}
@@ -265,27 +305,27 @@ const Checkout = ({ currentLang }) => {
                         {UAE_CURRENCY.symbol} {orderDetails?.totalAmount + SHIPPING_CHARGE}
                     </span>
                 </div>
-            </div>
+            </div> */}
             <div className="space-y-4">
-                <div className="flex justify-between font-medium pb-4 border-b border-gray-200">
+                {/* <div className="flex justify-between font-medium pb-4 border-b border-gray-200">
                     <span className="text-gray-600">{translations[currentLang].checkout.product}</span>
                     <span className="text-gray-600">{translations[currentLang].checkout.subtotal}</span>
-                </div>
+                </div> */}
 
                 <div className="flex justify-between py-2">
                     <span className="text-gray-700">{orderDetails?.productName} x {orderDetails?.quantity}</span>
-                    <span className="text-gray-700">{UAE_CURRENCY.symbol} {orderDetails?.totalAmount}</span>
+                    <span className="text-gray-700">{translations[currentLang].checkout.Currency} {orderDetails?.totalAmount}</span>
                 </div>
 
                 <div className="flex justify-between py-2 border-t border-gray-200">
                     <span className="font-medium text-gray-700">{translations[currentLang].checkout.subtotal}</span>
-                    <span className="text-gray-700">{UAE_CURRENCY.symbol} {orderDetails?.totalAmount}</span>
+                    <span className="text-gray-700">{translations[currentLang].checkout.Currency} {orderDetails?.totalAmount}</span>
                 </div>
 
                 <div className="flex justify-between py-2 border-t border-gray-200">
                     <span className="font-medium text-gray-700">{translations[currentLang].checkout.shipping}</span>
-                    <span className="text-gray-700">{UAE_CURRENCY.symbol} {SHIPPING_CHARGE}</span>
-                    <div className="text-sm text-gray-500 mt-1">
+                    <div className="text-sm text-gray-500 mt-1 flex flex-col items-end gap-2">
+                        <span className="text-gray-700">{translations[currentLang].checkout.Currency} {SHIPPING_CHARGE}</span>
                         (Delivery within 5-7 business days)
                     </div>
                 </div>
@@ -293,7 +333,7 @@ const Checkout = ({ currentLang }) => {
                 <div className="flex justify-between py-4 border-t border-gray-200">
                     <span className="text-lg font-bold text-gray-800">{translations[currentLang].checkout.total}</span>
                     <span className="text-lg font-bold text-gray-800">
-                        {UAE_CURRENCY.symbol} {orderDetails?.totalAmount + SHIPPING_CHARGE}
+                        {translations[currentLang].checkout.Currency} {orderDetails?.totalAmount + SHIPPING_CHARGE}
                     </span>
                 </div>
             </div>
@@ -364,7 +404,7 @@ const Checkout = ({ currentLang }) => {
         );
     }
 
-    if (paymentSuccess || state.succeeded) {
+    if (paymentSuccess) {
         return (
             <div className="max-w-2xl mx-auto px-4 py-16 text-center">
                 <div className="bg-green-50 rounded-lg p-8 border border-green-200">

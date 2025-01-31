@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, ThumbsUp, Store, Users, UserCircle, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ThumbsUp, Store, Users, UserCircle, Star, Currency } from 'lucide-react';
 import painone from '../assets/pain_first.svg';
 import painsecond from '../assets/pain_second.svg';
 import painthird from '../assets/pain_three.svg';
@@ -45,25 +45,26 @@ const translations = {
             whatsapp: "9030202444",
         },
         navbar: {
-            home: "PRODUCT",
+            home: "ORDER NOW",
             about: "ABOUT",
             contact: "CONTACT",
         },
         navLinks: [
-            { id: "product", path: "/product", label: "PRODUCT" },
+            { id: "Home", path: "/", label: "HOME" },
+            { id: "product", path: "/product", label: "ORDER NOW" },
             { id: "about", path: "/about", label: "ABOUT" },
             { id: "contact", path: "/contact", label: "CONTACT" },
         ],
         footer: [
             { id: "HOME", path: "/", label: "HOME" },
-            { id: "SHOP", path: "/product", label: "PRODUCT" },
+            { id: "SHOP", path: "/product", label: "ORDER NOW" },
             { id: "ABOUT", path: "/about", label: "OUR STORY" },
             { id: "CONTACT", path: "/contact", label: "CONTACT" },
             { id: "RETURN POLICY", path: "/return", label: "RETURN POLICY" },
             { id: "PRIVACY POLICY", path: "/private", label: "PRIVACY POLICY" },
             { id: "TERMS & CONDITIONS", path: "/terms", label: "TERMS & CONDITIONS" },
             { id: "SHIPPING POLICY", path: "/ship", label: "SHIPPING POLICY" },
-            { id: "CANCEL POLICY", path: "/cancel", label: "CANCEL POLICY" },
+            { id: "CANCELLATION POLICY", path: "/cancel", label: "CANCELLATION POLICY" },
 
         ],
         product: {
@@ -72,7 +73,7 @@ const translations = {
             // off2: "Flat 70% OFF on Bulk Purchase",
             buynow: "Buy Now",
             qty: "Quantity",
-            cutamount: "د.إ 288.63", // Updated from ₹ 6,672
+            cutamount: "د.إ 360", // Updated from ₹ 6,672
             amount: "د.إ 280", // Updated from ₹ 6,474
             price2: "د.إ 280 - Express Online Delivery",
             para: `Unleash the power of natural healing with Dr. Joints Pain Relief Oil. Our revolutionary Ayurvedic formula is meticulously crafted to provide instant relief and long-term healing. Packed with potent herbal ingredients, our oil penetrates deep to address joint and muscle pain at its source. We're not just offering a product – we're providing a holistic path to wellness, empowering you to reclaim your mobility and live life to the fullest.`,
@@ -135,9 +136,8 @@ const translations = {
             processing: "Processing...",
             successfully: "Order Placed Successfully!",
             thank: "Thank you for your purchase. You will receive a confirmation email shortly.",
-            continue: "Continue Shopping"
-
-
+            continue: "Continue Shopping",
+            Currency: "AED"
         },
         returnPolicy: {
             title: 'Return Policy',
@@ -155,104 +155,81 @@ const translations = {
                     content: 'The return process is customer-initiated, and customers are responsible for ensuring the product is shipped to the specified address. Return shipping costs are not covered unless the return is due to a manufacturing defect or error.'
                 }
             ],
-            contactInfo: 'For any return inquiries, please contact us at hello@drjoints.in.'
+            contactInfo: 'For any return inquiries, please contact us athello@drjoints.ae.'
         },
         privacyPolicy: {
             heading: 'Privacy Policy',
             lastUpdated: 'Last Updated: December 2024',
             sections: [
                 {
-                    title: 'Information Collection',
-                    content: 'We collect personal information that you provide directly to us, such as your name, billing address, shipping address, email address, and phone number. You provide this information when you contact us through a form on the Site. We also collect non-personal information, including browser type, operating system, IP address, browsing activity, and demographic details, automatically when you use the Site.'
+                    title: 'Information We Collect',
+                    content: 'This Privacy Policy describes how Dr.Joints Fat and Weight Loss Oil collects, uses, and discloses your information when you use our website https://drjoints.ae//\n\nPersonal Information: This includes information that can be used to identify you, such as your name, billing address, shipping address, email address, and phone number. You only provide this information when you contact us through a form on the Site.\n\nNon-Personal Information: This includes information that cannot be used to identify you, such as your browser type, operating system, IP address, browsing activity on the Site, and demographic information (e.g., age, gender). This information is collected automatically when you visit the Site.'
                 },
                 {
-                    title: 'Data Usage',
-                    content: 'We use personal information to respond to your inquiries and requests. Non-personal information is used to enhance the Site, improve user experience, and support internal marketing efforts. We will not share your personal information with third parties without your consent, except as required by law.'
+                    title: 'How We Use Your Information',
+                    content: 'Personal Information: We will only use your personal information to respond to inquiries and requests. We will not share your personal information with any third parties without your consent, except as required by law.\n\nNon-Personal Information: We use non-personal information to improve the Site and understand how users interact. We may also use non-personal information for internal marketing and promotional purposes.'
                 },
                 {
-                    title: 'Cookies and Tracking',
-                    content: 'We use cookies and similar tracking technologies to collect non-personal information about your usage of the Site. Cookies help us remember your preferences and improve your browsing experience. Login cookies last for two days, screen options cookies last for a year, and additional cookies used during article editing expire after one day. Selecting "Remember Me" will extend login persistence to two weeks. Logging out will remove login cookies.'
+                    title: 'Cookies and Tracking Technologies',
+                    content: 'We may use cookies and other tracking technologies to collect non-personal information about your use of the Site. Cookies are small data files that are stored on your device when you visit a website. They allow the website to remember your actions and preferences over time.\n\nIf you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.\n\nWhen you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select “Remember Me”, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.\n\nIf you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.'
                 },
                 {
                     title: 'Third-Party Service Providers',
-                    content: 'We may use third-party service providers to operate the Site and deliver our services. These providers may have access to non-personal information. Personal information will not be shared with third parties for their marketing purposes without your consent.'
+                    content: 'We may use third-party service providers to help us operate the Site and deliver our services. These service providers may have access to your non-personal information. We will not share your personal information with any third-party service providers for their marketing purposes without your consent.'
                 },
                 {
-                    title: 'Data Protection',
-                    content: 'We take reasonable steps to protect your information from unauthorized access, disclosure, alteration, or destruction. However, no internet transmission or website is completely secure. We encourage users to take precautions when sharing personal data online.'
+                    title: 'Security',
+                    content: 'We take reasonable steps to protect your information from unauthorized access, disclosure, alteration, or destruction. However, no website or internet transmission is completely secure.'
                 },
                 {
                     title: 'Children’s Privacy',
-                    content: 'The Site is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe your child has provided us with personal information, please contact us to remove it.'
+                    content: 'The Site is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and you believe that your child has provided us with personal information, please contact us. We will take steps to remove the information from our records.'
                 },
                 {
-                    title: 'Policy Updates',
-                    content: 'This Privacy Policy may be updated periodically. Changes will be posted on the Site, and we encourage you to review this policy regularly to stay informed about our practices.'
+                    title: 'Changes to this Privacy Policy',
+                    content: 'We may update this Privacy Policy from time to time. We will post any changes on the Site. We encourage you to review this Privacy Policy periodically for the latest information on our privacy practices.'
                 }
             ],
-            contactPrivacy: 'If you have any questions about our privacy practices, please contact us at hello@drjoints.in.'
+            contactPrivacy: 'If you have any questions about this Privacy Policy, please get in touch with us athello@drjoints.ae.'
         },
         termsConditions: {
             heading: 'Terms & Conditions',
             lastUpdated: 'Last Updated: December 2024',
             sections: [
                 {
-                    heading: "Acceptance of Terms",
-                    content: "By downloading, installing, or using the Genius-Baby ('the App'), you agree to be bound by these Terms and Conditions ('Terms'). If you do not agree to these Terms, do not use the App."
+                    heading: "Welcome to Dr.Joints!",
+                    content: "These terms and conditions outline the rules and regulations for the use of Dr.Joints Website, located at https://drjoints.ae/, A product of Pain Relief Oil. By accessing this website we assume you accept these terms and conditions. Do not continue to use Dr.Joints if you do not agree to take all of the terms and conditions stated on this page."
                 },
                 {
-                    heading: "License",
-                    content: "Genius-Baby grants you a limited, non-exclusive, non-transferable, and revocable license to use the App for personal, non-commercial purposes, subject to these Terms."
+                    heading: "Terminology",
+                    content: "The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice, and all Agreements: \"Client\", \"You\" and \"Your\" refers to you, the person who logs on to this website and is compliant with the Company’s terms and conditions. \"The Company\", \"Ourselves\", \"We\", \"Our\" and \"Us\", refers to our Company. \"Party\", \"Parties\", or \"Us\", refers to both the Client and ourselves. All terms refer to the offer, acceptance, and consideration of payment necessary to undertake the process of our assistance to the Client most appropriately for the express purpose of meeting the Client’s needs in respect of the provision of the Company’s stated services, by and subject to, prevailing law of in. Any use of the above terminology or other words in the singular, plural, capitalization, and/or he/she or they, are taken as interchangeable and therefore as referring to the same."
                 },
                 {
-                    heading: "User Obligations",
+                    heading: "Cookies",
+                    content: "We employ the use of cookies. By accessing Dr.Joints, you agree to use cookies in agreement with Dr.Joints’s Privacy Policy. Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies."
+                },
+                {
+                    heading: "Intellectual Property Rights",
+                    content: "Unless otherwise stated, Dr.Joints and/or its licensors own the intellectual property rights for all material on Dr.Joints. All intellectual property rights are reserved. You may access this from Dr.Joints for your personal use subject to restrictions set in these terms and conditions."
+                },
+                {
+                    heading: "You Must Not:",
                     content: [
-                        "You must be at least 18 years old to use the App.",
-                        "You agree to use the App only for lawful purposes and in accordance with these Terms.",
-                        "You must not attempt to interfere with the App's operation or security."
+                        "Republish material from Dr.Joints",
+                        "Sell, rent, or sub-license material from Dr.Joints",
+                        "Reproduce, duplicate, or copy material from Dr.Joints",
+                        "Redistribute content from Dr.Joints"
                     ]
                 },
                 {
-                    heading: "Intellectual Property",
-                    content: "All content, features, and functionality (including but not limited to text, graphics, logos, and software) are owned by Genius-Baby or its licensors and are protected by copyright and other laws. You agree not to reproduce, duplicate, copy, sell, resell, or exploit any part of the App without our express written permission."
+                    heading: "User Comments",
+                    content: "Parts of this website offer an opportunity for users to post and exchange opinions and information in certain areas of the website. Dr.Joints does not filter, edit, publish, or review Comments before their presence on the website. Comments do not reflect the views and opinions of Dr.Joints, its agents, and/or affiliates. Comments reflect the views and opinions of the person who posts their views and opinions. To the extent permitted by applicable laws, Dr.Joints shall not be liable for the Comments or any liability, damages, or expenses caused and/or suffered as a result of any use of and/or posting of and/or appearance of the Comments on this website."
                 },
                 {
-                    heading: "User-Generated Content",
-                    content: "You may be able to submit, upload, or otherwise make available content (such as playlists or reviews) through the App. By doing so, you grant Genius-Baby a worldwide, royalty-free, perpetual, irrevocable, non-exclusive, and sublicensable right to use, modify, distribute, and display such content in connection with the App."
-                },
-                {
-                    heading: "Privacy",
-                    content: "Your privacy is important to us. Please review our Privacy Policy to understand how we collect, use, and protect your information."
-                },
-                {
-                    heading: "Termination",
-                    content: "We reserve the right to terminate or suspend your access to the App at any time, with or without notice, for any reason, including if you breach these Terms."
-                },
-                {
-                    heading: "Limitation of Liability",
-                    content: [
-                        "To the fullest extent permitted by law, Genius-Baby App and its affiliates, officers, directors, employees, agents, and licensors shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from:",
-                        "- Your use or inability to use the App;",
-                        "- Any unauthorized access to or use of our servers and/or any personal information stored therein;",
-                        "- Any bugs, viruses, or the like that may be transmitted to or through the App by any third party;",
-                        "- Any errors or omissions in any content."
-                    ]
-                },
-                {
-                    heading: "Changes to Terms",
-                    content: "We may modify these Terms from time to time. We will notify you of any changes by posting the new Terms on the App. Your continued use of the App after the changes are made will constitute your acceptance of the new Terms."
-                },
-                {
-                    heading: "Governing Law",
-                    content: "These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions."
-                },
-                {
-                    heading: "Contact Information",
-                    content: "If you have any questions about these Terms, please contact us at srilogishyd@gmail.com."
+                    heading: "External Links",
+                    content: "We shall not be held responsible for any content that appears on your Website. You agree to protect and defend us against all claims that are arising on your Website. No link(s) should appear on any Website that may be interpreted as libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third-party rights."
                 }
-            ],
-            disclaimer: 'We reserve the right to modify these terms at any time. Continued use of our services constitutes acceptance of any changes.',
-            contactTerms: 'For any questions regarding our terms, please contact hello@drjoints.in.'
+            ]
         },
         contact: {
             title: 'Contact Us',
@@ -272,7 +249,7 @@ const translations = {
         },
         shippingPolicyContent: {
             title: "Shipping Policy",
-            lastUpdated: "Last Updated: [Insert Last Update Date]",
+            lastUpdated: "Last Updated: December 2024",
             sections: [
                 {
                     heading: "1. Shipping Coverage",
@@ -390,25 +367,26 @@ const translations = {
             whatsapp: "9030652444",
         },
         navbar: {
-            home: "المنتج",
+            home: "اطلب الآن",
             about: "من نحن",
             contact: "اتصل بنا",
         },
         navLinks: [
-            { id: "product", path: "/product", label: "المنتج" },
+            { id: "Home", path: "/", label: "الصفحة الرئيسية" },
+            { id: "product", path: "/product", label: "اطلب الآن" },
             { id: "about", path: "/about", label: "من نحن" },
             { id: "contact", path: "/contact", label: "اتصل بنا" },
         ],
         footer: [
             { id: "HOME", path: "/", label: "الرئيسية" },
-            { id: "SHOP", path: "/product", label: "المنتج" },
+            { id: "SHOP", path: "/product", label: "اطلب الآن" },
             { id: "ABOUT", path: "/about", label: "قصتنا" },
             { id: "CONTACT", path: "/contact", label: "اتصل بنا" },
             { id: "RETURN POLICY", path: "/return", label: "سياسة الإرجاع" },
             { id: "PRIVACY POLICY", path: "/private", label: "سياسة الخصوصية" },
             { id: "TERMS & CONDITIONS", path: "/terms", label: "الشروط والأحكام" },
             { id: "SHIPPING POLICY", path: "/ship", label: "سياسة الشحن" },
-            { id: "Cancel POLICY", path: "/cancel", label: "سياسة الإلغاء" }
+            { id: "CANCELLATION POLICY", path: "/cancel", label: "سياسة الإلغاء" }
         ],
         product: {
             name: "زيت تخفيف آلام المفاصل من Dr. Joints - الشفاء الطبيعي",
@@ -416,7 +394,7 @@ const translations = {
             // off2: "خصم 70٪ على الشراء بالجملة",
             buynow: "اشترِ الآن",
             qty: "الكمية",
-            cutamount: "د.إ 288.63",
+            cutamount: "د.إ 360",
             amount: "د.إ 280",
             price2: "د.إ 280 - توصيل سريع عبر الإنترنت",
             para: "اكتشف قوة الشفاء الطبيعي مع زيت تخفيف آلام المفاصل من Dr. Joints. صيغتنا الأيورفيدا الثورية مُعدّة بعناية لتوفير تخفيف فوري للألم وشفاء طويل الأمد. محملة بمكونات عشبية فعّالة، يخترق الزيت بعمق لمعالجة آلام المفاصل والعضلات من المصدر. نحن لا نقدم منتجًا فحسب - بل نوفر مسارًا شاملاً للصحة والعافية، مما يمنحك القوة لاستعادة حركتك والعيش بكامل طاقتك.",
@@ -480,7 +458,8 @@ const translations = {
             processing: "جارٍ المعالجة...",
             successfully: "تم الطلب بنجاح!",
             thank: "شكرًا لشرائك. ستتلقى رسالة تأكيد بالبريد الإلكتروني قريبًا.",
-            continue: "مواصلة التسوق"
+            continue: "مواصلة التسوق",
+            Currency: "د.إ"
         },
         returnPolicy: {
             "title": "سياسة الإرجاع",
@@ -498,103 +477,83 @@ const translations = {
                     "content": "عملية الإرجاع يتم البدء بها من العميل، وهم مسؤولون عن ضمان شحن المنتج إلى العنوان المحدد. تكاليف شحن الإرجاع غير مغطاة ما لم يكن الإرجاع بسبب عيب في التصنيع أو خطأ."
                 }
             ],
-            "contactInfo": "لأي استفسارات حول الإرجاع، يرجى الاتصال بنا على hello@drjoints.in."
+            "contactInfo": "لأي استفسارات حول الإرجاع، يرجى الاتصال بنا علىhello@drjoints.ae."
         },
         privacyPolicy: {
-            "heading": "سياسة الخصوصية",
-            "lastUpdated": "آخر تحديث: ديسمبر 2024",
-            "sections": [
+            heading: 'سياسة الخصوصية',
+            lastUpdated: 'آخر تحديث: ديسمبر 2024',
+            sections: [
                 {
-                    "title": "جمع المعلومات",
-                    "content": "نقوم بجمع المعلومات الشخصية التي تقدمها لنا مباشرة مثل اسمك، عنوان الفوترة، عنوان الشحن، عنوان البريد الإلكتروني، ورقم الهاتف. يتم تقديم هذه المعلومات عندما تتواصل معنا عبر نموذج على الموقع. كما نقوم أيضًا بجمع المعلومات غير الشخصية، مثل نوع المتصفح، ونظام التشغيل، وعنوان IP، ونشاط التصفح، والتفاصيل الديموغرافية بشكل تلقائي عند استخدام الموقع."
+                    title: 'المعلومات التي نجمعها',
+                    content: 'تصف سياسة الخصوصية هذه كيفية جمع واستخدام والكشف عن معلوماتك عندما تستخدم موقعنا الإلكتروني https://drjoints.ae//\n\nالمعلومات الشخصية: تشمل المعلومات التي يمكن استخدامها لتحديد هويتك، مثل اسمك، وعنوان الفوترة، وعنوان الشحن، وعنوان بريدك الإلكتروني، ورقم هاتفك. تقوم بتقديم هذه المعلومات فقط عندما تتواصل معنا من خلال نموذج على الموقع.\n\nالمعلومات غير الشخصية: تشمل المعلومات التي لا يمكن استخدامها لتحديد هويتك، مثل نوع المتصفح، ونظام التشغيل، وعنوان الـ IP، ونشاط التصفح على الموقع، والمعلومات الديموغرافية (مثل العمر والجنس). يتم جمع هذه المعلومات تلقائيًا عند زيارتك للموقع.'
                 },
                 {
-                    "title": "استخدام البيانات",
-                    "content": "نستخدم المعلومات الشخصية للرد على استفساراتك وطلبك. يتم استخدام المعلومات غير الشخصية لتحسين الموقع، وتعزيز تجربة المستخدم، ودعم الجهود التسويقية الداخلية. لن نشارك معلوماتك الشخصية مع أطراف ثالثة دون موافقتك، إلا إذا كان ذلك مطلوبًا بموجب القانون."
+                    title: 'كيفية استخدامنا لمعلوماتك',
+                    content: 'المعلومات الشخصية: سنستخدم معلوماتك الشخصية فقط للرد على الاستفسارات والطلبات. لن نشارك معلوماتك الشخصية مع أطراف ثالثة بدون موافقتك، إلا إذا كان ذلك مطلوبًا بموجب القانون.\n\nالمعلومات غير الشخصية: نستخدم المعلومات غير الشخصية لتحسين الموقع وفهم كيفية تفاعل المستخدمين. قد نستخدم أيضًا المعلومات غير الشخصية لأغراض التسويق الداخلي والترويج.'
                 },
                 {
-                    "title": "الكوكيز والتتبع",
-                    "content": "نستخدم الكوكيز وتقنيات التتبع المشابهة لجمع معلومات غير شخصية حول استخدامك للموقع. تساعدنا الكوكيز في تذكر تفضيلاتك وتحسين تجربة التصفح الخاصة بك. الكوكيز الخاصة بتسجيل الدخول تدوم لمدة يومين، وكوكيز خيارات الشاشة تدوم لمدة عام، والكوكيز الإضافية المستخدمة أثناء تحرير المقالات تنتهي صلاحيتها بعد يوم واحد. عند تحديد \"تذكرني\"، سيتم تمديد مدة تسجيل الدخول إلى أسبوعين. سيتم إزالة كوكيز تسجيل الدخول عند الخروج."
+                    title: 'ملفات تعريف الارتباط وتقنيات التتبع',
+                    content: 'قد نستخدم ملفات تعريف الارتباط وتقنيات تتبع أخرى لجمع معلومات غير شخصية عن استخدامك للموقع. ملفات تعريف الارتباط هي ملفات بيانات صغيرة يتم تخزينها على جهازك عند زيارة موقع ويب. إنها تسمح للموقع بتذكر أفعالك وتفضيلاتك مع مرور الوقت.\n\nإذا قمت بزيارة صفحة تسجيل الدخول لدينا، سنقوم بتعيين ملف تعريف ارتباط مؤقت للتحقق مما إذا كان متصفحك يقبل ملفات تعريف الارتباط. يحتوي هذا الملف على بيانات غير شخصية ويتم التخلص منه عند إغلاق متصفحك.\n\nعند تسجيل الدخول، سنقوم أيضًا بإعداد عدة ملفات تعريف ارتباط لحفظ معلومات تسجيل الدخول الخاصة بك وتفضيلات عرض الشاشة الخاصة بك. تستمر ملفات تعريف الارتباط الخاصة بتسجيل الدخول لمدة يومين، وملفات تعريف الارتباط الخاصة بتفضيلات الشاشة تستمر لمدة عام. إذا اخترت "تذكرني"، سيستمر تسجيل الدخول لمدة أسبوعين. إذا قمت بتسجيل الخروج من حسابك، سيتم إزالة ملفات تعريف الارتباط الخاصة بتسجيل الدخول.\n\nإذا قمت بتحرير أو نشر مقال، سيتم حفظ ملف تعريف ارتباط إضافي في متصفحك. يتضمن هذا الملف بيانات غير شخصية ويشير ببساطة إلى معرف المقالة التي قمت بتحريرها للتو. ينتهي صلاحيته بعد يوم واحد.'
                 },
                 {
-                    "title": "مقدمو الخدمات من أطراف ثالثة",
-                    "content": "قد نستخدم مقدمي خدمات من أطراف ثالثة لتشغيل الموقع وتقديم خدماتنا. قد يكون لهؤلاء المزودين وصول إلى المعلومات غير الشخصية. لن تتم مشاركة المعلومات الشخصية مع أطراف ثالثة لأغراض التسويق دون موافقتك."
+                    title: 'مزودي الخدمة من الأطراف الثالثة',
+                    content: 'قد نستخدم مزودي خدمة من الأطراف الثالثة لمساعدتنا في تشغيل الموقع وتقديم خدماتنا. قد يكون لدى مزودي الخدمة هؤلاء إمكانية الوصول إلى معلوماتك غير الشخصية. لن نشارك معلوماتك الشخصية مع أي مزودي خدمة من الأطراف الثالثة لأغراض تسويقية دون موافقتك.'
                 },
                 {
-                    "title": "حماية البيانات",
-                    "content": "نقوم باتخاذ خطوات معقولة لحماية معلوماتك من الوصول غير المصرح به أو الكشف أو التغيير أو التدمير. ومع ذلك، لا توجد أي وسيلة نقل عبر الإنترنت أو موقع ويب آمن تمامًا. نشجع المستخدمين على اتخاذ الاحتياطات عند مشاركة البيانات الشخصية عبر الإنترنت."
+                    title: 'الأمان',
+                    content: 'نقوم باتخاذ خطوات معقولة لحماية معلوماتك من الوصول غير المصرح به أو الكشف أو التعديل أو التدمير. ومع ذلك، لا يوجد موقع ويب أو انتقال عبر الإنترنت آمن تمامًا.'
                 },
                 {
-                    "title": "خصوصية الأطفال",
-                    "content": "الموقع غير مخصص للأطفال دون سن 13 عامًا. نحن لا نجمع معلومات شخصية من الأطفال دون سن 13 عامًا. إذا كنت تعتقد أن طفلك قد قدم لنا معلومات شخصية، يرجى الاتصال بنا لإزالتها."
+                    title: 'خصوصية الأطفال',
+                    content: 'الموقع غير موجه للأطفال تحت سن 13 عامًا. نحن لا نجمع معلومات شخصية عن الأطفال دون سن 13 عامًا عن علم. إذا كنت والدًا أو وصيًا وكنت تعتقد أن طفلك قد قدم لنا معلومات شخصية، يرجى الاتصال بنا. سنتخذ خطوات لإزالة المعلومات من سجلاتنا.'
                 },
                 {
-                    "title": "تحديثات السياسة",
-                    "content": "قد يتم تحديث سياسة الخصوصية هذه بين الحين والآخر. سيتم نشر التغييرات على الموقع، ونشجعك على مراجعة هذه السياسة بانتظام للبقاء على اطلاع بممارساتنا."
+                    title: 'التغييرات في سياسة الخصوصية هذه',
+                    content: 'قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنقوم بنشر أي تغييرات على الموقع. نشجعك على مراجعة سياسة الخصوصية هذه بشكل دوري للحصول على أحدث المعلومات حول ممارساتنا في الخصوصية.'
                 }
             ],
-            "contactPrivacy": "إذا كان لديك أي أسئلة حول ممارسات الخصوصية لدينا، يرجى الاتصال بنا على hello@drjoints.in."
+            contactPrivacy: 'إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه، يرجى الاتصال بنا عبر البريد الإلكترونيhello@drjoints.ae.'
         },
         termsConditions: {
-            "heading": "الشروط والأحكام",
-            "lastUpdated": "آخر تحديث: ديسمبر 2024",
-            "sections": [
+            heading: "الشروط والأحكام",
+            lastUpdated: "آخر تحديث: ديسمبر 2024",
+            sections: [
                 {
-                    "heading": "قبول الشروط",
-                    "content": "من خلال تنزيل أو تثبيت أو استخدام تطبيق Genius-Baby ('التطبيق')، فإنك توافق على الالتزام بهذه الشروط والأحكام ('الشروط'). إذا كنت لا توافق على هذه الشروط، فلا تستخدم التطبيق."
+                    heading: "مرحبًا بكم في Dr.Joints!",
+                    content: "تحدد هذه الشروط والأحكام القواعد واللوائح الخاصة باستخدام موقع Dr.Joints، الموجود على https://drjoints.ae/، وهو منتج من زيت تخفيف الألم. من خلال الوصول إلى هذا الموقع، نفترض أنك توافق على هذه الشروط والأحكام. يرجى عدم الاستمرار في استخدام Dr.Joints إذا كنت لا توافق على جميع الشروط والأحكام الموضحة في هذه الصفحة."
                 },
                 {
-                    "heading": "الرخصة",
-                    "content": "يمنحك تطبيق Genius-Baby ترخيصًا محدودًا وغير حصري وغير قابل للتحويل وقابلًا للإلغاء لاستخدام التطبيق لأغراض شخصية وغير تجارية، وفقًا لهذه الشروط."
+                    heading: "المصطلحات المستخدمة",
+                    content: "تنطبق المصطلحات التالية على هذه الشروط والأحكام، وسياسة الخصوصية، وإشعار إخلاء المسؤولية، وجميع الاتفاقيات: 'العميل'، 'أنت' و'خاصتك' تشير إليك، الشخص الذي يقوم بتسجيل الدخول إلى هذا الموقع ويتوافق مع شروط وأحكام الشركة. 'الشركة'، 'نحن'، 'لدينا' و'خاصتنا' تشير إلى شركتنا. يشير 'الطرف'، 'الأطراف' أو 'نحن' إلى كل من العميل ونحن. تشير جميع المصطلحات إلى العرض، القبول، ومقابل الدفع اللازم للشروع في عملية مساعدتنا للعميل بالشكل الأنسب لتحقيق احتياجات العميل في تقديم الخدمات المعلنة من الشركة، بموجب القانون السائد. يتم استخدام أي من المصطلحات المذكورة أعلاه أو الكلمات الأخرى بصيغة المفرد، الجمع، الأحرف الكبيرة، وأي ضمير شخصي كبديل للإشارة إلى نفس المعنى."
                 },
                 {
-                    "heading": "التزامات المستخدم",
-                    "content": [
-                        "يجب أن يكون عمرك 18 عامًا على الأقل لاستخدام التطبيق.",
-                        "توافق على استخدام التطبيق فقط لأغراض قانونية ووفقًا لهذه الشروط.",
-                        "يجب ألا تحاول التدخل في تشغيل التطبيق أو أمانه."
+                    heading: "استخدام ملفات تعريف الارتباط (Cookies)",
+                    content: "نحن نستخدم ملفات تعريف الارتباط. من خلال الوصول إلى Dr.Joints، فإنك توافق على استخدام ملفات تعريف الارتباط بما يتماشى مع سياسة الخصوصية الخاصة بـ Dr.Joints. تستخدم معظم المواقع التفاعلية ملفات تعريف الارتباط لاسترجاع تفاصيل المستخدمين لكل زيارة. تُستخدم ملفات تعريف الارتباط على موقعنا لتمكين بعض الوظائف لتسهيل تجربة الزوار. قد يستخدم بعض شركائنا في الإعلانات/التسويق ملفات تعريف الارتباط أيضًا."
+                },
+                {
+                    heading: "حقوق الملكية الفكرية",
+                    content: "ما لم يُذكر خلاف ذلك، فإن Dr.Joints و/أو المرخصين التابعين له يمتلكون حقوق الملكية الفكرية لجميع المواد الموجودة على Dr.Joints. جميع حقوق الملكية الفكرية محفوظة. يمكنك الوصول إلى هذا الموقع لاستخدامك الشخصي فقط، وفقًا للقيود الموضحة في هذه الشروط والأحكام."
+                },
+                {
+                    heading: "قيود الاستخدام",
+                    content: [
+                        "إعادة نشر المواد من Dr.Joints",
+                        "بيع أو تأجير أو ترخيص المواد من Dr.Joints",
+                        "إعادة إنتاج أو نسخ المواد من Dr.Joints",
+                        "إعادة توزيع المحتوى من Dr.Joints"
                     ]
                 },
                 {
-                    "heading": "الملكية الفكرية",
-                    "content": "جميع المحتويات والميزات والوظائف (بما في ذلك على سبيل المثال لا الحصر النصوص، الرسومات، الشعارات، والبرامج) هي ملك لـ Genius-Baby أو مرخصيها ومحميّة بموجب حقوق النشر والقوانين الأخرى. توافق على عدم إعادة إنتاج أو تكرار أو نسخ أو بيع أو إعادة بيع أو استغلال أي جزء من التطبيق دون إذن خطي مسبق منا."
+                    heading: "التعليقات والمحتوى المنشور",
+                    content: "تتيح أجزاء من هذا الموقع للمستخدمين نشر وتبادل الآراء والمعلومات في مناطق معينة من الموقع. Dr.Joints لا يقوم بتصفية أو تعديل أو نشر أو مراجعة التعليقات قبل ظهورها على الموقع. التعليقات لا تعكس وجهات نظر وآراء Dr.Joints، ووكلائه، و/أو الشركات التابعة له. التعليقات تعبر فقط عن وجهات نظر وآراء الشخص الذي نشرها. بالقدر الذي يسمح به القانون المعمول به، لن يكون Dr.Joints مسؤولاً عن التعليقات أو أي أضرار أو تكاليف ناجمة عنها."
                 },
                 {
-                    "heading": "المحتوى الذي ينشئه المستخدم",
-                    "content": "قد تتمكن من تقديم أو تحميل أو جعل المحتوى (مثل قوائم التشغيل أو المراجعات) متاحًا من خلال التطبيق. من خلال القيام بذلك، فإنك تمنح Genius-Baby حقًا عالميًا وغير حصري وبدون رسوم ملكية ودائمًا وقابلًا للتحويل لاستخدام هذا المحتوى وتعديله وتوزيعه وعرضه بالاتصال مع التطبيق."
-                },
-                {
-                    "heading": "الخصوصية",
-                    "content": "خصوصيتك مهمة بالنسبة لنا. يرجى مراجعة سياسة الخصوصية الخاصة بنا لفهم كيفية جمع معلوماتك واستخدامها وحمايتها."
-                },
-                {
-                    "heading": "الإلغاء",
-                    "content": "نحتفظ بالحق في إنهاء أو تعليق وصولك إلى التطبيق في أي وقت، مع أو بدون إشعار، لأي سبب كان، بما في ذلك إذا خالفت هذه الشروط."
-                },
-                {
-                    "heading": "تحديد المسؤولية",
-                    "content": [
-                        "إلى أقصى حد يسمح به القانون، فإن تطبيق Genius-Baby والشركات التابعة له، والمسؤولين، والمديرين، والموظفين، والوكلاء، والمرخصين لن يتحملوا أي مسؤولية عن أي أضرار غير مباشرة أو عرضية أو خاصة أو تبعية أو عقابية، أو أي خسارة في الأرباح أو الإيرادات، سواء كانت ناتجة بشكل مباشر أو غير مباشر، أو أي خسارة في البيانات أو الاستخدام أو السمعة أو أي خسائر غير مادية أخرى، الناتجة عن:",
-                        "- استخدامك أو عدم قدرتك على استخدام التطبيق؛",
-                        "- أي وصول غير مصرح به إلى أو استخدام لخوادمنا وأي معلومات شخصية مخزنة بها؛",
-                        "- أي أخطاء أو عيوب في المحتوى."
-                    ]
-                },
-                {
-                    "heading": "التغييرات في الشروط",
-                    "content": "قد نقوم بتعديل هذه الشروط من وقت لآخر. سيتم إشعارك بأي تغييرات من خلال نشر الشروط الجديدة على التطبيق. يعتبر استمرارك في استخدام التطبيق بعد إجراء التغييرات موافقة منك على الشروط الجديدة."
-                },
-                {
-                    "heading": "القانون المعمول به",
-                    "content": "تخضع هذه الشروط وتُفسر وفقًا لقوانين الهند، دون مراعاة أحكام تعارض القوانين."
-                },
-                {
-                    "heading": "معلومات الاتصال",
-                    "content": "إذا كانت لديك أي أسئلة حول هذه الشروط، يرجى الاتصال بنا على srilogishyd@gmail.com."
+                    heading: "إخلاء المسؤولية عن الروابط",
+                    content: "لن نكون مسؤولين عن أي محتوى يظهر على موقعك. أنت توافق على حماية والدفاع عنّا ضد جميع المطالبات التي تنشأ عن موقعك. يجب ألا يظهر أي رابط على أي موقع يمكن تفسيره على أنه تشهيري أو فاحش أو إجرامي، أو ينتهك، أو يروج لانتهاك حقوق أي طرف ثالث."
                 }
             ],
-            "disclaimer": "نحتفظ بالحق في تعديل هذه الشروط في أي وقت. يعتبر الاستمرار في استخدام خدماتنا قبولًا لأي تغييرات.",
-            "contactTerms": "لأي استفسارات بشأن شروطنا، يرجى الاتصال بـ hello@drjoints.in."
+            disclaimer: "نحتفظ بالحق في تعديل هذه الشروط في أي وقت. استمرارك في استخدام خدماتنا يشكل قبولًا لأي تغييرات.",
+            contactTerms: "لأي استفسارات حول شروطنا، يرجى التواصل عبرhello@drjoints.ae."
         },
         contact: {
             "title": "اتصل بنا",
@@ -614,7 +573,7 @@ const translations = {
         },
         shippingPolicyContent: {
             "title": "سياسة الشحن",
-            "lastUpdated": "آخر تحديث: [أدخل تاريخ التحديث الأخير]",
+            "lastUpdated": "آخر تحديث: ديسمبر 2024",
             "sections": [
                 {
                     "heading": "1. تغطية الشحن",
@@ -742,11 +701,12 @@ const translations = {
         },
         navbar: {
             home: "वेलनेस शॉप",
-            about: "हमारी कहानी",
+            about: "अभी ऑर्डर करें",
             contact: "संपर्क करें",
         },
         navLinks: [
-            { id: "product", path: "/product", label: "वेलनेस शॉप" },
+            { id: "Home", path: "/", label: "मुख्य पृष्ठ" },
+            { id: "product", path: "/product", label: "अभी ऑर्डर करें" },
             { id: "about", path: "/about", label: "हमारी कहानी" },
             { id: "contact", path: "/contact", label: "संपर्क करें" },
         ],
@@ -758,7 +718,7 @@ const translations = {
             { id: "RETURN POLICY", path: "/return", label: "वापसी नीति" },
             { id: "PRIVACY POLICY", path: "/private", label: "गोपनीयता नीति" },
             { id: "TERMS & CONDITIONS", path: "/terms", label: "नियम और शर्तें" },
-            { id: "CANCEL POLICY", path: "/cancel", label: "रद्द नीति" },
+            { id: "CANCELLATION POLICY", path: "/cancel", label: "रद्द करने की नीति" },
         ],
         product: {
             name: "Dr. Joints पेन रिलीफ ऑयल - प्राकृतिक उपचार",
@@ -766,7 +726,7 @@ const translations = {
             off2: "थोक खरीद पर 70% की सीधी छूट",
             buynow: "अभी खरीदें",
             qty: "मात्रा",
-            cutamount: "د.إ 288.63",
+            cutamount: "د.إ 360",
             amount: "د.إ 280",
             price2: "د.إ 280 - एक्सप्रेस ऑनलाइन डिलीवरी",
             para: "Dr. Joints पेन रिलीफ ऑयल के साथ प्राकृतिक उपचार की शक्ति का अनुभव करें। हमारा क्रांतिकारी आयुर्वेदिक फॉर्मूला त्वरित राहत और दीर्घकालिक उपचार प्रदान करने के लिए सावधानीपूर्वक तैयार किया गया है। शक्तिशाली जड़ी-बूटियों से भरपूर, यह तेल दर्द के स्रोत तक गहराई से पहुँचता है और जोड़ों और मांसपेशियों के दर्द को दूर करता है। हम केवल एक उत्पाद की पेशकश नहीं कर रहे हैं - बल्कि एक संपूर्ण स्वास्थ्य और कल्याण का मार्ग प्रदान कर रहे हैं, जिससे आप अपनी गतिशीलता वापस पा सकें और जीवन को पूर्णता के साथ जी सकें।",
@@ -827,7 +787,8 @@ const translations = {
             processing: "प्रोसेसिंग...",
             successfully: "ऑर्डर सफलतापूर्वक प्लेस हुआ!",
             thank: "आपकी खरीदारी के लिए धन्यवाद। आपको जल्द ही एक पुष्टि ईमेल प्राप्त होगा।",
-            continue: "खरीदारी जारी रखें"
+            continue: "खरीदारी जारी रखें",
+            Currency: "AED"
         },
         returnPolicy: {
             title: 'रिटर्न पॉलिसी',
@@ -845,104 +806,83 @@ const translations = {
                     content: 'रिटर्न प्रक्रिया ग्राहक द्वारा शुरू की जाती है, और ग्राहक को यह सुनिश्चित करना होगा कि उत्पाद निर्दिष्ट पते पर भेजा जाए। रिटर्न शिपिंग की लागत ग्राहक को वहन करनी होगी, जब तक कि रिटर्न किसी निर्माण दोष या त्रुटि के कारण न हो।'
                 }
             ],
-            contactInfo: 'किसी भी रिटर्न पूछताछ के लिए, कृपया hello@drjoints.in पर संपर्क करें।'
+            contactInfo: 'किसी भी रिटर्न पूछताछ के लिए, कृपयाhello@drjoints.ae पर संपर्क करें।'
         },
         privacyPolicy: {
             heading: 'गोपनीयता नीति',
             lastUpdated: 'अंतिम अपडेट: दिसंबर 2024',
             sections: [
                 {
-                    title: 'जानकारी संग्रह',
-                    content: 'हम व्यक्तिगत जानकारी एकत्र करते हैं जो आप हमें सीधे प्रदान करते हैं, जैसे आपका नाम, बिलिंग पता, शिपिंग पता, ईमेल पता और फोन नंबर। आप यह जानकारी साइट पर एक फॉर्म के माध्यम से संपर्क करने पर प्रदान करते हैं। हम गैर-व्यक्तिगत जानकारी भी एकत्र करते हैं, जिसमें ब्राउज़र प्रकार, ऑपरेटिंग सिस्टम, आईपी पता, ब्राउज़िंग गतिविधि और जनसांख्यिकी विवरण शामिल हैं, जो स्वचालित रूप से साइट का उपयोग करते समय एकत्रित होती है।'
+                    title: 'हम कौन सी जानकारी इकट्ठा करते हैं',
+                    content: 'यह गोपनीयता नीति बताती है कि Dr.Joints Fat and Weight Loss Oil कैसे आपकी जानकारी इकट्ठा करता है, उपयोग करता है और उसे प्रकट करता है जब आप हमारी वेबसाइट https://drjoints.ae// का उपयोग करते हैं।\n\nव्यक्तिगत जानकारी: इसमें वह जानकारी शामिल है जिसका उपयोग आपकी पहचान करने के लिए किया जा सकता है, जैसे आपका नाम, बिलिंग पता, शिपिंग पता, ईमेल पता, और फोन नंबर। आप यह जानकारी केवल तभी प्रदान करते हैं जब आप साइट पर एक फॉर्म के माध्यम से हमसे संपर्क करते हैं।\n\nगैर-व्यक्तिगत जानकारी: इसमें वह जानकारी शामिल है जिसका उपयोग आपकी पहचान करने के लिए नहीं किया जा सकता, जैसे आपका ब्राउज़र प्रकार, ऑपरेटिंग सिस्टम, आईपी पता, साइट पर ब्राउज़िंग गतिविधि, और जनसांख्यिकीय जानकारी (जैसे उम्र, लिंग)। यह जानकारी स्वचालित रूप से एकत्र की जाती है जब आप साइट पर जाते हैं।'
                 },
                 {
-                    title: 'डेटा उपयोग',
-                    content: 'हम व्यक्तिगत जानकारी का उपयोग आपकी पूछताछ और अनुरोधों का जवाब देने के लिए करते हैं। गैर-व्यक्तिगत जानकारी का उपयोग साइट को बढ़ाने, उपयोगकर्ता अनुभव को सुधारने और आंतरिक मार्केटिंग प्रयासों का समर्थन करने के लिए किया जाता है। हम आपकी व्यक्तिगत जानकारी को आपकी सहमति के बिना तृतीय पक्षों के साथ साझा नहीं करेंगे, जब तक कि कानून द्वारा आवश्यक न हो।'
+                    title: 'हम आपकी जानकारी का उपयोग कैसे करते हैं',
+                    content: 'व्यक्तिगत जानकारी: हम आपकी व्यक्तिगत जानकारी का उपयोग केवल आपकी पूछताछ और अनुरोधों का उत्तर देने के लिए करेंगे। हम बिना आपकी सहमति के आपकी व्यक्तिगत जानकारी किसी तीसरे पक्ष के साथ साझा नहीं करेंगे, सिवाय इसके कि जब कानून के तहत यह आवश्यक हो।\n\nगैर-व्यक्तिगत जानकारी: हम साइट को बेहतर बनाने और यह समझने के लिए गैर-व्यक्तिगत जानकारी का उपयोग करते हैं कि उपयोगकर्ता किस प्रकार साइट के साथ इंटरैक्ट करते हैं। हम आंतरिक विपणन और प्रचार उद्देश्यों के लिए भी गैर-व्यक्तिगत जानकारी का उपयोग कर सकते हैं।'
                 },
                 {
-                    title: 'कुकीज और ट्रैकिंग',
-                    content: 'हम साइट के उपयोग के बारे में गैर-व्यक्तिगत जानकारी एकत्र करने के लिए कुकीज और समान ट्रैकिंग प्रौद्योगिकियों का उपयोग करते हैं। कुकीज हमें आपकी प्राथमिकताएं याद रखने और आपके ब्राउज़िंग अनुभव को बेहतर बनाने में मदद करती हैं। लॉगिन कुकीज दो दिनों तक रहती हैं, स्क्रीन विकल्प कुकीज एक साल तक रहती हैं, और लेख संपादन के दौरान उपयोग की जाने वाली अतिरिक्त कुकीज एक दिन बाद समाप्त हो जाती हैं। "मुझे याद रखें" चुनने से लॉगिन को दो सप्ताह तक बढ़ा दिया जाएगा। लॉग आउट करने पर लॉगिन कुकीज हटा दी जाएंगी।'
+                    title: 'कुकीज़ और ट्रैकिंग प्रौद्योगिकियाँ',
+                    content: 'हम कुकीज़ और अन्य ट्रैकिंग प्रौद्योगिकियों का उपयोग करके साइट पर आपके उपयोग के बारे में गैर-व्यक्तिगत जानकारी एकत्र कर सकते हैं। कुकीज़ छोटे डेटा फ़ाइलें हैं जो आपकी डिवाइस पर तब संग्रहीत होती हैं जब आप किसी वेबसाइट पर जाते हैं। वे वेबसाइट को समय के साथ आपकी क्रियाओं और प्राथमिकताओं को याद रखने की अनुमति देती हैं।\n\nयदि आप हमारे लॉगिन पृष्ठ पर जाते हैं, तो हम एक अस्थायी कुकी सेट करेंगे ताकि यह जांचा जा सके कि आपका ब्राउज़र कुकीज़ स्वीकार करता है या नहीं। इस कुकी में कोई व्यक्तिगत डेटा नहीं होता है और यह तब हटा दी जाती है जब आप अपना ब्राउज़र बंद कर देते हैं।\n\nजब आप लॉगिन करते हैं, तो हम आपकी लॉगिन जानकारी और स्क्रीन डिस्प्ले विकल्पों को सहेजने के लिए कई कुकीज़ सेट करेंगे। लॉगिन कुकीज़ दो दिन तक चलती हैं, और स्क्रीन विकल्प कुकीज़ एक वर्ष तक चलती हैं। यदि आप "मुझे याद रखें" चुनते हैं, तो आपका लॉगिन दो सप्ताह तक बना रहेगा। यदि आप लॉग आउट करते हैं, तो लॉगिन कुकीज़ हटा दी जाती हैं।\n\nयदि आप एक लेख संपादित या प्रकाशित करते हैं, तो एक अतिरिक्त कुकी आपके ब्राउज़र में सहेजी जाएगी। इस कुकी में कोई व्यक्तिगत डेटा नहीं होता है और यह बस उस लेख के पोस्ट आईडी को सूचित करती है जिसे आपने अभी संपादित किया है। यह कुकी 1 दिन के बाद समाप्त हो जाती है।'
                 },
                 {
-                    title: 'तृतीय-पक्ष सेवा प्रदाता',
-                    content: 'हम साइट संचालित करने और अपनी सेवाओं को वितरित करने के लिए तृतीय-पक्ष सेवा प्रदाताओं का उपयोग कर सकते हैं। इन प्रदाताओं को गैर-व्यक्तिगत जानकारी तक पहुँच हो सकती है। व्यक्तिगत जानकारी आपकी सहमति के बिना तृतीय पक्षों के साथ उनके विपणन उद्देश्यों के लिए साझा नहीं की जाएगी।'
+                    title: 'तीसरे पक्ष के सेवा प्रदाता',
+                    content: 'हम साइट संचालित करने और हमारी सेवाएं प्रदान करने में सहायता करने के लिए तीसरे पक्ष के सेवा प्रदाताओं का उपयोग कर सकते हैं। इन सेवा प्रदाताओं के पास आपकी गैर-व्यक्तिगत जानकारी तक पहुंच हो सकती है। हम आपकी व्यक्तिगत जानकारी को किसी तीसरे पक्ष के सेवा प्रदाताओं के साथ उनकी विपणन उद्देश्यों के लिए आपकी सहमति के बिना साझा नहीं करेंगे।'
                 },
                 {
-                    title: 'डेटा सुरक्षा',
-                    content: 'हम आपकी जानकारी को अनधिकृत पहुंच, प्रकटीकरण, परिवर्तन, या विनाश से बचाने के लिए उचित कदम उठाते हैं। हालांकि, कोई भी इंटरनेट ट्रांसमिशन या वेबसाइट पूरी तरह से सुरक्षित नहीं है। हम उपयोगकर्ताओं को ऑनलाइन व्यक्तिगत डेटा साझा करते समय सतर्क रहने के लिए प्रोत्साहित करते हैं।'
+                    title: 'सुरक्षा',
+                    content: 'हम आपकी जानकारी को अनधिकृत पहुंच, खुलासा, परिवर्तन या विनाश से बचाने के लिए उचित कदम उठाते हैं। हालांकि, कोई भी वेबसाइट या इंटरनेट ट्रांसमिशन पूरी तरह से सुरक्षित नहीं है।'
                 },
                 {
                     title: 'बच्चों की गोपनीयता',
-                    content: 'यह साइट 13 वर्ष से कम आयु के बच्चों के लिए नहीं है। हम जानबूझकर 13 वर्ष से कम उम्र के बच्चों से व्यक्तिगत जानकारी एकत्र नहीं करते हैं। यदि आपको विश्वास है कि आपके बच्चे ने हमें व्यक्तिगत जानकारी प्रदान की है, तो कृपया इसे हटाने के लिए हमसे संपर्क करें।'
+                    content: 'साइट 13 वर्ष से कम आयु के बच्चों के लिए लक्षित नहीं है। हम 13 वर्ष से कम उम्र के बच्चों से व्यक्तिगत जानकारी जानबूझकर नहीं एकत्र करते हैं। यदि आप एक माता-पिता या अभिभावक हैं और आपको लगता है कि आपके बच्चे ने हमें व्यक्तिगत जानकारी दी है, तो कृपया हमसे संपर्क करें। हम उस जानकारी को अपने रिकॉर्ड से हटाने के लिए कदम उठाएंगे।'
                 },
                 {
-                    title: 'नीति अपडेट्स',
-                    content: 'यह गोपनीयता नीति समय-समय पर अपडेट की जा सकती है। परिवर्तन साइट पर पोस्ट किए जाएंगे, और हम आपको अपनी प्रथाओं के बारे में सूचित रहने के लिए इस नीति की नियमित रूप से समीक्षा करने के लिए प्रोत्साहित करते हैं।'
+                    title: 'इस गोपनीयता नीति में परिवर्तन',
+                    content: 'हम समय-समय पर इस गोपनीयता नीति को अपडेट कर सकते हैं। हम किसी भी परिवर्तन को साइट पर पोस्ट करेंगे। हम आपको नियमित रूप से इस गोपनीयता नीति की समीक्षा करने के लिए प्रेरित करते हैं ताकि आप हमारी गोपनीयता प्रथाओं के बारे में नवीनतम जानकारी प्राप्त कर सकें।'
                 }
             ],
-            contactPrivacy: 'यदि आपको हमारी गोपनीयता प्रथाओं के बारे में कोई प्रश्न हैं, तो कृपया hello@drjoints.in पर संपर्क करें।'
+            contactPrivacy: 'यदि आपको इस गोपनीयता नीति के बारे में कोई प्रश्न है, तो कृपया हमसे संपर्क करें:hello@drjoints.ae'
         },
         termsConditions: {
-            heading: 'नियम और शर्तें',
-            lastUpdated: 'अंतिम अपडेट: दिसंबर 2024',
+            heading: "नियम और शर्तें",
+            lastUpdated: "अंतिम अपडेट: दिसंबर 2024",
             sections: [
                 {
-                    heading: "नियमों की स्वीकृति",
-                    content: "Genius-Baby ('एप') डाउनलोड, इंस्टॉल या उपयोग करके, आप इन नियमों और शर्तों ('नियम') से बाध्य होने के लिए सहमत होते हैं। यदि आप इन नियमों से सहमत नहीं हैं, तो एप का उपयोग न करें।"
+                    heading: "Dr.Joints में आपका स्वागत है!",
+                    content: "ये नियम और शर्तें Dr.Joints वेबसाइट के उपयोग के लिए नियम और विनियम निर्धारित करती हैं, जो https://drjoints.ae/ पर उपलब्ध है। यह एक दर्द निवारक तेल का उत्पाद है। इस वेबसाइट तक पहुँच करके, हम मान लेते हैं कि आप इन नियमों और शर्तों से सहमत हैं। कृपया Dr.Joints का उपयोग जारी न रखें यदि आप इस पृष्ठ पर दिए गए सभी नियमों और शर्तों से सहमत नहीं हैं।"
                 },
                 {
-                    heading: "लाइसेंस",
-                    content: "Genius-Baby आपको इन नियमों के अधीन व्यक्तिगत, गैर-व्यावसायिक उपयोग के लिए एप का सीमित, गैर-विशेष, गैर-हस्तांतरणीय और रद्द करने योग्य लाइसेंस प्रदान करता है।"
+                    heading: "उपयोग की जाने वाली परिभाषाएँ",
+                    content: "ये नियम और शर्तें, गोपनीयता नीति, अस्वीकरण सूचना, और सभी समझौतों में निम्नलिखित परिभाषाएँ लागू होती हैं: 'ग्राहक', 'आप', और 'आपका' उस व्यक्ति को संदर्भित करते हैं, जो इस वेबसाइट पर लॉग इन करता है और कंपनी की नियम और शर्तों का पालन करता है। 'कंपनी', 'हम', 'हमारा', और 'हमें' हमारी कंपनी को संदर्भित करते हैं। 'पक्ष', 'पक्षकार', या 'हम' ग्राहक और हमें दोनों को संदर्भित करते हैं। सभी परिभाषाएँ उस प्रस्ताव, स्वीकृति, और भुगतान को संदर्भित करती हैं जो ग्राहक को हमारी सेवाओं को प्रदान करने के लिए आवश्यक है, जो लागू कानून के अनुसार है। उपर्युक्त परिभाषाओं या अन्य शब्दों को एकवचन, बहुवचन, और किसी भी व्याकरणिक बदलाव में समान अर्थ माना जाएगा।"
                 },
                 {
-                    heading: "उपयोगकर्ता दायित्व",
+                    heading: "कुकीज़ का उपयोग",
+                    content: "हम कुकीज़ का उपयोग करते हैं। Dr.Joints तक पहुँच करके, आप Dr.Joints की गोपनीयता नीति के अनुसार कुकीज़ का उपयोग करने के लिए सहमति देते हैं। अधिकांश इंटरैक्टिव वेबसाइटें प्रत्येक विज़िट पर उपयोगकर्ताओं के विवरण पुनः प्राप्त करने के लिए कुकीज़ का उपयोग करती हैं। हमारी वेबसाइट पर कुकीज़ का उपयोग कुछ कार्यक्षमताओं को सक्षम करने के लिए किया जाता है, जिससे आगंतुकों का अनुभव बेहतर हो सके। हमारे कुछ विज्ञापन/मार्केटिंग पार्टनर भी कुकीज़ का उपयोग कर सकते हैं।"
+                },
+                {
+                    heading: "बौद्धिक संपत्ति के अधिकार",
+                    content: "जब तक अन्यथा उल्लेख न किया गया हो, Dr.Joints और/या इसके लाइसेंसधारकों के पास Dr.Joints पर सभी सामग्री की बौद्धिक संपत्ति के अधिकार हैं। सभी बौद्धिक संपत्ति अधिकार सुरक्षित हैं। आप इस वेबसाइट तक केवल व्यक्तिगत उपयोग के लिए पहुँच सकते हैं, जो इन नियमों और शर्तों में वर्णित प्रतिबंधों के अधीन है।"
+                },
+                {
+                    heading: "उपयोग के प्रतिबंध",
                     content: [
-                        "एप का उपयोग करने के लिए आपकी आयु कम से कम 18 वर्ष होनी चाहिए।",
-                        "आप एप का उपयोग केवल वैध उद्देश्यों के लिए और इन नियमों के अनुसार करने के लिए सहमत हैं।",
-                        "आप एप के संचालन या सुरक्षा में हस्तक्षेप करने का प्रयास नहीं करेंगे।"
+                        "Dr.Joints से सामग्री को पुनः प्रकाशित करना",
+                        "Dr.Joints से सामग्री बेचना, किराए पर देना, या लाइसेंस करना",
+                        "Dr.Joints से सामग्री को पुनः उत्पादित या कॉपी करना",
+                        "Dr.Joints से सामग्री का पुनर्वितरण"
                     ]
                 },
                 {
-                    heading: "बौद्धिक संपदा",
-                    content: "सभी सामग्री, सुविधाएँ और कार्यक्षमता (जैसे पाठ, ग्राफिक्स, लोगो और सॉफ़्टवेयर) Genius-Baby या उसके लाइसेंसधारकों के स्वामित्व में हैं और कॉपीराइट और अन्य कानूनों द्वारा संरक्षित हैं। आप हमारी स्पष्ट लिखित अनुमति के बिना एप के किसी भी भाग को पुन: उत्पन्न, डुप्लिकेट, कॉपी, बेच, या शोषण करने के लिए सहमत नहीं हैं।"
+                    heading: "टिप्पणियाँ और पोस्ट की गई सामग्री",
+                    content: "इस वेबसाइट के कुछ भाग उपयोगकर्ताओं को टिप्पणियाँ पोस्ट करने और जानकारी साझा करने की अनुमति देते हैं। Dr.Joints टिप्पणियाँ पोस्ट करने से पहले उनकी समीक्षा, संपादन, या प्रकाशन नहीं करता है। टिप्पणियाँ Dr.Joints, उसके एजेंटों, या उसकी संबद्ध कंपनियों के विचारों और राय को प्रतिबिंबित नहीं करती हैं। वे केवल उस व्यक्ति के विचारों और राय को दर्शाती हैं जिसने उन्हें पोस्ट किया है। लागू कानून के तहत, Dr.Joints टिप्पणियों के लिए या किसी भी नुकसान या व्यय के लिए ज़िम्मेदार नहीं होगा जो टिप्पणियों के कारण हुआ हो।"
                 },
                 {
-                    heading: "उपयोगकर्ता द्वारा निर्मित सामग्री",
-                    content: "आप एप के माध्यम से सामग्री (जैसे प्लेलिस्ट या समीक्षाएं) सबमिट, अपलोड, या अन्यथा उपलब्ध कर सकते हैं। ऐसा करके, आप Genius-Baby को उस सामग्री का उपयोग, संशोधित, वितरित, और एप के संबंध में प्रदर्शन करने का अधिकार देते हैं।"
-                },
-                {
-                    heading: "गोपनीयता",
-                    content: "आपकी गोपनीयता हमारे लिए महत्वपूर्ण है। कृपया यह समझने के लिए हमारी गोपनीयता नीति की समीक्षा करें कि हम आपकी जानकारी कैसे एकत्र करते हैं, उपयोग करते हैं, और सुरक्षा करते हैं।"
-                },
-                {
-                    heading: "समाप्ति",
-                    content: "हम किसी भी समय, बिना किसी नोटिस के, आपके एप तक पहुँच को समाप्त करने या निलंबित करने का अधिकार सुरक्षित रखते हैं।"
-                },
-                {
-                    heading: "जिम्मेदारी की सीमा",
-                    content: [
-                        "कानून द्वारा अनुमत सीमा तक, Genius-Baby और उसके सहयोगी किसी भी अप्रत्यक्ष, आकस्मिक, विशेष, परिणामी, या दंडात्मक नुकसान के लिए जिम्मेदार नहीं होंगे।",
-                        "- एप का उपयोग या उपयोग करने में असमर्थता से उत्पन्न होने वाले नुकसान।",
-                        "- हमारे सर्वर तक अनधिकृत पहुंच से होने वाले नुकसान।",
-                        "- किसी तीसरे पक्ष द्वारा एप के माध्यम से प्रसारित किसी भी वायरस।",
-                        "- किसी भी सामग्री में त्रुटियां या चूक।"
-                    ]
-                },
-                {
-                    heading: "नियमों में परिवर्तन",
-                    content: "हम समय-समय पर इन नियमों को संशोधित कर सकते हैं। एप पर नए नियम पोस्ट करके आपको सूचित किया जाएगा। एप का निरंतर उपयोग संशोधनों की स्वीकृति माना जाएगा।"
-                },
-                {
-                    heading: "शासन कानून",
-                    content: "ये नियम भारतीय कानूनों के अधीन और उनके अनुसार व्याख्यायित होंगे।"
-                },
-                {
-                    heading: "संपर्क जानकारी",
-                    content: "यदि आपके पास इन नियमों के बारे में कोई प्रश्न हैं, तो कृपया srilogishyd@gmail.com पर संपर्क करें।"
+                    heading: "लिंक के लिए अस्वीकरण",
+                    content: "हम आपकी वेबसाइट पर दिखने वाले किसी भी सामग्री के लिए ज़िम्मेदार नहीं होंगे। आप हमारी वेबसाइट से उत्पन्न किसी भी दावे से हमें सुरक्षा प्रदान करने और बचाव करने के लिए सहमत हैं। आपकी वेबसाइट पर कोई भी लिंक ऐसा नहीं होना चाहिए जो मानहानिकारक, अश्लील, आपराधिक हो, या किसी तीसरे पक्ष के अधिकारों का उल्लंघन करता हो।"
                 }
             ],
-            disclaimer: 'हम इन नियमों को कभी भी संशोधित करने का अधिकार सुरक्षित रखते हैं। हमारी सेवाओं का निरंतर उपयोग किसी भी परिवर्तन की स्वीकृति माना जाएगा।',
-            contactTerms: 'किसी भी प्रश्न के लिए, कृपया hello@drjoints.in पर संपर्क करें।'
+            disclaimer: "हम किसी भी समय इन नियमों और शर्तों में संशोधन करने का अधिकार सुरक्षित रखते हैं। हमारी सेवाओं का आपका लगातार उपयोग किसी भी संशोधन की स्वीकृति माना जाएगा।",
+            contactTerms: "हमारे नियमों के बारे में किसी भी प्रश्न के लिए, कृपयाhello@drjoints.ae पर संपर्क करें।"
         },
         contact: {
             title: 'हमसे संपर्क करें',
@@ -962,7 +902,7 @@ const translations = {
         },
         shippingPolicyContent: {
             title: "शिपिंग नीति",
-            lastUpdated: "अंतिम अद्यतन: [अंतिम अद्यतन की तारीख डालें]",
+            lastUpdated: "अंतिम अद्यतन: अंतिम अपडेट: दिसंबर 2024",
             sections: [
                 {
                     heading: "1. शिपिंग कवरेज",

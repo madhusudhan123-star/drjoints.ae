@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './page/Home';
@@ -16,6 +16,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import LoadingSpinner from './components/LoadingSpinner';
 import Cancel from './page/Cancel';
+import ProductPage from './page/Try';
 // import LocomotiveScroll from 'locomotive-scroll';
 // ..
 AOS.init();
@@ -39,6 +40,7 @@ const RouteChangeListener = ({ setIsLoading }) => {
 };
 
 function App() {
+
   // Ensure the language exists in translations, fallback to 'ENGLISH'
   const getValidLanguage = (lang) => {
     return translations[lang] ? lang : 'ENGLISH';
@@ -72,10 +74,12 @@ function App() {
   }, [currentLang]);
 
   const [isLoading, setIsLoading] = useState(true);
+  const t = useMemo(() => translations[currentLang] || translations.ENGLISH, [currentLang]);
 
   return (
     <BrowserRouter>
       <div className={`app overflow-hidden ${currentLang === 'ar' ? 'rtl' : 'ltr'}`}>
+        
         <RouteChangeListener setIsLoading={setIsLoading} />
         {isLoading && <LoadingSpinner />}
         <Navbar
@@ -93,6 +97,7 @@ function App() {
           <Route path='/terms' element={<TermsConditionsPage currentLang={currentLang} />} />
           <Route path='/ship' element={<ShippingPolicyPage currentLang={currentLang} />} />
           <Route path='/cancel' element={<Cancel currentLang={currentLang} />} />
+          <Route path='/try' element={<ProductPage currentLang={currentLang} />} />
         </Routes>
       </div>
     </BrowserRouter>
